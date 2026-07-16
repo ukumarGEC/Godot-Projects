@@ -1,0 +1,567 @@
+[gd_scene format=3 uid="uid://b782umj8vywnl"]
+
+[ext_resource type="PackedScene" uid="uid://dyhvoundu2kqc" path="res://parts/Building.tscn" id="1_7d13r"]
+[ext_resource type="Script" uid="uid://vqjisxqt7s61" path="res://Scripts/Factory.gd" id="1_fj5ke"]
+[ext_resource type="PackedScene" uid="uid://c8nsbt4xmrfw8" path="res://CAD Models/conveyor ewab 06-25-2026.glb" id="2_fj5ke"]
+[ext_resource type="Script" uid="uid://cpphti6qfc4or" path="res://Scripts/TrackNetwork.gd" id="3_7d13r"]
+[ext_resource type="Script" uid="uid://tgvhtmuy3rwr" path="res://Scripts/TrackNode.gd" id="4_fj5ke"]
+[ext_resource type="Script" uid="uid://3gipogrix56g" path="res://Scripts/Vehicle.gd" id="5_nx2sc"]
+[ext_resource type="Script" uid="uid://cvlmekgcdyvj5" path="res://Scripts/TrafficManger.gd" id="6_04rp7"]
+[ext_resource type="Script" uid="uid://dbp8ungxsmwsl" path="res://Scripts/RouteFinder.gd" id="7_fxbbc"]
+[ext_resource type="PackedScene" uid="uid://cpwdo2a7jjnsy" path="res://Pallet.tscn" id="7_nx2sc"]
+[ext_resource type="PackedScene" uid="uid://dwvkxiwuxu3im" path="res://parts/Platform.tscn" id="8_cp5ni"]
+[ext_resource type="PackedScene" uid="uid://dc6o7qkwd60ha" path="res://parts/SixAxisRobot.tscn" id="9_f6ypw"]
+[ext_resource type="Script" uid="uid://tc6oj6hpr38" path="res://Scripts/robo_script_2.gd" id="10_ngllm"]
+[ext_resource type="PackedScene" uid="uid://c3hjw2y68g3a5" path="res://CAD Models/Dunnage.glb" id="11_40a4t"]
+[ext_resource type="Texture2D" uid="uid://c0iwb4uggqvym" path="res://label6.png" id="12_pdm07"]
+[ext_resource type="PackedScene" uid="uid://cc72d4e7jy02o" path="res://CAD Models/280g.glb" id="13_ruckw"]
+[ext_resource type="Texture2D" uid="uid://dgsg7p2w28a7e" path="res://280G_right_view_b.png" id="14_e678l"]
+[ext_resource type="Texture2D" uid="uid://do63sfbmg0frj" path="res://280G_right_view_c.png" id="15_wovih"]
+[ext_resource type="Texture2D" uid="uid://i8a3hvb2ldx0" path="res://280_Front_view_a.png" id="16_idxg4"]
+[ext_resource type="Texture2D" uid="uid://btp60ioyki0x" path="res://280_Front_view_b.png" id="17_gx8q3"]
+[ext_resource type="Texture2D" uid="uid://c2o4dqek73ply" path="res://280_Front_view_d.png" id="18_dv8e0"]
+[ext_resource type="Texture2D" uid="uid://dtmb3thns3ijj" path="res://280_Front_view_c.png" id="19_tvyiy"]
+[ext_resource type="Texture2D" uid="uid://y0vwkb1md4ys" path="res://280G_left_view_a.png" id="20_w47h7"]
+[ext_resource type="Texture2D" uid="uid://e2ypvdhmhea6" path="res://280G_left_view_b1.png" id="21_mfb0u"]
+[ext_resource type="Texture2D" uid="uid://bap8plb1c2wsh" path="res://280G_left_view_c.png" id="22_p1gk4"]
+[ext_resource type="Texture2D" uid="uid://c2jdolldmlrcg" path="res://280G_left_view_d.png" id="23_opxh8"]
+[ext_resource type="Texture2D" uid="uid://f53wgcnrs8fx" path="res://280G_left_view_b2.png" id="24_43lju"]
+[ext_resource type="Texture2D" uid="uid://bnc3eagm7gxav" path="res://280G_left_view_top.png" id="25_n5kvl"]
+[ext_resource type="Texture2D" uid="uid://b2iscb3jfowyq" path="res://280_Front_view_e.png" id="26_3dttj"]
+[ext_resource type="Texture2D" uid="uid://b51w6lfeqcyu8" path="res://label1.png" id="27_esq7h"]
+[ext_resource type="Script" uid="uid://bbi7pc36jkxwx" path="res://Scripts/robo_script_1.gd" id="28_37s4p"]
+[ext_resource type="PackedScene" uid="uid://bvgy1g5ncryvb" path="res://CAD Models/Meshy_AI_Industrial_Vacuum_Coa_0608115533_texture.glb" id="29_ofljq"]
+[ext_resource type="Texture2D" uid="uid://cy7kwdtx2j372" path="res://label3.png" id="30_dau47"]
+[ext_resource type="PackedScene" uid="uid://cdrr7i0dlbnod" path="res://CAD Models/300_GMSP_NANO_Bl.glb" id="31_hl73b"]
+[ext_resource type="Texture2D" uid="uid://2mxuh8cks0py" path="res://label2.png" id="32_j3qeb"]
+[ext_resource type="PackedScene" uid="uid://bahfcxplgs3wi" path="res://CAD Models/360T_simplified.glb" id="33_kok3v"]
+[ext_resource type="Texture2D" uid="uid://bj28a1a7rpgpm" path="res://360T_rightview_a.png" id="34_qljfv"]
+[ext_resource type="Texture2D" uid="uid://cfaasgn4q3y6n" path="res://360T_rightview_b.png" id="35_0ibec"]
+[ext_resource type="Texture2D" uid="uid://bqqey5vnfvj1d" path="res://360T_rightview_c.png" id="36_v7g80"]
+[ext_resource type="Texture2D" uid="uid://cekclm7wfj175" path="res://360T_rightview_d.png" id="37_bl1qg"]
+[ext_resource type="Texture2D" uid="uid://daqtrpuyvs38i" path="res://360T_rightview_e.png" id="38_hm57m"]
+[ext_resource type="Texture2D" uid="uid://dn1vsoorauyo0" path="res://360T_rightview_f.png" id="39_32ik3"]
+[ext_resource type="Texture2D" uid="uid://ppto1wto2ujp" path="res://360T_frontview_a1.png" id="40_hf2at"]
+[ext_resource type="Texture2D" uid="uid://h68kq3hsmeu4" path="res://360T_frontview_a2.png" id="41_gcl4h"]
+[ext_resource type="Texture2D" uid="uid://c5a56yysk1v71" path="res://360T_frontview_b.png" id="42_dia33"]
+[ext_resource type="Texture2D" uid="uid://ukjmh0mqeqo0" path="res://360T_frontview_c.png" id="43_2l2x5"]
+[ext_resource type="Texture2D" uid="uid://cxtmodg82bgnk" path="res://360T_frontview_d.png" id="44_0nsr6"]
+[ext_resource type="Texture2D" uid="uid://b43jjxlhh1e7p" path="res://360T_leftview_a.png" id="45_6atsy"]
+[ext_resource type="Texture2D" uid="uid://rns55d1w4lv4" path="res://360T_leftview_d1.png" id="46_hejc6"]
+[ext_resource type="Texture2D" uid="uid://mo1xobj7b330" path="res://360T_leftview_d2.png" id="47_mayk6"]
+[ext_resource type="Texture2D" uid="uid://nhaqj2hbpo40" path="res://360T_leftview_d3.png" id="48_4fdb8"]
+[ext_resource type="Texture2D" uid="uid://b6fod3icf0rks" path="res://360T_leftview_b.png" id="49_hwu8c"]
+[ext_resource type="Texture2D" uid="uid://dmq73fdphe6mf" path="res://360T_leftview_c.png" id="50_8hpjr"]
+[ext_resource type="Texture2D" uid="uid://b2ynam6uex20a" path="res://label4.png" id="51_w7vyx"]
+[ext_resource type="PackedScene" uid="uid://b7yybreepit1g" path="res://CAD Models/PhotoBooth.glb" id="52_acppy"]
+[ext_resource type="Texture2D" uid="uid://ddnfvji5excr4" path="res://label5.png" id="53_l4632"]
+[ext_resource type="Texture2D" uid="uid://dik7etawoemp" path="res://label8.png" id="54_icfhr"]
+[ext_resource type="Texture2D" uid="uid://lk4llq4t6kp4" path="res://label7.png" id="55_sowrr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fj5ke"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lnent"]
+load_path = "res://.godot/imported/280G_right_view_a.png-798a6923df0f436a15a1868356c5462b.s3tc.ctex"
+
+[node name="Simulation" type="Node3D" unique_id=1269275433]
+
+[node name="Environment" type="Node3D" parent="." unique_id=1301383595]
+script = ExtResource("1_fj5ke")
+
+[node name="Building" parent="Environment" unique_id=183560046 instance=ExtResource("1_7d13r")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7361398)
+width_sections = 10
+length_sections = 7
+brightness = 20.0
+
+[node name="Conveyor" parent="Environment" unique_id=1959225874 instance=ExtResource("2_fj5ke")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, -2, 0, 2, -8.742278e-08, -17.51474, -0.23253727, 19.52011)
+
+[node name="TrackNetwork" type="Node3D" parent="Environment" unique_id=338429774]
+script = ExtResource("3_7d13r")
+
+[node name="N1" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1897427759 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.124748, 0, 21.701382)
+script = ExtResource("4_fj5ke")
+next_nodes = [NodePath("../N2")]
+
+[node name="N2" type="Marker3D" parent="Environment/TrackNetwork" unique_id=994508206 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.37764, 0, 20.370394)
+script = ExtResource("4_fj5ke")
+next_nodes = [NodePath("../N3")]
+
+[node name="N3" type="Marker3D" parent="Environment/TrackNetwork" unique_id=600312894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.377632, 0, -7.5281878)
+script = ExtResource("4_fj5ke")
+
+[node name="Vehicle" type="Node3D" parent="Environment" unique_id=473014263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.377626, 0, -7.518935)
+script = ExtResource("5_nx2sc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicle" unique_id=157157124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825362, 0, 21.440386)
+visible = false
+mesh = SubResource("BoxMesh_fj5ke")
+
+[node name="Pallet" parent="Environment/Vehicle" unique_id=159928600 instance=ExtResource("7_nx2sc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="TrafficManager" type="Node" parent="Environment" unique_id=1574997243]
+script = ExtResource("6_04rp7")
+
+[node name="RouteFinder" type="Node" parent="Environment" unique_id=607585202]
+script = ExtResource("7_fxbbc")
+
+[node name="InputLoader" type="Node3D" parent="." unique_id=776539885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.715183, 0, 13.532576)
+
+[node name="Robo_1" parent="InputLoader" unique_id=793067781 instance=ExtResource("8_cp5ni")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6141682, 0.0050001144, 10.026588)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="InputLoader/Robo_1" unique_id=508298280 instance=ExtResource("9_f6ypw")]
+process_mode = 1
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.0010790825, 0, 0.011746407)
+script = ExtResource("10_ngllm")
+home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
+waypoints = {
+"1: Point1": Array[float]([0.0, 55.0, 75.0, 0.0, 45.0, 0.0])
+}
+selected_waypoint = "1: Point1"
+new_waypoint_name = "Point2"
+j1_angle = -1131480.0
+
+[node name="Platform" parent="InputLoader" unique_id=923371324 instance=ExtResource("8_cp5ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74137914, 0.0050001144, 10.48364)
+floor_y = -1.9949999
+size = Vector3(3, 2, 2.9996028)
+
+[node name="Dunnage2" parent="InputLoader/Platform" unique_id=727401838 instance=ExtResource("11_40a4t")]
+transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, -5, 0, 5, -2.1855695e-07, 0.049451828, 0.11107719, 0.02661705)
+
+[node name="Platform2" parent="InputLoader" unique_id=1437852808 instance=ExtResource("8_cp5ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4616523, 0.0050001144, 10.502505)
+floor_y = -1.9949999
+size = Vector3(2.9996748, 2, 3.003345)
+
+[node name="Label" type="Sprite3D" parent="InputLoader" unique_id=91110790]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.775591, 2.005931, 10.642519)
+billboard = 1
+texture = ExtResource("12_pdm07")
+
+[node name="280GMachines" type="Node3D" parent="." unique_id=1941243531]
+
+[node name="280g" parent="280GMachines" unique_id=24211437 instance=ExtResource("13_ruckw")]
+transform = Transform3D(2.5, 0, 0, 0, -1.09278474e-07, -2.5, 0, 2.5, -1.09278474e-07, -25.133875, 0.7318343, 13.259939)
+
+[node name="Sprite3D" type="Sprite3D" parent="280GMachines/280g" unique_id=1635958812]
+transform = Transform3D(-0.285, 4.3033804e-08, -1.8810673e-15, 0, -1.2457746e-08, -0.285, -4.3033804e-08, -0.285, 1.2457746e-08, -1.0841274, -2.1099994, -0.20493141)
+texture = SubResource("CompressedTexture2D_lnent")
+
+[node name="Sprite3D2" type="Sprite3D" parent="280GMachines/280g" unique_id=1059404534]
+transform = Transform3D(-0.285, 4.3033804e-08, -1.8810673e-15, 0, -1.2457746e-08, -0.285, -4.3033804e-08, -0.285, 1.2457746e-08, -1.4481049, -2.1099994, -0.17703938)
+texture = ExtResource("14_e678l")
+
+[node name="Sprite3D3" type="Sprite3D" parent="280GMachines/280g" unique_id=2084771278]
+transform = Transform3D(-0.35603234, 4.3033804e-08, -1.8810673e-15, 0, -1.2457748e-08, -0.285, -5.375939e-08, -0.28499997, 1.2457746e-08, -1.9214668, -2.1099994, -1.2515812)
+texture = ExtResource("15_wovih")
+
+[node name="Sprite3D4" type="Sprite3D" parent="280GMachines/280g" unique_id=450262110]
+transform = Transform3D(0.023440043, -1.4008863e-08, 0.27901712, -0.27901712, 2.1065206e-08, 0.023440043, -2.2164011e-08, -0.28, -1.2196226e-08, 0.6921425, 0.24900246, -0.49908233)
+texture = ExtResource("16_idxg4")
+
+[node name="Sprite3D5" type="Sprite3D" parent="280GMachines/280g" unique_id=530489454]
+transform = Transform3D(5.6366676e-16, -1.215921e-08, 0.289, -0.29500768, -1.2159211e-08, 0, 1.2895199e-08, -0.27817032, -1.263259e-08, 0.72330666, -1.1029515, -0.52329594)
+texture = ExtResource("17_gx8q3")
+
+[node name="Sprite3D6" type="Sprite3D" parent="280GMachines/280g" unique_id=410019450]
+transform = Transform3D(5.718198e-16, -1.2708536e-08, 0.289, -0.29927477, -1.27085364e-08, -2.1175824e-22, 1.3081719e-08, -0.29073742, -1.2632592e-08, 0.4103632, -0.6515293, 0.81761825)
+texture = ExtResource("18_dv8e0")
+
+[node name="Sprite3D7" type="Sprite3D" parent="280GMachines/280g" unique_id=356694559]
+transform = Transform3D(0.29579017, 0, 0.043972928, -0.045536276, -1.27085364e-08, 0.2856351, 1.9904542e-09, -0.29073742, -1.24855095e-08, -0.16945648, 1.1022525, -0.2946807)
+texture = ExtResource("19_tvyiy")
+
+[node name="Sprite3D8" type="Sprite3D" parent="280GMachines/280g" unique_id=256781908]
+transform = Transform3D(0.31993392, 0, -1.26325945e-08, 1.3984755e-08, 7.1054274e-15, 0.28900006, 2.1175824e-22, -0.32637262, 0, 0.2001934, 0.76987267, -0.49446028)
+texture = ExtResource("20_w47h7")
+
+[node name="Sprite3D9" type="Sprite3D" parent="280GMachines/280g" unique_id=115110920]
+transform = Transform3D(0.40528113, -1.1829149e-22, -4.51294e-30, 7.523164e-37, -1.4473755e-08, 0.28900006, -1.447849e-22, -0.33112082, -1.26325945e-08, -1.0041618, 0.8913002, -0.5411027)
+texture = ExtResource("21_mfb0u")
+
+[node name="Sprite3D10" type="Sprite3D" parent="280GMachines/280g" unique_id=1085988991]
+transform = Transform3D(0.41102454, -1.2305108e-22, -4.51294e-30, 0, -1.5056125e-08, 0.28900006, -1.4683673e-22, -0.3444439, -1.26325945e-08, -0.80511665, 0.5795069, 0.86088)
+texture = ExtResource("22_p1gk4")
+
+[node name="Sprite3D11" type="Sprite3D" parent="280GMachines/280g" unique_id=1199564265]
+transform = Transform3D(0.41102454, -1.1881331e-22, -4.51294e-30, 0, -1.4537606e-08, 0.28900006, -1.4683673e-22, -0.33258155, -1.26325945e-08, -3.6987362, 0.8978634, -0.38133925)
+texture = ExtResource("23_opxh8")
+
+[node name="Sprite3D12" type="Sprite3D" parent="280GMachines/280g" unique_id=569241792]
+transform = Transform3D(0.40528113, -1.1829149e-22, -4.51294e-30, 7.523164e-37, -1.4473755e-08, 0.28900006, -1.447849e-22, -0.33112082, -1.26325945e-08, -2.007925, 0.8342676, -0.5354867)
+texture = ExtResource("24_43lju")
+
+[node name="Sprite3D13" type="Sprite3D" parent="280GMachines/280g" unique_id=1865487255]
+transform = Transform3D(0.65844244, 0.0860649, 2.4246148e-08, 0.049542665, -1.1438378, 1.8600383e-09, 5.5560022e-08, -1.4132695e-10, -0.28899992, 0.225, 0.224, -1.23)
+texture = ExtResource("25_n5kvl")
+
+[node name="Sprite3D14" type="Sprite3D" parent="280GMachines/280g" unique_id=664029530]
+transform = Transform3D(5.6366676e-16, -1.215921e-08, 0.289, -0.29500768, -1.2159211e-08, 0, 1.2895199e-08, -0.27817032, -1.263259e-08, 0.67050934, -2.003001, -0.50986934)
+texture = ExtResource("26_3dttj")
+
+[node name="Label" type="Sprite3D" parent="280GMachines/280g" unique_id=1809370487]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.0780525, -2.8748043, -2.3878841)
+billboard = 1
+texture = ExtResource("27_esq7h")
+
+[node name="280g2" parent="280GMachines" unique_id=788838252 instance=ExtResource("13_ruckw")]
+transform = Transform3D(2.5, 0, 0, 0, -1.09278474e-07, -2.5, 0, 2.5, -1.09278474e-07, -25.285421, 0.731835, -1.7574115)
+
+[node name="Sprite3D" type="Sprite3D" parent="280GMachines/280g2" unique_id=1036588664]
+transform = Transform3D(-0.285, 4.3033804e-08, -1.8810673e-15, 0, -1.2457746e-08, -0.285, -4.3033804e-08, -0.285, 1.2457746e-08, -1.0841274, -2.1099994, -0.20493141)
+texture = SubResource("CompressedTexture2D_lnent")
+
+[node name="Sprite3D2" type="Sprite3D" parent="280GMachines/280g2" unique_id=2087202348]
+transform = Transform3D(-0.285, 4.3033804e-08, -1.8810673e-15, 0, -1.2457746e-08, -0.285, -4.3033804e-08, -0.285, 1.2457746e-08, -1.4481049, -2.1099994, -0.17703938)
+texture = ExtResource("14_e678l")
+
+[node name="Sprite3D3" type="Sprite3D" parent="280GMachines/280g2" unique_id=729661073]
+transform = Transform3D(-0.35603234, 4.3033804e-08, -1.8810673e-15, 0, -1.2457748e-08, -0.285, -5.375939e-08, -0.28499997, 1.2457746e-08, -1.9214668, -2.1099994, -1.2515812)
+texture = ExtResource("15_wovih")
+
+[node name="Sprite3D4" type="Sprite3D" parent="280GMachines/280g2" unique_id=1952883877]
+transform = Transform3D(0.023440043, -1.4008863e-08, 0.27901712, -0.27901712, 2.1065206e-08, 0.023440043, -2.2164011e-08, -0.28, -1.2196226e-08, 0.6921425, 0.24900246, -0.49908233)
+texture = ExtResource("16_idxg4")
+
+[node name="Sprite3D5" type="Sprite3D" parent="280GMachines/280g2" unique_id=154648251]
+transform = Transform3D(5.6366676e-16, -1.215921e-08, 0.289, -0.29500768, -1.2159211e-08, 0, 1.2895199e-08, -0.27817032, -1.263259e-08, 0.72330666, -1.1029515, -0.52329594)
+texture = ExtResource("17_gx8q3")
+
+[node name="Sprite3D6" type="Sprite3D" parent="280GMachines/280g2" unique_id=1913993050]
+transform = Transform3D(5.718198e-16, -1.2708536e-08, 0.289, -0.29927477, -1.27085364e-08, -2.1175824e-22, 1.3081719e-08, -0.29073742, -1.2632592e-08, 0.4103632, -0.6515293, 0.81761825)
+texture = ExtResource("18_dv8e0")
+
+[node name="Sprite3D7" type="Sprite3D" parent="280GMachines/280g2" unique_id=1422607255]
+transform = Transform3D(0.29579017, 0, 0.043972928, -0.045536276, -1.27085364e-08, 0.2856351, 1.9904542e-09, -0.29073742, -1.24855095e-08, -0.16945648, 1.1022525, -0.2946807)
+texture = ExtResource("19_tvyiy")
+
+[node name="Sprite3D8" type="Sprite3D" parent="280GMachines/280g2" unique_id=1757181315]
+transform = Transform3D(0.31993392, 0, -1.26325945e-08, 1.3984755e-08, 7.1054274e-15, 0.28900006, 2.1175824e-22, -0.32637262, 0, 0.2001934, 0.76987267, -0.49446028)
+texture = ExtResource("20_w47h7")
+
+[node name="Sprite3D9" type="Sprite3D" parent="280GMachines/280g2" unique_id=1631247086]
+transform = Transform3D(0.40528113, -1.1829149e-22, -4.51294e-30, 7.523164e-37, -1.4473755e-08, 0.28900006, -1.447849e-22, -0.33112082, -1.26325945e-08, -1.0041618, 0.8913002, -0.5411027)
+texture = ExtResource("21_mfb0u")
+
+[node name="Sprite3D10" type="Sprite3D" parent="280GMachines/280g2" unique_id=1546285510]
+transform = Transform3D(0.41102454, -1.2305108e-22, -4.51294e-30, 0, -1.5056125e-08, 0.28900006, -1.4683673e-22, -0.3444439, -1.26325945e-08, -0.80511665, 0.5795069, 0.86088)
+texture = ExtResource("22_p1gk4")
+
+[node name="Sprite3D11" type="Sprite3D" parent="280GMachines/280g2" unique_id=1678026086]
+transform = Transform3D(0.41102454, -1.1881331e-22, -4.51294e-30, 0, -1.4537606e-08, 0.28900006, -1.4683673e-22, -0.33258155, -1.26325945e-08, -3.6987362, 0.8978634, -0.38133925)
+texture = ExtResource("23_opxh8")
+
+[node name="Sprite3D12" type="Sprite3D" parent="280GMachines/280g2" unique_id=310531047]
+transform = Transform3D(0.40528113, -1.1829149e-22, -4.51294e-30, 7.523164e-37, -1.4473755e-08, 0.28900006, -1.447849e-22, -0.33112082, -1.26325945e-08, -2.007925, 0.8342676, -0.5354867)
+texture = ExtResource("24_43lju")
+
+[node name="Sprite3D13" type="Sprite3D" parent="280GMachines/280g2" unique_id=1703190000]
+transform = Transform3D(0.65844244, 0.0860649, 2.4246148e-08, 0.049542665, -1.1438378, 1.8600383e-09, 5.5560022e-08, -1.4132695e-10, -0.28899992, 0.225, 0.224, -1.23)
+texture = ExtResource("25_n5kvl")
+
+[node name="Sprite3D14" type="Sprite3D" parent="280GMachines/280g2" unique_id=2048384557]
+transform = Transform3D(5.6366676e-16, -1.215921e-08, 0.289, -0.29500768, -1.2159211e-08, 0, 1.2895199e-08, -0.27817032, -1.263259e-08, 0.6586418, -1.9989007, -0.5104178)
+texture = ExtResource("26_3dttj")
+
+[node name="Label" type="Sprite3D" parent="280GMachines/280g2" unique_id=1764180168]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.0780525, -2.8748043, -2.3878841)
+billboard = 1
+texture = ExtResource("27_esq7h")
+
+[node name="Robo_2" parent="280GMachines" unique_id=668025538 instance=ExtResource("8_cp5ni")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.556578, -0.13340956, 13.948278)
+floor_y = -1.9949999451637268
+size = Vector3(1.2, 1.8615904, 1.2)
+
+[node name="SixAxisRobot2" parent="280GMachines/Robo_2" unique_id=2004573801 instance=ExtResource("9_f6ypw")]
+process_mode = 1
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.021320581, 0)
+script = ExtResource("28_37s4p")
+home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
+j1_angle = -2216520.0
+j2_angle = 19.999999999999993
+j3_angle = 85.00000000000001
+j5_angle = 65.0
+
+[node name="Robo_3" parent="280GMachines" unique_id=1798611370 instance=ExtResource("8_cp5ni")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.635256, -0.19182724, -1.1814213)
+floor_y = -1.9949998259544373
+size = Vector3(1.2, 1.8031726, 1.2)
+
+[node name="SixAxisRobot3" parent="280GMachines/Robo_3" unique_id=1020581805 instance=ExtResource("9_f6ypw")]
+process_mode = 1
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.021320581, 0)
+script = ExtResource("28_37s4p")
+home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
+j1_angle = -1722960.0
+
+[node name="Washer" parent="." unique_id=787296881 instance=ExtResource("29_ofljq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.484662, -0.17350519, -10.977738)
+
+[node name="Label" type="Sprite3D" parent="Washer" unique_id=493592990]
+transform = Transform3D(0.20000002, 0, 0, 0, 0.20000002, 0, 0, 0, 0.20000002, 2.1848514, 2.005931, -0.24728274)
+billboard = 1
+texture = ExtResource("30_dau47")
+
+[node name="300GMSP" type="Node3D" parent="." unique_id=571197270]
+
+[node name="300_GMSP_NANO_Bl2" parent="300GMSP" unique_id=993083634 instance=ExtResource("31_hl73b")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 3.6627712, -1.445464, -14.149174)
+
+[node name="Label" type="Sprite3D" parent="300GMSP/300_GMSP_NANO_Bl2" unique_id=919483325]
+transform = Transform3D(0.20000002, 0, 8.881784e-16, 0, 0.20000002, 0, -8.881784e-16, 0, 0.20000002, -0.08325863, 2.005931, 1.5910703)
+billboard = 1
+texture = ExtResource("32_j3qeb")
+
+[node name="Robo_6" parent="300GMSP" unique_id=1472786766 instance=ExtResource("8_cp5ni")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.300882, 0.0050001144, -10.756239)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="300GMSP/Robo_6" unique_id=1746883994 instance=ExtResource("9_f6ypw")]
+process_mode = 1
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("28_37s4p")
+home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
+j1_angle = -1780920.0
+
+[node name="300_GMSP_NANO_Bl3" parent="300GMSP" unique_id=954246795 instance=ExtResource("31_hl73b")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 14.766684, -1.4453292, -14.08897)
+
+[node name="Label" type="Sprite3D" parent="300GMSP/300_GMSP_NANO_Bl3" unique_id=1794455715]
+transform = Transform3D(0.20000002, 0, 8.881784e-16, 0, 0.20000002, 0, -8.881784e-16, 0, 0.20000002, -0.08325863, 2.005931, 1.5910703)
+billboard = 1
+texture = ExtResource("32_j3qeb")
+
+[node name="Robo_7" parent="300GMSP" unique_id=1348072046 instance=ExtResource("8_cp5ni")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.334932, 0.0050001144, -10.660328)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="300GMSP/Robo_7" unique_id=75207400 instance=ExtResource("9_f6ypw")]
+process_mode = 1
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("28_37s4p")
+home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
+j1_angle = -1707120.0
+
+[node name="360T" type="Node3D" parent="." unique_id=473571316]
+
+[node name="360T_simplified2" parent="360T" unique_id=1974783508 instance=ExtResource("33_kok3v")]
+transform = Transform3D(-1.3113416e-07, -3, 1.3113416e-07, 0, -1.3113416e-07, -3, 3, -1.3113416e-07, 5.732057e-15, 29.26865, 1.4447817, 0.61257124)
+
+[node name="Sprite3D" type="Sprite3D" parent="360T/360T_simplified2" unique_id=552500966]
+transform = Transform3D(2.6645353e-15, -7.649493e-09, 0.175, -0.175, -7.649498e-09, 6.217249e-15, 7.649493e-09, -0.175, -7.649493e-09, 0.47999784, 0.062838554, -0.1050545)
+texture = ExtResource("34_qljfv")
+
+[node name="Sprite3D2" type="Sprite3D" parent="360T/360T_simplified2" unique_id=1160021218]
+transform = Transform3D(9.769963e-15, -1.026039e-08, 0.19, -0.25159794, -1.0260389e-08, 2.6645353e-15, 1.09976925e-08, -0.23473036, -8.305164e-09, 0.5998149, -0.9558563, -0.7626418)
+texture = ExtResource("35_0ibec")
+
+[node name="Sprite3D3" type="Sprite3D" parent="360T/360T_simplified2" unique_id=885161932]
+transform = Transform3D(9.769963e-15, -8.628939e-09, 0.19, -0.25159794, -8.62894e-09, 2.6645353e-15, 1.09976925e-08, -0.19740711, -8.305164e-09, 0.6049502, -1.4241381, -0.06305653)
+texture = ExtResource("36_v7g80")
+
+[node name="Sprite3D4" type="Sprite3D" parent="360T/360T_simplified2" unique_id=780188402]
+transform = Transform3D(9.769963e-15, -8.637535e-09, 0.19, -0.25159794, -8.637534e-09, 2.6645353e-15, 1.09976925e-08, -0.19760379, -8.305164e-09, 0.5998149, -0.7777138, -0.02540803)
+texture = ExtResource("37_bl1qg")
+
+[node name="Sprite3D5" type="Sprite3D" parent="360T/360T_simplified2" unique_id=121530738]
+transform = Transform3D(8.881784e-15, -8.637535e-09, 0.19, -0.2000451, -8.637534e-09, 2.6645353e-15, 8.744246e-09, -0.19760379, -8.305164e-09, 0.5819824, -0.4029665, 1.0058229)
+texture = ExtResource("38_hm57m")
+
+[node name="Sprite3D6" type="Sprite3D" parent="360T/360T_simplified2" unique_id=960967845]
+transform = Transform3D(1.5099033e-14, -9.191108e-09, 0.19, -0.2000451, -9.191107e-09, 2.6645353e-15, 8.744245e-09, -0.21026807, -8.305164e-09, 0.65652966, -0.25166607, 0.5370549)
+texture = ExtResource("39_32ik3")
+
+[node name="Sprite3D7" type="Sprite3D" parent="360T/360T_simplified2" unique_id=115228018]
+transform = Transform3D(0.232, 9.185602e-23, 0, 0, -1.0665579e-08, 0.221, 2.3822802e-22, -0.244, -9.6602175e-09, -0.279205, -0.257205, -0.73048115)
+texture = ExtResource("40_hf2at")
+
+[node name="Sprite3D8" type="Sprite3D" parent="360T/360T_simplified2" unique_id=2008896173]
+transform = Transform3D(0.175, -9.1121165e-23, 0, 0, -9.90946e-09, 0.167, 5.8233515e-22, -0.22670203, -7.2998017e-09, -0.565469, 0.4437065, 0.0697726)
+texture = ExtResource("41_gcl4h")
+
+[node name="Sprite3D9" type="Sprite3D" parent="360T/360T_simplified2" unique_id=1935539409]
+transform = Transform3D(0.175, -1.9700028e-22, 0, 0, -9.90946e-09, 0.167, 6.617445e-22, -0.22670203, -7.2998017e-09, 0.58333194, -0.3003044, 0.14757538)
+texture = ExtResource("42_dia33")
+
+[node name="Sprite3D10" type="Sprite3D" parent="360T/360T_simplified2" unique_id=413177272]
+transform = Transform3D(0.175, -5.1463766e-22, 0, 0, -9.90946e-09, 0.167, 8.999725e-22, -0.22670203, -7.2998017e-09, 0.578712, 0.740366, 0.6676297)
+texture = ExtResource("43_2l2x5")
+
+[node name="Sprite3D11" type="Sprite3D" parent="360T/360T_simplified2" unique_id=378620009]
+transform = Transform3D(-8.702233e-09, -0.33680475, -7.299801e-09, 2.1567435e-15, -1.4722216e-08, 0.167, -0.19908357, 1.4722206e-08, 4.4408918e-16, -0.33781844, 0.50200367, 0.638855)
+texture = ExtResource("24_43lju")
+
+[node name="Sprite3D12" type="Sprite3D" parent="360T/360T_simplified2" unique_id=275900236]
+transform = Transform3D(0.21527599, -4.3294565e-22, 0, 8.881784e-16, -7.919547e-09, 0.167, 1.3499588e-21, -0.1811783, -7.2998017e-09, -0.73023736, 0.79181767, -0.25690782)
+texture = ExtResource("44_0nsr6")
+
+[node name="Sprite3D13" type="Sprite3D" parent="360T/360T_simplified2" unique_id=1248365478]
+transform = Transform3D(0.17524938, -5.046564e-22, 0, 0, -7.516125e-09, 0.167, 1.0323214e-21, -0.171949, -7.2998017e-09, -1.2799174, 0.6932192, -0.54743624)
+texture = ExtResource("23_opxh8")
+
+[node name="Sprite3D14" type="Sprite3D" parent="360T/360T_simplified2" unique_id=943793427]
+transform = Transform3D(0.162585, -3.1120442e-22, 0, 8.881784e-16, -4.7077893e-09, 0.167, 9.529121e-22, -0.10770174, -7.2998017e-09, -1.2730176, 0.71628475, 0.19133624)
+texture = ExtResource("23_opxh8")
+
+[node name="Sprite3D15" type="Sprite3D" parent="360T/360T_simplified2" unique_id=2054107344]
+transform = Transform3D(0.5819981, -6.617338e-09, -4.8071165e-09, -1.883989e-08, -0.15138699, 0.03852652, -2.4568887e-08, -0.040667847, -0.14341596, -0.68508065, 0.13492298, -0.5093368)
+texture = ExtResource("23_opxh8")
+
+[node name="Sprite3D16" type="Sprite3D" parent="360T/360T_simplified2" unique_id=871640515]
+transform = Transform3D(0.5162637, -4.079848e-08, 1.874667e-09, -1.7139964e-08, -0.9333601, -0.013578457, -2.1904402e-08, -0.2312324, 0.054808926, 0.12098345, 0.023695946, -0.38844353)
+texture = ExtResource("25_n5kvl")
+
+[node name="Sprite3D17" type="Sprite3D" parent="360T/360T_simplified2" unique_id=1840892549]
+transform = Transform3D(1.7763568e-15, 1.0158831e-08, -0.16700003, 0.19834018, -1.0158833e-08, -6.217249e-15, -8.669725e-09, -0.23240694, -7.2998025e-09, -1.4370372, -1.0399742, 0.0020271838)
+texture = ExtResource("45_6atsy")
+
+[node name="Sprite3D18" type="Sprite3D" parent="360T/360T_simplified2" unique_id=1309558436]
+transform = Transform3D(0, 1.3329852e-08, -0.167, 0.80989355, -1.3329859e-08, -9.325873e-15, -3.5401573e-08, -0.3049514, -7.2998017e-09, -1.4109608, 0.07305241, -0.26438206)
+texture = ExtResource("24_43lju")
+
+[node name="Sprite3D19" type="Sprite3D" parent="360T/360T_simplified2" unique_id=884073443]
+transform = Transform3D(-1.7763568e-15, 1.1836451e-08, -0.167, 0.5989615, -1.1836459e-08, -9.325873e-15, -2.618144e-08, -0.27078635, -7.2998017e-09, -1.4344755, 0.07305241, -0.26438206)
+texture = ExtResource("24_43lju")
+
+[node name="Sprite3D20" type="Sprite3D" parent="360T/360T_simplified2" unique_id=604033321]
+transform = Transform3D(-5.3290705e-15, 1.11283285e-08, -0.167, 0.4637348, -1.1128342e-08, -9.325873e-15, -2.0270491e-08, -0.2545864, -7.2998017e-09, -1.4517658, 0.07305241, -0.26438206)
+texture = ExtResource("24_43lju")
+
+[node name="Sprite3D21" type="Sprite3D" parent="360T/360T_simplified2" unique_id=1428035215]
+transform = Transform3D(-2.6645353e-15, 7.872059e-09, -0.167, 0.20764893, -7.872055e-09, -9.325873e-15, -9.076624e-09, -0.18009162, -7.2998017e-09, -1.5464509, 0.062000275, -0.6382867)
+texture = ExtResource("46_hejc6")
+
+[node name="Sprite3D22" type="Sprite3D" parent="360T/360T_simplified2" unique_id=2021787749]
+transform = Transform3D(-2.6645353e-15, 7.872059e-09, -0.167, 0.20764893, -7.872058e-09, -9.325873e-15, -9.076624e-09, -0.18009162, -7.2998017e-09, -1.4876306, 0.073851585, -0.2859189)
+texture = ExtResource("47_mayk6")
+
+[node name="Sprite3D23" type="Sprite3D" parent="360T/360T_simplified2" unique_id=485085022]
+transform = Transform3D(-3.1086245e-15, 7.034286e-09, -0.167, 0.16492456, -7.0342834e-09, -9.325873e-15, -7.2090813e-09, -0.16092563, -7.2998017e-09, -1.6074502, 0.08856583, 0.13887864)
+texture = ExtResource("48_4fdb8")
+
+[node name="Sprite3D24" type="Sprite3D" parent="360T/360T_simplified2" unique_id=2016792157]
+transform = Transform3D(-4.8849813e-15, 1.165042e-08, -0.167, 0.14391506, -1.165042e-08, -9.325873e-15, -6.290726e-09, -0.2665304, -7.2998017e-09, -1.2005901, -0.0557127, 0.99256104)
+texture = ExtResource("49_hwu8c")
+
+[node name="Sprite3D25" type="Sprite3D" parent="360T/360T_simplified2" unique_id=857897790]
+transform = Transform3D(-5.7731597e-15, 8.2642675e-09, -0.167, 0.1316649, -8.26426e-09, -9.325873e-15, -5.7552536e-09, -0.18906431, -7.2998017e-09, -1.3333433, -0.07575703, 0.58192796)
+texture = ExtResource("50_8hpjr")
+
+[node name="Label" type="Sprite3D" parent="360T/360T_simplified2" unique_id=773244041]
+transform = Transform3D(-8.742278e-09, -3.05873e-23, 0.20000002, -0.20000002, -8.742278e-09, -8.742278e-09, 8.742278e-09, -0.20000002, 3.821371e-16, -2.284004, -0.46415424, -1.8580142)
+billboard = 1
+texture = ExtResource("51_w7vyx")
+
+[node name="Robo_8" parent="360T" unique_id=1461387911 instance=ExtResource("8_cp5ni")]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.904108, -0.19052005, 0.9966996)
+floor_y = -1.9949999
+size = Vector3(1.2, 1.8044798, 1.2)
+
+[node name="SixAxisRobot" parent="360T/Robo_8" unique_id=1508053106 instance=ExtResource("9_f6ypw")]
+process_mode = 1
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("28_37s4p")
+home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
+j1_angle = -1773360.0
+
+[node name="PhotoBooth" parent="." unique_id=1087032330 instance=ExtResource("52_acppy")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 26.809772, -0.0071823597, 12.656346)
+
+[node name="Label" type="Sprite3D" parent="PhotoBooth" unique_id=1800634004]
+transform = Transform3D(0.325, 0, 0, 0, 0.325, 0, 0, 0, 0.325, -0.16492033, 2.005931, 2.5694962)
+billboard = 1
+texture = ExtResource("53_l4632")
+
+[node name="BadDunnage" type="Node3D" parent="." unique_id=1776275981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.213524, 0, 13.532576)
+
+[node name="Robo_9" parent="BadDunnage" unique_id=343187557 instance=ExtResource("8_cp5ni")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6141682, 0.0050001144, 10.056688)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="BadDunnage/Robo_9" unique_id=605155382 instance=ExtResource("9_f6ypw")]
+process_mode = 1
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.0010790825, 0, 0.011746407)
+script = ExtResource("10_ngllm")
+home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
+waypoints = {
+"1: Point1": Array[float]([0.0, 55.0, 75.0, 0.0, 45.0, 0.0])
+}
+selected_waypoint = "1: Point1"
+new_waypoint_name = "Point2"
+j1_angle = -1120680.0
+
+[node name="Platform" parent="BadDunnage" unique_id=1857520093 instance=ExtResource("8_cp5ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74137914, 0.0050001144, 10.48364)
+floor_y = -1.9949999
+size = Vector3(3, 2, 2.9996028)
+
+[node name="Platform2" parent="BadDunnage" unique_id=738200956 instance=ExtResource("8_cp5ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4616523, 0.0050001144, 10.502505)
+floor_y = -1.9949999
+size = Vector3(2.9996748, 2, 3.003345)
+
+[node name="Label" type="Sprite3D" parent="BadDunnage" unique_id=1719457120]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 11.887154, 2.005931, 10.642519)
+billboard = 1
+texture = ExtResource("54_icfhr")
+
+[node name="GoodDunnage" type="Node3D" parent="." unique_id=553332136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2508287, 0, 13.532576)
+
+[node name="Robo_10" parent="GoodDunnage" unique_id=1171235505 instance=ExtResource("8_cp5ni")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.614168, 0.0050001144, 10.056688)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="GoodDunnage/Robo_10" unique_id=254255466 instance=ExtResource("9_f6ypw")]
+process_mode = 1
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.0010790825, 0, 0.011746407)
+script = ExtResource("10_ngllm")
+home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
+waypoints = {
+"1: Point1": Array[float]([0.0, 55.0, 75.0, 0.0, 45.0, 0.0])
+}
+selected_waypoint = "1: Point1"
+new_waypoint_name = "Point2"
+j1_angle = -1119960.0
+
+[node name="Platform" parent="GoodDunnage" unique_id=264313457 instance=ExtResource("8_cp5ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74137914, 0.0050001144, 10.48364)
+floor_y = -1.9949999
+size = Vector3(3, 2, 2.9996028)
+
+[node name="Platform2" parent="GoodDunnage" unique_id=1066121814 instance=ExtResource("8_cp5ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4616523, 0.0050001144, 10.502505)
+floor_y = -1.9949999
+size = Vector3(2.9996748, 2, 3.003345)
+
+[node name="Label" type="Sprite3D" parent="GoodDunnage" unique_id=1685209594]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3.6073518, 2.005931, 14.441042)
+billboard = 1
+texture = ExtResource("55_sowrr")
