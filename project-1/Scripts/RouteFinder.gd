@@ -14,8 +14,6 @@ func choose_branch(vehicle: Vehicle, junction: TrackNode) -> TrackNode:
 	match vehicle.destination:
 		Vehicle.Destination.QUEUE:
 			return junction.next_nodes[0]
-		Vehicle.Destination.WASHING:
+		Vehicle.Destination.MEASUREMENT:
 			return junction.next_nodes[1]
-		Vehicle.Destination.STORAGE:
-			return junction.next_nodes[2]
 	return junction.next_nodes[0]

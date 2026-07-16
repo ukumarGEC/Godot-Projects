@@ -2,7 +2,7 @@
 extends Node3D
 
 @onready var vehicle: Vehicle = $Vehicle
-#@onready var vehicle2: Vehicle = $Vehicle2
+@onready var vehicle2: Vehicle = $Vehicle2
 #@onready var vehicle3: Vehicle = $Vehicle3
 #@onready var vehicle4: Vehicle = $Vehicle4
 @onready var network: TrackNetwork = $TrackNetwork
@@ -19,6 +19,6 @@ func _ready()->void:
 	#if !vehicle2.start($TrackNetwork/Entry):
 		#print("Vehicle2 couldn't start.")
 	vehicle.start($TrackNetwork/N1)
-	#vehicle2.start($TrackNetwork/Entry)
+	vehicle2.start($TrackNetwork/N1)
 	#vehicle3.start($TrackNetwork/Entry)
 	#vehicle4.start($TrackNetwork/Entry)

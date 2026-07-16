@@ -5,10 +5,12 @@ extends Node3D
 enum Destination
 {
 	QUEUE,
-	GRINDING,
-	WASHING,
-	STORAGE,
-	EXIT
+	MEASUREMENT
+}
+
+enum AssetType{
+	GEAR,
+	PINION
 }
 
 enum State
@@ -21,10 +23,12 @@ enum State
 
 var state := State.IDLE
 
-@export var destination := Destination.EXIT
+@export var destination := Destination.MEASUREMENT
+@export var process_type := AssetType.GEAR
 @export var speed := 2.0
 @onready var traffic : TrafficManager = $"../TrafficManager"
 @onready var route_finder : RouteFinder = $"../RouteFinder"
+@onready var robot_manager : RobotManager = $"../RobotManager"
 @export var retry_delay := 0.25
 @export var processing_time := 0.0
 
@@ -66,26 +70,43 @@ func _process(delta: float)-> void:
 		#return
 	if !moving:
 		return
+		
+	# Calculate movement direction
+	var direction := (target_node.global_position - global_position).normalized()
 
+	# Face the movement direction
+	if direction.length() > 0.001:
+		look_at(global_position + direction, Vector3.UP)
+		
+	# Move
 	global_position = global_position.move_toward(
 		target_node.global_position,
 		speed * delta
 	)
 
-		# Arrived?
+	# Arrived?
 	if global_position.distance_to(target_node.global_position) < 0.05:
-		arrive()
+		await arrive()
 		
 func arrive()-> void:
+
 	#current_node.release()
 	var previous: TrackNode = current_node
 	current_node = target_node
+		
 	#current_node.reserve(self)
 	target_node = null
 	moving = false
 	state = State.IDLE
 	traffic.arrived(self, previous)
-	print(name, " Reached ", current_node.name)
+	
+	match current_node.node_type:
+		TrackNode.NodeType.MACHINE: print(name, " Reached ", current_node.name)
+		TrackNode.NodeType.ENTRY: print(name, " Reached ", current_node.name)
+		_: pass
+		
+	if current_node.name == "N7":
+		await robot_manager._run_robot(2)
 	go_next()
 	
 func go_next()->void:

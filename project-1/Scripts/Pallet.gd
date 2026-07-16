@@ -7,6 +7,7 @@ extends PathFollow3D
 #--------------------------------------------------
 @onready var path: Path3D = get_parent() as Path3D
 @onready var stoppage_path:Path3D = %QuarantineGQGHalt
+@onready var robo_Manager:RobotManager = %RobotManager
 #@export var stoppage_path: Path3D
 
 #--------------------------------------------------
@@ -132,22 +133,6 @@ func release_old_station()->void:
 		occupied_station = -1
 
 #--------------------------------------------------
-# ROBOT CONTROL
-#--------------------------------------------------
-func _run_robot(roboId:int)->void:
-	var robot : SixAxisRobot
-	match roboId:
-		1: robot = (	%Robo_1.find_child("SixAxisRobot*"))
-		2: robot = (%Robo_2.find_child("SixAxisRobot*"))
-		3: robot = (%Robo_3.find_child("SixAxisRobot*"))
-		6: robot = (%Robo_6.find_child("SixAxisRobot*"))
-		7: robot = (%Robo_7.find_child("SixAxisRobot*"))
-		8: robot = (%Robo_8.find_child("SixAxisRobot*"))
-		9: robot = (%Robo_9.find_child("SixAxisRobot*"))
-		10:robot = (%Robo_10.find_child("SixAxisRobot*"))
-	await robot.pick_place()
-	
-#--------------------------------------------------
 # PALLET STATUS
 #--------------------------------------------------
 func _update_pallet_status(machineID:int)->void:
@@ -155,10 +140,10 @@ func _update_pallet_status(machineID:int)->void:
 		match machineID:
 			0:
 				print(name," leaves input loader")
-				await _run_robot(1)
+				await robo_Manager._run_robot(1)
 			2:
 				print(name," reached Gear Grinding")
-				await _run_robot(2)
+				await robo_Manager._run_robot(2)
 			4:	
 				print(name," reached Washer")
 				await get_tree().create_timer(5.0).timeout
@@ -181,31 +166,31 @@ func _update_pallet_status(machineID:int)->void:
 			13:
 				if path.name.contains("GQB"):
 					print(name," reached Bad Dunnage")
-					await _run_robot(9)
+					await robo_Manager._run_robot(9)
 				else:
 					print(name," reached Good Dunnage")
-					await _run_robot(10)
+					await robo_Manager._run_robot(10)
 	elif path.name.contains("M"):
 		match machineID:
 			0:
 				print(name," leaves input loader")
-				_run_robot(1)
+				robo_Manager._run_robot(1)
 			1:
 				print(name," reached Gear Grinding")
-				_run_robot(2)
+				robo_Manager._run_robot(2)
 			3:
 				print(name," reached GMSP")
-				_run_robot(6)
+				robo_Manager._run_robot(6)
 			4:
 				print(name," reached 300T GearSet")
-				_run_robot(8)
+				robo_Manager._run_robot(8)
 			6:
 				if path.name.contains("GMB"):
 					print(name," reached Bad Dunnage")
-					_run_robot(9)
+					robo_Manager._run_robot(9)
 				else:
 					print(name," reached Good Dunnage")
-					_run_robot(10)
+					robo_Manager._run_robot(10)
 
 #--------------------------------------------------
 # HELPERS
