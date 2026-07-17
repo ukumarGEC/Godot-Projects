@@ -21,41 +21,30 @@ enum State
 	PROCESSING
 }
 
-var state := State.IDLE
+var state:State = State.IDLE
 
-@export var destination := Destination.MEASUREMENT
-@export var process_type := AssetType.GEAR
-@export var speed := 2.0
-@onready var traffic : TrafficManager = $"../TrafficManager"
-@onready var route_finder : RouteFinder = $"../RouteFinder"
-@onready var robot_manager : RobotManager = $"../RobotManager"
-@export var retry_delay := 0.25
-@export var processing_time := 0.0
+@export var destination:Destination = Destination.MEASUREMENT
+@export var process_type:AssetType = AssetType.GEAR
+@export var speed:float = 2.0
+@onready var traffic : TrafficManager = $"../../TrafficManager"
+@onready var route_finder : RouteFinder = $"../../RouteFinder"
+@onready var robot_manager : RobotManager = $"../../RobotManager"
+@onready var job_manager: JobManager = $"../../JobManager"
+@export var retry_delay:float = 0.25
+@export var processing_time:float = 0.0
 
-var processing_timer := 0.0
-var processing := false
-var retry_timer := 0.0
+var processing_timer:float = 0.0
+var processing:bool = false
+var retry_timer:float = 0.0
+var previous_node: TrackNode
 var current_node: TrackNode
 var target_node: TrackNode
 
-var moving := false
-var waiting := false
+var moving:bool = false
+var waiting:bool = false
 var waiting_for_node: TrackNode = null
-var retry_time := 0.5
-var retry_counter := 0.0
-
-func start(node: TrackNode)-> void:
-	current_node = node
-	global_position = node.global_position
-	state = State.WAITING
-	if !node.reserve(self):
-		waiting = true
-		waiting_for_node = node
-		#push_error("Node occupied")
-		#print("Start failed:", node.name)
-		return
-	#current_node.reserve(self)
-	go_next()
+var retry_time:float = 0.5
+var retry_counter:float = 0.0
 
 func _process(delta: float)-> void:
 	if waiting:
@@ -72,7 +61,7 @@ func _process(delta: float)-> void:
 		return
 		
 	# Calculate movement direction
-	var direction := (target_node.global_position - global_position).normalized()
+	var direction:Vector3 = (target_node.global_position - global_position).normalized()
 
 	# Face the movement direction
 	if direction.length() > 0.001:
@@ -88,43 +77,55 @@ func _process(delta: float)-> void:
 	if global_position.distance_to(target_node.global_position) < 0.05:
 		await arrive()
 		
-func arrive()-> void:
+func start(node: TrackNode)-> void:
+	current_node = node
+	global_position = node.global_position
+	state = State.WAITING
+	if !node.reserve(self):
+		waiting = true
+		waiting_for_node = node
+		#push_error("Node occupied")
+		#print("Start failed:", node.name)
+		return
+	#current_node.reserve(self)
+	go_next()
 
+func arrive()-> void:
+	
 	#current_node.release()
-	var previous: TrackNode = current_node
+	previous_node = current_node
 	current_node = target_node
 		
 	#current_node.reserve(self)
 	target_node = null
 	moving = false
 	state = State.IDLE
-	traffic.arrived(self, previous)
+	traffic.arrived(self, previous_node)
 	
+	# log status
 	match current_node.node_type:
 		TrackNode.NodeType.MACHINE: print(name, " Reached ", current_node.name)
 		TrackNode.NodeType.ENTRY: print(name, " Reached ", current_node.name)
 		_: pass
 		
+	# Trigger Robot
 	if current_node.name == "N7":
 		await robot_manager._run_robot(2)
+	
+	job_manager.update_status(self, current_node, previous_node)
+	
 	go_next()
 	
 func go_next()->void:
 	if current_node.next_nodes.is_empty():
 		return
-	#var next_node:TrackNode = current_node.next_nodes[0] if current_node.next_nodes.size() ==1 else current_node.next_nodes[1]
-	#if next_node.is_free():
-		#move_to(next_node)
-	#move_to(current_node.next_nodes[0])
-	var next := route_finder.get_next_node(self,current_node)
+	var next:TrackNode = route_finder.get_next_node(self,current_node)
 	move_to(next)
-
 	
 func move_to(node: TrackNode)-> void:
 	if node == null:
 		return
-	#if node.reserve(self):
-	if traffic.request_move(self, node):
+	if traffic.request_move(self, current_node, node):
 		target_node = node
 		moving = true
 		state = State.MOVING
@@ -135,9 +136,17 @@ func move_to(node: TrackNode)-> void:
 		retry_timer = retry_delay
 		waiting_for_node = node
 		
-func try_move()-> void:
-	if current_node.next_nodes.is_empty():
-		return
-	var next := current_node.next_nodes[0] 
-	if next.is_free():
-		move_to(next)
+#func try_move()-> void:
+	#if current_node.next_nodes.is_empty():
+		#return
+	#var next:TrackNode = current_node.next_nodes[0] 
+	#if next.is_free():
+		#move_to(next)
+		
+		
+#func wait_for(node: TrackNode) -> void:
+	#waiting = true
+	#moving = false
+	#waiting_for_node = node
+	#retry_timer = retry_delay
+	#state = State.WAITING

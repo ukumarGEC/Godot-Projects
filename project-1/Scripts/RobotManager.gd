@@ -39,7 +39,7 @@ func _run_robot(roboId:int)->void:
 func _run(roboId:Robos)->void:
 	var robot : SixAxisRobot
 	match roboId:
-		Robos.InputLoader: robot = (	%Robo_1.find_child("SixAxisRobot*"))
+		Robos.InputLoader: robot = (%Robo_1.find_child("SixAxisRobot*"))
 		Robos.Grinding: robot = (%Robo_2.find_child("SixAxisRobot*"))
 		Robos.Grinding: robot = (%Robo_3.find_child("SixAxisRobot*"))
 		Robos.GMSP: robot = (%Robo_6.find_child("SixAxisRobot*"))
