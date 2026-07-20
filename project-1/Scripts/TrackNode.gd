@@ -36,7 +36,7 @@ func is_free() -> bool:
 	return occupied_by == null
 
 func reserve(vehicle: Vehicle) -> bool:
-	if occupied_by != null:
+	if occupied_by != null and occupied_by != vehicle:
 		return false
 	occupied_by = vehicle
 	return true

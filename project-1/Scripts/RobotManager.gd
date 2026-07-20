@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 func _run_robot(roboId:int)->void:
 	var robot : SixAxisRobot
 	match roboId:
-		1: robot = (	%Robo_1.find_child("SixAxisRobot*"))
+		1: robot = (%Robo_1.find_child("SixAxisRobot*"))
 		2: robot = (%Robo_2.find_child("SixAxisRobot*"))
 		3: robot = (%Robo_3.find_child("SixAxisRobot*"))
 		6: robot = (%Robo_6.find_child("SixAxisRobot*"))

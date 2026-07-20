@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://dcyg51i1bnbx7" path="res://Scripts/JobManager.gd" id="12_uem70"]
 [ext_resource type="PackedScene" uid="uid://cc72d4e7jy02o" path="res://CAD Models/280g.glb" id="13_ruckw"]
 [ext_resource type="Texture2D" uid="uid://dgsg7p2w28a7e" path="res://280G_right_view_b.png" id="14_e678l"]
+[ext_resource type="Script" uid="uid://ci2ggexs4ag2j" path="res://Scripts/loader_robo_script.gd" id="15_deaqs"]
 [ext_resource type="Texture2D" uid="uid://do63sfbmg0frj" path="res://280G_right_view_c.png" id="15_wovih"]
 [ext_resource type="Texture2D" uid="uid://i8a3hvb2ldx0" path="res://280_Front_view_a.png" id="16_idxg4"]
 [ext_resource type="Texture2D" uid="uid://btp60ioyki0x" path="res://280_Front_view_b.png" id="17_gx8q3"]
@@ -85,7 +86,7 @@ transform = Transform3D(2, 0, 0, 0, -8.742278e-08, -2, 0, 2, -8.742278e-08, -17.
 script = ExtResource("3_7d13r")
 
 [node name="N1" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1897427759 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.124748, 0, 21.348007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.090449, 0, 21.348007)
 script = ExtResource("4_fj5ke")
 node_id = 1
 node_type = 4
@@ -145,117 +146,82 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.394426, 0, -7.5217485)
 script = ExtResource("4_fj5ke")
 node_id = 10
 node_type = 3
-next_nodes = [NodePath("../N15")]
+next_nodes = [NodePath("../N11")]
 
-[node name="N15" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1458817742 node_paths=PackedStringArray("next_nodes")]
+[node name="N11" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1458817742 node_paths=PackedStringArray("next_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.309119, 0, -7.5217485)
 script = ExtResource("4_fj5ke")
 node_id = 15
 node_type = 1
-next_nodes = [NodePath("../N16"), NodePath("../N11")]
+next_nodes = [NodePath("../N12Q1"), NodePath("../N12M1")]
 
-[node name="N11" type="Marker3D" parent="Environment/TrackNetwork" unique_id=634676616 node_paths=PackedStringArray("next_nodes")]
+[node name="N12M1" type="Marker3D" parent="Environment/TrackNetwork" unique_id=839746912 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4131203, 0, -7.5217485)
+script = ExtResource("4_fj5ke")
+zone_type = 2
+next_nodes = [NodePath("../N12M2")]
+
+[node name="N12M2" type="Marker3D" parent="Environment/TrackNetwork" unique_id=634676616 node_paths=PackedStringArray("next_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.609428, 0, -7.5217485)
 script = ExtResource("4_fj5ke")
 zone_type = 2
 node_id = 11
 node_type = 3
-next_nodes = [NodePath("../N12")]
+next_nodes = [NodePath("../N12M3")]
 
-[node name="N23" type="Marker3D" parent="Environment/TrackNetwork" unique_id=839746912 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4131203, 0, -7.5217485)
-script = ExtResource("4_fj5ke")
-zone_type = 2
-node_id = 23
-next_nodes = [NodePath("../N12")]
-
-[node name="N12" type="Marker3D" parent="Environment/TrackNetwork" unique_id=956915022 node_paths=PackedStringArray("next_nodes")]
+[node name="N12M3" type="Marker3D" parent="Environment/TrackNetwork" unique_id=956915022 node_paths=PackedStringArray("next_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.609428, 0, 20.335094)
 script = ExtResource("4_fj5ke")
 zone_type = 2
 node_id = 12
-node_type = 3
-next_nodes = [NodePath("../N22")]
+next_nodes = [NodePath("../N12M4")]
 
-[node name="N16" type="Marker3D" parent="Environment/TrackNetwork" unique_id=288870274 node_paths=PackedStringArray("next_nodes")]
+[node name="N12M4" type="Marker3D" parent="Environment/TrackNetwork" unique_id=2084452535 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.365108, 0, 20.335094)
+script = ExtResource("4_fj5ke")
+zone_type = 2
+node_id = 12
+node_type = 2
+next_nodes = [NodePath("../N12M5")]
+
+[node name="N12M5" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1159326035 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.997139, 0, 20.335094)
+script = ExtResource("4_fj5ke")
+zone_type = 2
+node_id = 12
+node_type = 2
+next_nodes = [NodePath("../N12M6")]
+
+[node name="N12M6" type="Marker3D" parent="Environment/TrackNetwork" unique_id=124398462 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.43624, 0, 20.33582)
+script = ExtResource("4_fj5ke")
+zone_type = 2
+node_id = 22
+next_nodes = [NodePath("../N13")]
+
+[node name="N12Q1" type="Marker3D" parent="Environment/TrackNetwork" unique_id=288870274 node_paths=PackedStringArray("next_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0342455, 0, -6.120276)
 script = ExtResource("4_fj5ke")
 node_id = 16
-next_nodes = [NodePath("../N17")]
+next_nodes = [NodePath("../N12Q2")]
 
-[node name="N17" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1754984503 node_paths=PackedStringArray("next_nodes")]
+[node name="N12Q2" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1754984503 node_paths=PackedStringArray("next_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0342455, 0, 6.131955)
 script = ExtResource("4_fj5ke")
 node_id = 17
-next_nodes = [NodePath("../N18")]
+next_nodes = [NodePath("../N12Q3")]
 
-[node name="N18" type="Marker3D" parent="Environment/TrackNetwork" unique_id=861840221 node_paths=PackedStringArray("next_nodes")]
+[node name="N12Q3" type="Marker3D" parent="Environment/TrackNetwork" unique_id=861840221 node_paths=PackedStringArray("next_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4501133, 0, 6.7220316)
 script = ExtResource("4_fj5ke")
 node_id = 18
-next_nodes = [NodePath("../Q10")]
+next_nodes = [NodePath("../N12Q4")]
 
-[node name="Q1" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1692964619 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.361639, 0, 6.7220316)
+[node name="N12Q4" type="Marker3D" parent="Environment/TrackNetwork" unique_id=403017984 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5513396, 0, 6.7220316)
 script = ExtResource("4_fj5ke")
-zone_type = 1
-node_id = 23
-node_type = 7
-next_nodes = [NodePath("../N19")]
-queue_zone = true
-
-[node name="Q2" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1453036717 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.349484, 0, 6.7220316)
-script = ExtResource("4_fj5ke")
-zone_type = 1
-node_id = 24
-node_type = 7
-next_nodes = [NodePath("../Q1")]
-queue_zone = true
-
-[node name="Q3" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1176481212 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3543, 0, 6.7220316)
-script = ExtResource("4_fj5ke")
-zone_type = 1
-node_id = 25
-node_type = 7
-next_nodes = [NodePath("../Q2")]
-queue_zone = true
-
-[node name="Q4" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1121478925 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.363166, 0, 6.7220316)
-script = ExtResource("4_fj5ke")
-zone_type = 1
-node_id = 26
-node_type = 7
-next_nodes = [NodePath("../Q3")]
-queue_zone = true
-
-[node name="Q5" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1177732153 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.338763, 0, 6.7220316)
-script = ExtResource("4_fj5ke")
-zone_type = 1
-node_id = 27
-node_type = 7
-next_nodes = [NodePath("../Q4")]
-queue_zone = true
-
-[node name="Q6" type="Marker3D" parent="Environment/TrackNetwork" unique_id=628803067 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.345132, 0, 6.7220316)
-script = ExtResource("4_fj5ke")
-zone_type = 1
-node_id = 28
-node_type = 7
-next_nodes = [NodePath("../Q5")]
-queue_zone = true
-
-[node name="Q7" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1700469647 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.448803, 0, 6.7220316)
-script = ExtResource("4_fj5ke")
-zone_type = 1
-node_id = 29
-node_type = 7
-next_nodes = [NodePath("../Q6")]
+node_id = 32
+next_nodes = [NodePath("../Q8")]
 queue_zone = true
 
 [node name="Q8" type="Marker3D" parent="Environment/TrackNetwork" unique_id=256338383 node_paths=PackedStringArray("next_nodes")]
@@ -263,54 +229,157 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47629595, 0, 6.7220316)
 script = ExtResource("4_fj5ke")
 zone_type = 1
 node_id = 30
-node_type = 7
+node_type = 2
 next_nodes = [NodePath("../Q7")]
 queue_zone = true
 
-[node name="Q10" type="Marker3D" parent="Environment/TrackNetwork" unique_id=403017984 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5513396, 0, 6.7220316)
+[node name="Q7" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1700469647 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.448803, 0, 6.7220316)
 script = ExtResource("4_fj5ke")
 zone_type = 1
-node_id = 32
-node_type = 7
-next_nodes = [NodePath("../Q8")]
+node_id = 29
+node_type = 2
+next_nodes = [NodePath("../Q6")]
 queue_zone = true
 
-[node name="N19" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1254816595 node_paths=PackedStringArray("next_nodes")]
+[node name="Q6" type="Marker3D" parent="Environment/TrackNetwork" unique_id=628803067 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.345132, 0, 6.7220316)
+script = ExtResource("4_fj5ke")
+zone_type = 1
+node_id = 28
+node_type = 2
+next_nodes = [NodePath("../Q5")]
+queue_zone = true
+
+[node name="Q5" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1177732153 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.338763, 0, 6.7220316)
+script = ExtResource("4_fj5ke")
+zone_type = 1
+node_id = 27
+node_type = 2
+next_nodes = [NodePath("../Q4")]
+queue_zone = true
+
+[node name="Q4" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1121478925 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.363166, 0, 6.7220316)
+script = ExtResource("4_fj5ke")
+zone_type = 1
+node_id = 26
+node_type = 2
+next_nodes = [NodePath("../Q3")]
+queue_zone = true
+
+[node name="Q3" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1176481212 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3543, 0, 6.7220316)
+script = ExtResource("4_fj5ke")
+zone_type = 1
+node_id = 25
+node_type = 2
+next_nodes = [NodePath("../Q2")]
+queue_zone = true
+
+[node name="Q2" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1453036717 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.349484, 0, 6.7220316)
+script = ExtResource("4_fj5ke")
+zone_type = 1
+node_id = 24
+node_type = 2
+next_nodes = [NodePath("../Q1")]
+queue_zone = true
+
+[node name="Q1" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1692964619 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.361639, 0, 6.7220316)
+script = ExtResource("4_fj5ke")
+zone_type = 1
+node_id = 23
+node_type = 2
+next_nodes = [NodePath("../N12Q5")]
+queue_zone = true
+
+[node name="N12Q5" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1254816595 node_paths=PackedStringArray("next_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.98748, 0, 6.752516)
 script = ExtResource("4_fj5ke")
+zone_type = 1
 node_id = 19
-node_type = 2
-next_nodes = [NodePath("../N20")]
+next_nodes = [NodePath("../N12Q6")]
 
-[node name="N20" type="Marker3D" parent="Environment/TrackNetwork" unique_id=830069648 node_paths=PackedStringArray("next_nodes")]
+[node name="N12Q6" type="Marker3D" parent="Environment/TrackNetwork" unique_id=830069648 node_paths=PackedStringArray("next_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.868809, 0, 7.5873613)
 script = ExtResource("4_fj5ke")
+zone_type = 1
 node_id = 20
-next_nodes = [NodePath("../N21")]
+next_nodes = [NodePath("../N12Q7")]
 
-[node name="N21" type="Marker3D" parent="Environment/TrackNetwork" unique_id=687212142 node_paths=PackedStringArray("next_nodes")]
+[node name="N12Q7" type="Marker3D" parent="Environment/TrackNetwork" unique_id=687212142 node_paths=PackedStringArray("next_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.868809, 0, 18.99781)
 script = ExtResource("4_fj5ke")
+zone_type = 1
 node_id = 21
-next_nodes = [NodePath("../N22")]
-
-[node name="N22" type="Marker3D" parent="Environment/TrackNetwork" unique_id=813667022 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.603369, 0, 20.33582)
-script = ExtResource("4_fj5ke")
-zone_type = 2
-node_id = 22
-node_type = 6
 next_nodes = [NodePath("../N13")]
 
-[node name="N13" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1251859964 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.684763, 0, 20.335094)
+[node name="N13" type="Marker3D" parent="Environment/TrackNetwork" unique_id=813667022 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.603369, 0, 20.33582)
 script = ExtResource("4_fj5ke")
-node_id = 13
+node_id = 22
+node_type = 6
 next_nodes = [NodePath("../N14")]
 
-[node name="N14" type="Marker3D" parent="Environment/TrackNetwork" unique_id=2119037986 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.684744, 0, 21.330193)
+[node name="N14" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1251859964 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.881876, 0, 20.335094)
+script = ExtResource("4_fj5ke")
+node_id = 13
+next_nodes = [NodePath("../N15")]
+
+[node name="N15" type="Marker3D" parent="Environment/TrackNetwork" unique_id=2119037986 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62258816, 0, 20.377714)
+script = ExtResource("4_fj5ke")
+node_id = 14
+next_nodes = [NodePath("../NL0")]
+
+[node name="NL0" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1838044010 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0585966, 0, 20.377714)
+script = ExtResource("4_fj5ke")
+node_id = 14
+next_nodes = [NodePath("../NL1")]
+
+[node name="NL1" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1630616336 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2761297, 0, 20.377714)
+script = ExtResource("4_fj5ke")
+node_id = 14
+next_nodes = [NodePath("../NL2")]
+
+[node name="NL2" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1827383762 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4463186, 0, 20.377714)
+script = ExtResource("4_fj5ke")
+node_id = 14
+next_nodes = [NodePath("../NL3")]
+
+[node name="NL3" type="Marker3D" parent="Environment/TrackNetwork" unique_id=972586791 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.480439, 0, 20.377714)
+script = ExtResource("4_fj5ke")
+node_id = 14
+next_nodes = [NodePath("../NL4")]
+
+[node name="NL4" type="Marker3D" parent="Environment/TrackNetwork" unique_id=2121723668 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5962, 0, 20.377714)
+script = ExtResource("4_fj5ke")
+node_id = 14
+next_nodes = [NodePath("../NL5")]
+
+[node name="NL5" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1737182896 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.276541, 0, 20.9492)
+script = ExtResource("4_fj5ke")
+node_id = 14
+next_nodes = [NodePath("../NL6")]
+
+[node name="NL6" type="Marker3D" parent="Environment/TrackNetwork" unique_id=987262672 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.082555, 0, 21.37793)
+script = ExtResource("4_fj5ke")
+node_id = 14
+next_nodes = [NodePath("../NL7")]
+
+[node name="NL7" type="Marker3D" parent="Environment/TrackNetwork" unique_id=952161503 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.111509, 0, 21.37793)
 script = ExtResource("4_fj5ke")
 node_id = 14
 next_nodes = [NodePath("../N1")]
@@ -321,7 +390,7 @@ script = ExtResource("6_04rp7")
 [node name="Vehicles" type="Node" parent="Environment" unique_id=1845568271]
 
 [node name="V1" type="Node3D" parent="Environment/Vehicles" unique_id=473014263]
-transform = Transform3D(-4.370386e-08, 0, -0.99982774, 0, 1, 0, 0.99982774, 0, -4.370386e-08, 15.343041, 0, 6.7220316)
+transform = Transform3D(-4.370378e-08, 0, -0.9998259, 0, 1, 0, 0.9998259, 0, -4.370378e-08, 9.0219145, 0, 6.7220316)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -334,7 +403,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="V2" type="Node3D" parent="Environment/Vehicles" unique_id=1875575113]
-transform = Transform3D(-4.370402e-08, 0, -0.99983144, 0, 1, 0, 0.99983144, 0, -4.370402e-08, 13.321107, 0, 6.7220316)
+transform = Transform3D(0.9998274, 0, -0.0016667373, 0, 1, 0, 0.0016667373, 0, 0.9998274, -18.401283, 0, -3.406713)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -347,7 +416,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V3" type="Node3D" parent="Environment/Vehicles" unique_id=1440789607]
-transform = Transform3D(-4.370409e-08, 0, -0.99983305, 0, 1, 0, 0.99983305, 0, -4.370409e-08, 11.32253, 0, 6.7220316)
+transform = Transform3D(0.99979454, 0, 0.008863881, 0, 1, 0, -0.008863881, 0, 0.99979454, -19.377417, 0, 13.907844)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -360,7 +429,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V4" type="Node3D" parent="Environment/Vehicles" unique_id=908323127]
-transform = Transform3D(-4.370398e-08, 0, -0.99983054, 0, 1, 0, 0.99983054, 0, -4.370398e-08, 9.323994, 0, 6.7220316)
+transform = Transform3D(0.6921781, 0, 0.72148514, 0, 1, 0, -0.72148514, 0, 0.6921781, -19.374294, 0, 16.277899)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -373,7 +442,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V5" type="Node3D" parent="Environment/Vehicles" unique_id=1670675100]
-transform = Transform3D(-4.3703864e-08, 0, -0.99982786, 0, 1, 0, 0.99982786, 0, -4.3703864e-08, 7.3125186, 0, 6.7220316)
+transform = Transform3D(0.99962085, 0, 0.020632189, 0, 1, 0, -0.020632189, 0, 0.99962085, -18.409807, 0, 17.228514)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -386,7 +455,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V6" type="Node3D" parent="Environment/Vehicles" unique_id=559032236]
-transform = Transform3D(-4.3703924e-08, 0, -0.99982923, 0, 1, 0, 0.99982923, 0, -4.3703924e-08, 5.3342996, 0, 6.7220316)
+transform = Transform3D(0.0042354413, 0, 0.9998202, 0, 1, 0, -0.9998202, 0, 0.0042354413, -18.348127, 0, 20.37052)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -399,7 +468,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V7" type="Node3D" parent="Environment/Vehicles" unique_id=2077917968]
-transform = Transform3D(-5.764765e-06, 0, -0.9998279, 0, 1, 0, 0.9998279, 0, -5.764765e-06, 2.3998506, 0, 6.722031)
+transform = Transform3D(0.03054668, 0, 0.999363, 0, 1, 0, -0.999363, 0, 0.03054668, -12.074657, 0, 21.34849)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -412,7 +481,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V8" type="Node3D" parent="Environment/Vehicles" unique_id=106614286]
-transform = Transform3D(-0.00015832661, 0, -0.99982923, 0, 1, 0, 0.99982923, 0, -0.00015832661, 0.47209832, 0, 6.722031)
+transform = Transform3D(-0.018120516, 0, 0.99966383, 0, 1, 0, -0.99966383, 0, -0.018120516, -11.098828, 0, 21.377699)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -425,7 +494,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V9" type="Node3D" parent="Environment/Vehicles" unique_id=368200718]
-transform = Transform3D(2.8168338e-06, 0, -0.9998304, 0, 1, 0, 0.9998304, 0, 2.8168338e-06, -5.120633, 0, -7.5216665)
+transform = Transform3D(-4.370392e-08, 0, 0.9998292, 0, 1, 0, -0.9998292, 0, -4.370392e-08, -4.981109, 0, 20.377714)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V9" unique_id=879708828]
@@ -437,7 +506,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V10" type="Node3D" parent="Environment/Vehicles" unique_id=155902283]
-transform = Transform3D(0.9997726, 0, 0.010488611, 0, 1, 0, -0.010488611, 0, 0.9997726, -19.377417, 0, 13.902333)
+transform = Transform3D(0.00013535486, 0, 0.99982876, 0, 1, 0, -0.99982876, 0, 0.00013535486, 12.358941, 0, 20.335295)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V10" unique_id=374299067]
@@ -472,18 +541,17 @@ size = Vector3(1.2, 2, 1.2)
 [node name="SixAxisRobot" parent="InputLoader/Robo_1" unique_id=508298280 instance=ExtResource("9_f6ypw")]
 process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.0010790825, 0, 0.011746407)
-script = ExtResource("10_ngllm")
+script = ExtResource("15_deaqs")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
 waypoints = {
 "1: Point1": Array[float]([0.0, 55.0, 75.0, 0.0, 45.0, 0.0])
 }
 selected_waypoint = "1: Point1"
 new_waypoint_name = "Point2"
-vacuum_on = true
-j1_angle = -1131390.0
-j2_angle = 19.999999999999982
-j3_angle = 85.00000000000001
-j5_angle = 65.00000000000001
+j1_angle = -1131480.0
+j2_angle = -23.584524989128113
+j3_angle = 88.35265576839447
+j5_angle = 71.70531153678894
 
 [node name="Platform" parent="InputLoader" unique_id=923371324 instance=ExtResource("8_cp5ni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74137914, 0.0050001144, 10.48364)
@@ -497,6 +565,7 @@ transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, -5, 0, 5, -2.1855695e-07, 0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4616523, 0.0050001144, 10.502505)
 floor_y = -1.9949999
 size = Vector3(2.9996748, 2, 3.003345)
+metadata/_snap_transform = Callable()
 
 [node name="Label" type="Sprite3D" parent="InputLoader" unique_id=91110790]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.775591, 2.005931, 10.642519)
@@ -644,7 +713,8 @@ process_mode = 1
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.021320581, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -2474460.0
+vacuum_on = true
+j1_angle = -2713462.3955583572
 j2_angle = 20.0
 j3_angle = 85.0
 j5_angle = 65.0
@@ -916,3 +986,7 @@ size = Vector3(2.9996748, 2, 3.003345)
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3.6073518, 2.005931, 14.441042)
 billboard = 1
 texture = ExtResource("55_sowrr")
+
+[connection signal="MeasurementReady" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_measurement_ready"]
+[connection signal="QuarantineCleared" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_quarantine_cleared"]
+[connection signal="QuarantineQueueFull" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_quarantine_queue_full"]
