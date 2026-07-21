@@ -10,25 +10,28 @@ enum NodeType {
 	MACHINE,
 	ENTRY,
 	EXIT,
-	CROSSING,
-	QUEUE
+	CROSSING
 }
 
 enum ZoneType
 {
-	NONE,
+	LOADING,
+	GRINDING,
+	WASHING,
 	QUEUE,
 	MEASUREMENT,
-	STORAGE,
-	GRINDING
+	#MEASUREMENT_300,
+	#MEASUREMENT_360T,
+	PHOTOBOOTH,
+	DUNNAGE_GOOD,
+	DUNNAGE_BAD,
+	NONE
 }
 
 @export var zone_type := ZoneType.NONE
 @export var node_id := 0
 @export var node_type := NodeType.NORMAL
 @export var next_nodes: Array[TrackNode]
-@export var queue_zone := false
-#@export var edges : Array[TrackEdge]
 
 var occupied_by: Vehicle = null
 

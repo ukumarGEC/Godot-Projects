@@ -12,7 +12,9 @@ var measurement_zone_capacity := 2      # Number of nodes in measurement zone
 var quarantine_queue_capacity := 8     # Number of queue nodes
 
 func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) -> void:
-
+	if measurement_queue.is_empty() and quarantine_queue.is_empty():
+		reset_cycle()
+		
 	if previous == null:
 		return
 
@@ -36,11 +38,6 @@ func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) ->
 
 		elif left_queue:
 			quarantine_queue.erase(vehicle)
-
-			#queue_empty = quarantine_queue.is_empty()
-			#if quarantine_queue.is_empty():
-				#parts_quarantined = false
-
 			print_status()
 			
 	if vehicle.destination == Vehicle.Destination.MEASUREMENT:
@@ -48,7 +45,6 @@ func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) ->
 		if entered_measurement:
 			if !measurement_queue.has(vehicle):
 				measurement_queue.append(vehicle)
-				print("Entering measurement")
 				print_status()
 
 		elif left_measurement:
@@ -58,7 +54,6 @@ func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) ->
 				parts_measured = true
 
 			print_status()
-
 
 func is_measurement_zone_empty() -> bool:
 	return measurement_queue.is_empty()
@@ -75,15 +70,21 @@ func is_queue_full() -> bool:
 func can_queue_release(vehicle: Vehicle) -> bool:
 	if !parts_measured:
 		return false
-
+	
 	if quarantine_queue.is_empty():
 		return false
+	
+	#for q in quarantine_queue:
+		#print (q.name," -> ")
 	
 	return quarantine_queue.front() == vehicle
 
 
 func can_measurement_release(vehicle: Vehicle) -> bool:
 	if !quarantine_queue.is_empty():
+		return false
+	
+	if measurement_queue.is_empty():
 		return false
 	
 	return measurement_queue.front() == vehicle
@@ -93,8 +94,8 @@ func print_status()-> void:
 	print("------------------------------")
 	print("Queue Vehicles       :", quarantine_queue.size())
 	print("Measurement Vehicles :", measurement_queue.size())
-	print("Queue Full           :", is_queue_full())
-	print("Measurement Empty    :", is_measurement_zone_empty())
+	#print("Queue Full           :", is_queue_full())
+	#print("Measurement Empty    :", is_measurement_zone_empty())
 	print("------------------------------")
 
 
@@ -109,3 +110,8 @@ func _on_TrafficManager_quarantine_cleared() -> void:
 func _on_TrafficManager_quarantine_queue_full() -> void:
 	parts_quarantined = true
 	print("Quarantined queue waiting for release")
+	
+func reset_cycle()->void :
+	parts_measured = false
+	parts_quarantined = false
+	#print("Batch reset")

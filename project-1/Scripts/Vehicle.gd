@@ -106,10 +106,12 @@ func arrive()-> void:
 	traffic.arrived(self, current_node, previous_node)	
 	
 	# Trigger Robot
-	if current_node.name == "N1":
-		await robot_manager._run_robot(1)
-	if current_node.name == "N7":
-		await robot_manager._run_robot(2)
+	if current_node.node_type == TrackNode.NodeType.MACHINE:
+		match current_node.zone_type:
+			TrackNode.ZoneType.LOADING: await robot_manager._run_robot(1)
+			TrackNode.ZoneType.GRINDING: await robot_manager._run_robot(2)
+			TrackNode.ZoneType.DUNNAGE_BAD: await robot_manager._run_robot(9)
+			TrackNode.ZoneType.DUNNAGE_GOOD: await robot_manager._run_robot(10)
 	
 	go_next()
 	
