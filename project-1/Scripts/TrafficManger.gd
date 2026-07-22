@@ -41,7 +41,7 @@ func request_move(vehicle: Vehicle, current:TrackNode, target: TrackNode, previo
 	return false
 
 func arrived(vehicle: Vehicle, current_node: TrackNode, previous: TrackNode)->void:
-	if vehicle.name == "V10" && current_node.name == "N1":
+	if vehicle.name == "V8" && current_node.name == "N1":
 		reset_notification_controll()
 	
 	if previous:
