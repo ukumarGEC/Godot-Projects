@@ -9,7 +9,7 @@ var measurement_queue: Array[Vehicle] = []
 var quarantine_queue: Array[Vehicle] = []
 
 var measurement_zone_capacity := 2      # Number of nodes in measurement zone
-var quarantine_queue_capacity := 8     # Number of queue nodes
+var quarantine_queue_capacity := 6     # Number of queue nodes
 
 func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) -> void:
 	if measurement_queue.is_empty() and quarantine_queue.is_empty():

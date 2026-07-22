@@ -35,10 +35,9 @@ func pick_place_loop() -> void:
 func pick_place(vehicle:Vehicle) -> void:
 	# Pick position (front)
 	await _move([0, 55, 75, 0, 45, 0])
-	await _move([0, 20, 85, 0, 65, 0])
-	
 	vacuum_on = true
 	factory_manager._update_gear(vehicle, !vacuum_on)
+	await _move([0, 20, 85, 0, 65, 0])
 	await get_tree().create_timer(0.3).timeout
 	
 	#if counter % 2 == 0 :
