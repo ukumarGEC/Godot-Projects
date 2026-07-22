@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 #--------------------------------------------------
 # ROBOT CONTROL
 #--------------------------------------------------
-func _run_robot(roboId:int)->void:
+func _run_robot(vehicle: Vehicle,roboId:int)->void:
 	var robot : SixAxisRobot
 	match roboId:
 		1: robot = (%Robo_1.find_child("SixAxisRobot*"))
@@ -34,7 +34,7 @@ func _run_robot(roboId:int)->void:
 		8: robot = (%Robo_8.find_child("SixAxisRobot*"))
 		9: robot = (%Robo_9.find_child("SixAxisRobot*"))
 		10:robot = (%Robo_10.find_child("SixAxisRobot*"))
-	await robot.pick_place()
+	await robot.pick_place(vehicle)
 	
 func _run(roboId:Robos)->void:
 	var robot : SixAxisRobot
@@ -47,5 +47,5 @@ func _run(roboId:Robos)->void:
 		Robos.Gearset: robot = (%Robo_8.find_child("SixAxisRobot*"))
 		Robos.BadDunnage: robot = (%Robo_9.find_child("SixAxisRobot*"))
 		Robos.GoodDunnage:robot = (%Robo_10.find_child("SixAxisRobot*"))
-	await robot.pick_place()
+	await robot.pick_place(null)
 	

@@ -2,6 +2,8 @@
 class_name Robo_script_2
 extends SixAxisRobot
 
+@onready var factory_manager:Factory = $"../../../Environment"
+
 var counter := 0
 var _running := false
 
@@ -28,14 +30,15 @@ func stop() -> void:
 	
 func pick_place_loop() -> void:
 	while _running:
-		pick_place()
+		pick_place(null)
 	
-func pick_place() -> void:
+func pick_place(vehicle:Vehicle) -> void:
 	# Pick position (front)
 	await _move([0, 55, 75, 0, 45, 0])
 	await _move([0, 20, 85, 0, 65, 0])
 	
 	vacuum_on = true
+	factory_manager._update_gear(vehicle, !vacuum_on)
 	await get_tree().create_timer(0.3).timeout
 	
 	#if counter % 2 == 0 :
@@ -47,6 +50,7 @@ func pick_place() -> void:
 		# Place position (back)
 		await _move([-90, 20, 85, 0, 65, 0])
 		await _move([-90, 55, 75, 0, 45, 0])
+		
 	vacuum_on = false
 	await get_tree().create_timer(0.3).timeout
 	

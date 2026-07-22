@@ -384,8 +384,10 @@ func _update_vacuum_state() -> void:
 	
 	if vacuum_on:
 		_try_pick_up()
+		%gear3.visible = true
 	else:
 		_release_object()
+		%gear3.visible = false
 
 
 func _try_pick_up() -> void:

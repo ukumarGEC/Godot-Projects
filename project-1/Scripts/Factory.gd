@@ -1,4 +1,5 @@
 @tool
+class_name Factory
 extends Node3D
 
 func _ready()->void:
@@ -17,6 +18,19 @@ func _ready()->void:
 	vechicles[5].start($TrackNetwork/LoadingZone/NL2)
 	vechicles[6].start($TrackNetwork/LoadingZone/NL1)
 	vechicles[7].start($TrackNetwork/LoadingZone/NL0)
-	vechicles[8].start($TrackNetwork/LoadingZone/NL0)
-	vechicles[9].start($TrackNetwork/LoadingZone/NL0)
+	#vechicles[8].start($TrackNetwork/LoadingZone/NL0)
+	#vechicles[9].start($TrackNetwork/LoadingZone/NL0)
 	#$Vehicles/V1.start($TrackNetwork/N1)
+	
+	# Hide gear from pallets
+	for vehicle in vechicles:
+		_update_gear(vehicle, false)
+
+func  _process(delta: float) -> void:
+	pass
+	
+
+func _update_gear(vehicle: Vehicle, isvisible:bool)-> void:
+	var pallet := vehicle.find_child("Pallet")
+	var gear :Node3D = pallet.find_child("gear3")
+	gear.visible = isvisible

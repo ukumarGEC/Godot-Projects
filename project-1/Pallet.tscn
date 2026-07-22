@@ -10,6 +10,7 @@
 transform = Transform3D(-1.3113417e-08, 0.3, 1.3113417e-08, 0, -1.3113417e-08, 0.3, 0.3, 1.3113417e-08, 5.7320567e-16, 0, 0, 0)
 
 [node name="gear3" parent="." unique_id=2086740075 instance=ExtResource("1_7by2y")]
+unique_name_in_owner = true
 transform = Transform3D(1.4901161e-08, -4.9960036e-16, 0.29999995, -7.1054274e-15, 0.29999998, 5.3290705e-15, -0.29999995, 1.4210855e-14, 1.4901161e-08, -0.24981594, 0.19999994, -0.010785103)
 
 [node name="MeshInstance3D_1" type="MeshInstance3D" parent="." unique_id=467707745]
@@ -21,4 +22,4 @@ transform = Transform3D(-4, 3.496911e-07, -1.5285484e-14, 0, -1.7484555e-07, -4,
 visible = false
 
 [node name="PalletWithoutPG" parent="MeshInstance3D_1" unique_id=2013094333 instance=ExtResource("3_c8m3r")]
-transform = Transform3D(-4, -3.496911e-07, 1.5285484e-14, 0, -1.7484555e-07, -4, 3.496911e-07, -4, 1.7484555e-07, 0, 0, 0)
+transform = Transform3D(-3, -4.5298742e-07, 1.9800708e-14, 0, -1.3113416e-07, -3, 4.5298742e-07, -3, 1.3113416e-07, 0, 0, 0)

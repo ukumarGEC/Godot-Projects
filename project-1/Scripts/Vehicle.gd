@@ -108,11 +108,16 @@ func arrive()-> void:
 	# Trigger Robot
 	if current_node.node_type == TrackNode.NodeType.MACHINE:
 		match current_node.zone_type:
-			TrackNode.ZoneType.LOADING: await robot_manager._run_robot(1)
-			TrackNode.ZoneType.GRINDING: await robot_manager._run_robot(2)
-			TrackNode.ZoneType.DUNNAGE_BAD: await robot_manager._run_robot(9)
-			TrackNode.ZoneType.DUNNAGE_GOOD: await robot_manager._run_robot(10)
-	
+			TrackNode.ZoneType.LOADING: await robot_manager._run_robot(self, 1)
+			TrackNode.ZoneType.GRINDING: await robot_manager._run_robot(self, 2)
+			TrackNode.ZoneType.DUNNAGE_BAD: await robot_manager._run_robot(self, 9)
+			TrackNode.ZoneType.DUNNAGE_GOOD: await robot_manager._run_robot(self, 10)
+			TrackNode.ZoneType.MEASUREMENT: 
+				match current_node.node_id:
+					13: await robot_manager._run_robot(self, 6)
+					23: await robot_manager._run_robot(self, 8)
+					_ : print("Invalid operation")
+			
 	go_next()
 	
 func go_next()->void:

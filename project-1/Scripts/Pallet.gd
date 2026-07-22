@@ -140,10 +140,10 @@ func _update_pallet_status(machineID:int)->void:
 		match machineID:
 			0:
 				print(name," leaves input loader")
-				await robo_Manager._run_robot(1)
+				#await robo_Manager._run_robot(1)
 			2:
 				print(name," reached Gear Grinding")
-				await robo_Manager._run_robot(2)
+				#await robo_Manager._run_robot(2)
 			4:	
 				print(name," reached Washer")
 				await get_tree().create_timer(5.0).timeout
@@ -166,31 +166,31 @@ func _update_pallet_status(machineID:int)->void:
 			13:
 				if path.name.contains("GQB"):
 					print(name," reached Bad Dunnage")
-					await robo_Manager._run_robot(9)
+					#await robo_Manager._run_robot(9)
 				else:
 					print(name," reached Good Dunnage")
-					await robo_Manager._run_robot(10)
+					#await robo_Manager._run_robot(10)
 	elif path.name.contains("M"):
 		match machineID:
 			0:
 				print(name," leaves input loader")
-				robo_Manager._run_robot(1)
+				#robo_Manager._run_robot(1)
 			1:
 				print(name," reached Gear Grinding")
-				robo_Manager._run_robot(2)
+				#robo_Manager._run_robot(2)
 			3:
 				print(name," reached GMSP")
-				robo_Manager._run_robot(6)
+				#robo_Manager._run_robot(6)
 			4:
 				print(name," reached 300T GearSet")
-				robo_Manager._run_robot(8)
+				#robo_Manager._run_robot(8)
 			6:
 				if path.name.contains("GMB"):
 					print(name," reached Bad Dunnage")
-					robo_Manager._run_robot(9)
+					#robo_Manager._run_robot(9)
 				else:
 					print(name," reached Good Dunnage")
-					robo_Manager._run_robot(10)
+					#robo_Manager._run_robot(10)
 
 #--------------------------------------------------
 # HELPERS

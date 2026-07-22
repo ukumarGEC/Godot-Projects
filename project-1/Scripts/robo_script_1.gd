@@ -2,6 +2,7 @@
 class_name Robo_script_1
 extends SixAxisRobot
 
+@onready var factory_manager:Factory = $"../../../Environment"
 var _running := false
 
 # Called when the node enters the scene tree for the first time.
@@ -26,19 +27,22 @@ func stop() -> void:
 	
 func pick_place_loop()-> void:
 	while _running:
-		await pick_place()
+		await pick_place(null)
 
-func pick_place() -> void:
+func pick_place(vehicle:Vehicle) -> void:
+	if vehicle == null: return
+	
 	# Pick position (front)
 	await _move([0, 20, 85, 0, 65, 0])
 	await _move([0, 55, 75, 0, 45, 0])
 	vacuum_on = true
+	factory_manager._update_gear(vehicle, !vacuum_on)
+	
 	await get_tree().create_timer(0.3).timeout
 	await _move([0, 20, 85, 0, 65, 0])
 	
 	# Place position (back)
 	await _move([180, 20, 85, 0, 65, 0])
-	
 	await _move([180, 55, 75, 0, 45, 0])
 	await get_tree().create_timer(0.3).timeout
 	vacuum_on = false
@@ -55,6 +59,7 @@ func pick_place() -> void:
 	await _move([0, 20, 85, 0, 65, 0])
 	await _move([0, 55, 75, 0, 45, 0])
 	vacuum_on = false
+	factory_manager._update_gear(vehicle, !vacuum_on)
 	await get_tree().create_timer(0.3).timeout
 	await _move([0, 20, 85, 0, 65, 0])
 	
