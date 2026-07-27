@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dc6o7qkwd60ha"]
 
 [ext_resource type="Script" uid="uid://ckqgkrr7rm7gl" path="res://src/SixAxisRobot/six_axis_robot.gd" id="1_robot"]
-[ext_resource type="PackedScene" uid="uid://c3uyhenic4q0k" path="res://gear3.glb" id="2_f7oox"]
+[ext_resource type="PackedScene" uid="uid://c3uyhenic4q0k" path="res://CAD Models/gear3.glb" id="2_f7oox"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7oox"]
 albedo_color = Color(0.3, 0.3, 0.35, 1)

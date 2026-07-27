@@ -8,59 +8,59 @@
 [ext_resource type="Script" uid="uid://3gipogrix56g" path="res://Scripts/Vehicle.gd" id="5_nx2sc"]
 [ext_resource type="Script" uid="uid://cvlmekgcdyvj5" path="res://Scripts/TrafficManger.gd" id="6_04rp7"]
 [ext_resource type="Script" uid="uid://dbp8ungxsmwsl" path="res://Scripts/RouteFinder.gd" id="7_fxbbc"]
-[ext_resource type="PackedScene" uid="uid://cpwdo2a7jjnsy" path="res://Pallet.tscn" id="7_nx2sc"]
 [ext_resource type="PackedScene" uid="uid://dwvkxiwuxu3im" path="res://parts/Platform.tscn" id="8_cp5ni"]
+[ext_resource type="PackedScene" uid="uid://cpwdo2a7jjnsy" path="res://scenes/Pallet.tscn" id="8_deaqs"]
 [ext_resource type="PackedScene" uid="uid://dc6o7qkwd60ha" path="res://parts/SixAxisRobot.tscn" id="9_f6ypw"]
 [ext_resource type="Script" uid="uid://b3oxekjp8rmy" path="res://Scripts/RobotManager.gd" id="10_04rp7"]
 [ext_resource type="Script" uid="uid://tc6oj6hpr38" path="res://Scripts/robo_script_2.gd" id="10_ngllm"]
 [ext_resource type="Script" uid="uid://dltbowfpcwjyi" path="res://Scripts/ZoneController.gd" id="11_fxbbc"]
-[ext_resource type="Texture2D" uid="uid://c0iwb4uggqvym" path="res://label6.png" id="12_pdm07"]
+[ext_resource type="Texture2D" uid="uid://c0iwb4uggqvym" path="res://assets/png/label6.png" id="12_pdm07"]
 [ext_resource type="Script" uid="uid://dcyg51i1bnbx7" path="res://Scripts/JobManager.gd" id="12_uem70"]
 [ext_resource type="PackedScene" uid="uid://cc72d4e7jy02o" path="res://CAD Models/280g.glb" id="13_ruckw"]
-[ext_resource type="Texture2D" uid="uid://dgsg7p2w28a7e" path="res://280G_right_view_b.png" id="14_e678l"]
+[ext_resource type="Texture2D" uid="uid://dgsg7p2w28a7e" path="res://assets/png/280G_right_view_b.png" id="14_e678l"]
 [ext_resource type="Script" uid="uid://ci2ggexs4ag2j" path="res://Scripts/loader_robo_script.gd" id="15_deaqs"]
-[ext_resource type="Texture2D" uid="uid://do63sfbmg0frj" path="res://280G_right_view_c.png" id="15_wovih"]
-[ext_resource type="PackedScene" uid="uid://c3uyhenic4q0k" path="res://gear3.glb" id="16_deaqs"]
-[ext_resource type="Texture2D" uid="uid://i8a3hvb2ldx0" path="res://280_Front_view_a.png" id="16_idxg4"]
-[ext_resource type="Texture2D" uid="uid://btp60ioyki0x" path="res://280_Front_view_b.png" id="17_gx8q3"]
-[ext_resource type="Texture2D" uid="uid://c2o4dqek73ply" path="res://280_Front_view_d.png" id="18_dv8e0"]
-[ext_resource type="Texture2D" uid="uid://dtmb3thns3ijj" path="res://280_Front_view_c.png" id="19_tvyiy"]
-[ext_resource type="Texture2D" uid="uid://y0vwkb1md4ys" path="res://280G_left_view_a.png" id="20_w47h7"]
-[ext_resource type="Texture2D" uid="uid://e2ypvdhmhea6" path="res://280G_left_view_b1.png" id="21_mfb0u"]
-[ext_resource type="Texture2D" uid="uid://bap8plb1c2wsh" path="res://280G_left_view_c.png" id="22_p1gk4"]
-[ext_resource type="Texture2D" uid="uid://c2jdolldmlrcg" path="res://280G_left_view_d.png" id="23_opxh8"]
-[ext_resource type="Texture2D" uid="uid://f53wgcnrs8fx" path="res://280G_left_view_b2.png" id="24_43lju"]
-[ext_resource type="Texture2D" uid="uid://bnc3eagm7gxav" path="res://280G_left_view_top.png" id="25_n5kvl"]
-[ext_resource type="Texture2D" uid="uid://b2iscb3jfowyq" path="res://280_Front_view_e.png" id="26_3dttj"]
-[ext_resource type="Texture2D" uid="uid://b51w6lfeqcyu8" path="res://label1.png" id="27_esq7h"]
+[ext_resource type="Texture2D" uid="uid://do63sfbmg0frj" path="res://assets/png/280G_right_view_c.png" id="15_wovih"]
+[ext_resource type="PackedScene" uid="uid://c3uyhenic4q0k" path="res://CAD Models/gear3.glb" id="16_deaqs"]
+[ext_resource type="Texture2D" uid="uid://i8a3hvb2ldx0" path="res://assets/png/280_Front_view_a.png" id="16_idxg4"]
+[ext_resource type="Texture2D" uid="uid://btp60ioyki0x" path="res://assets/png/280_Front_view_b.png" id="17_gx8q3"]
+[ext_resource type="Texture2D" uid="uid://c2o4dqek73ply" path="res://assets/png/280_Front_view_d.png" id="18_dv8e0"]
+[ext_resource type="Texture2D" uid="uid://dtmb3thns3ijj" path="res://assets/png/280_Front_view_c.png" id="19_tvyiy"]
+[ext_resource type="Texture2D" uid="uid://y0vwkb1md4ys" path="res://assets/png/280G_left_view_a.png" id="20_w47h7"]
+[ext_resource type="Texture2D" uid="uid://e2ypvdhmhea6" path="res://assets/png/280G_left_view_b1.png" id="21_mfb0u"]
+[ext_resource type="Texture2D" uid="uid://bap8plb1c2wsh" path="res://assets/png/280G_left_view_c.png" id="22_p1gk4"]
+[ext_resource type="Texture2D" uid="uid://c2jdolldmlrcg" path="res://assets/png/280G_left_view_d.png" id="23_opxh8"]
+[ext_resource type="Texture2D" uid="uid://f53wgcnrs8fx" path="res://assets/png/280G_left_view_b2.png" id="24_43lju"]
+[ext_resource type="Texture2D" uid="uid://bnc3eagm7gxav" path="res://assets/png/280G_left_view_top.png" id="25_n5kvl"]
+[ext_resource type="Texture2D" uid="uid://b2iscb3jfowyq" path="res://assets/png/280_Front_view_e.png" id="26_3dttj"]
+[ext_resource type="Texture2D" uid="uid://b51w6lfeqcyu8" path="res://assets/png/label1.png" id="27_esq7h"]
 [ext_resource type="Script" uid="uid://bbi7pc36jkxwx" path="res://Scripts/robo_script_1.gd" id="28_37s4p"]
 [ext_resource type="PackedScene" uid="uid://bvgy1g5ncryvb" path="res://CAD Models/Meshy_AI_Industrial_Vacuum_Coa_0608115533_texture.glb" id="29_ofljq"]
-[ext_resource type="Texture2D" uid="uid://cy7kwdtx2j372" path="res://label3.png" id="30_dau47"]
+[ext_resource type="Texture2D" uid="uid://cy7kwdtx2j372" path="res://assets/png/label3.png" id="30_dau47"]
 [ext_resource type="PackedScene" uid="uid://cdrr7i0dlbnod" path="res://CAD Models/300_GMSP_NANO_Bl.glb" id="31_hl73b"]
-[ext_resource type="Texture2D" uid="uid://2mxuh8cks0py" path="res://label2.png" id="32_j3qeb"]
+[ext_resource type="Texture2D" uid="uid://2mxuh8cks0py" path="res://assets/png/label2.png" id="32_j3qeb"]
 [ext_resource type="PackedScene" uid="uid://bahfcxplgs3wi" path="res://CAD Models/360T_simplified.glb" id="33_kok3v"]
-[ext_resource type="Texture2D" uid="uid://bj28a1a7rpgpm" path="res://360T_rightview_a.png" id="34_qljfv"]
-[ext_resource type="Texture2D" uid="uid://cfaasgn4q3y6n" path="res://360T_rightview_b.png" id="35_0ibec"]
-[ext_resource type="Texture2D" uid="uid://bqqey5vnfvj1d" path="res://360T_rightview_c.png" id="36_v7g80"]
-[ext_resource type="Texture2D" uid="uid://cekclm7wfj175" path="res://360T_rightview_d.png" id="37_bl1qg"]
-[ext_resource type="Texture2D" uid="uid://daqtrpuyvs38i" path="res://360T_rightview_e.png" id="38_hm57m"]
-[ext_resource type="Texture2D" uid="uid://dn1vsoorauyo0" path="res://360T_rightview_f.png" id="39_32ik3"]
-[ext_resource type="Texture2D" uid="uid://ppto1wto2ujp" path="res://360T_frontview_a1.png" id="40_hf2at"]
-[ext_resource type="Texture2D" uid="uid://h68kq3hsmeu4" path="res://360T_frontview_a2.png" id="41_gcl4h"]
-[ext_resource type="Texture2D" uid="uid://c5a56yysk1v71" path="res://360T_frontview_b.png" id="42_dia33"]
-[ext_resource type="Texture2D" uid="uid://ukjmh0mqeqo0" path="res://360T_frontview_c.png" id="43_2l2x5"]
-[ext_resource type="Texture2D" uid="uid://cxtmodg82bgnk" path="res://360T_frontview_d.png" id="44_0nsr6"]
-[ext_resource type="Texture2D" uid="uid://b43jjxlhh1e7p" path="res://360T_leftview_a.png" id="45_6atsy"]
-[ext_resource type="Texture2D" uid="uid://rns55d1w4lv4" path="res://360T_leftview_d1.png" id="46_hejc6"]
-[ext_resource type="Texture2D" uid="uid://mo1xobj7b330" path="res://360T_leftview_d2.png" id="47_mayk6"]
-[ext_resource type="Texture2D" uid="uid://nhaqj2hbpo40" path="res://360T_leftview_d3.png" id="48_4fdb8"]
-[ext_resource type="Texture2D" uid="uid://b6fod3icf0rks" path="res://360T_leftview_b.png" id="49_hwu8c"]
-[ext_resource type="Texture2D" uid="uid://dmq73fdphe6mf" path="res://360T_leftview_c.png" id="50_8hpjr"]
-[ext_resource type="Texture2D" uid="uid://b2ynam6uex20a" path="res://label4.png" id="51_w7vyx"]
+[ext_resource type="Texture2D" uid="uid://bj28a1a7rpgpm" path="res://assets/png/360T_rightview_a.png" id="34_qljfv"]
+[ext_resource type="Texture2D" uid="uid://cfaasgn4q3y6n" path="res://assets/png/360T_rightview_b.png" id="35_0ibec"]
+[ext_resource type="Texture2D" uid="uid://bqqey5vnfvj1d" path="res://assets/png/360T_rightview_c.png" id="36_v7g80"]
+[ext_resource type="Texture2D" uid="uid://cekclm7wfj175" path="res://assets/png/360T_rightview_d.png" id="37_bl1qg"]
+[ext_resource type="Texture2D" uid="uid://daqtrpuyvs38i" path="res://assets/png/360T_rightview_e.png" id="38_hm57m"]
+[ext_resource type="Texture2D" uid="uid://dn1vsoorauyo0" path="res://assets/png/360T_rightview_f.png" id="39_32ik3"]
+[ext_resource type="Texture2D" uid="uid://ppto1wto2ujp" path="res://assets/png/360T_frontview_a1.png" id="40_hf2at"]
+[ext_resource type="Texture2D" uid="uid://h68kq3hsmeu4" path="res://assets/png/360T_frontview_a2.png" id="41_gcl4h"]
+[ext_resource type="Texture2D" uid="uid://c5a56yysk1v71" path="res://assets/png/360T_frontview_b.png" id="42_dia33"]
+[ext_resource type="Texture2D" uid="uid://ukjmh0mqeqo0" path="res://assets/png/360T_frontview_c.png" id="43_2l2x5"]
+[ext_resource type="Texture2D" uid="uid://cxtmodg82bgnk" path="res://assets/png/360T_frontview_d.png" id="44_0nsr6"]
+[ext_resource type="Texture2D" uid="uid://b43jjxlhh1e7p" path="res://assets/png/360T_leftview_a.png" id="45_6atsy"]
+[ext_resource type="Texture2D" uid="uid://rns55d1w4lv4" path="res://assets/png/360T_leftview_d1.png" id="46_hejc6"]
+[ext_resource type="Texture2D" uid="uid://mo1xobj7b330" path="res://assets/png/360T_leftview_d2.png" id="47_mayk6"]
+[ext_resource type="Texture2D" uid="uid://nhaqj2hbpo40" path="res://assets/png/360T_leftview_d3.png" id="48_4fdb8"]
+[ext_resource type="Texture2D" uid="uid://b6fod3icf0rks" path="res://assets/png/360T_leftview_b.png" id="49_hwu8c"]
+[ext_resource type="Texture2D" uid="uid://dmq73fdphe6mf" path="res://assets/png/360T_leftview_c.png" id="50_8hpjr"]
+[ext_resource type="Texture2D" uid="uid://b2ynam6uex20a" path="res://assets/png/label4.png" id="51_w7vyx"]
 [ext_resource type="PackedScene" uid="uid://b7yybreepit1g" path="res://CAD Models/PhotoBooth.glb" id="52_acppy"]
-[ext_resource type="Texture2D" uid="uid://ddnfvji5excr4" path="res://label5.png" id="53_l4632"]
-[ext_resource type="Texture2D" uid="uid://dik7etawoemp" path="res://label8.png" id="54_icfhr"]
-[ext_resource type="Texture2D" uid="uid://lk4llq4t6kp4" path="res://label7.png" id="55_sowrr"]
+[ext_resource type="Texture2D" uid="uid://ddnfvji5excr4" path="res://assets/png/label5.png" id="53_l4632"]
+[ext_resource type="Texture2D" uid="uid://dik7etawoemp" path="res://assets/png/label8.png" id="54_icfhr"]
+[ext_resource type="Texture2D" uid="uid://lk4llq4t6kp4" path="res://assets/png/label7.png" id="55_sowrr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fj5ke"]
 
@@ -132,35 +132,35 @@ node_id = 14
 next_nodes = [NodePath("../NL5")]
 
 [node name="NL5" type="Marker3D" parent="Environment/TrackNetwork/LoadingZone" unique_id=1737182896 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2607355, 0, 20.956444)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.441485, 0, 21.111374)
 script = ExtResource("4_fj5ke")
 zone_type = 0
 node_id = 14
 next_nodes = [NodePath("../NL6")]
 
 [node name="NL6" type="Marker3D" parent="Environment/TrackNetwork/LoadingZone" unique_id=987262672 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.961068, 0, 21.37793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4258585, 0, 21.37793)
 script = ExtResource("4_fj5ke")
 next_nodes = [NodePath("../NL7")]
 
 [node name="NL7" type="Marker3D" parent="Environment/TrackNetwork/LoadingZone" unique_id=952161503 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.91091, 0, 21.37793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.478991, 0, 21.37793)
 script = ExtResource("4_fj5ke")
 next_nodes = [NodePath("../N1")]
 
 [node name="N1" type="Marker3D" parent="Environment/TrackNetwork/LoadingZone" unique_id=1897427759 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.915347, 0, 21.375044)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.664178, 0, 21.375044)
 script = ExtResource("4_fj5ke")
 zone_type = 0
 node_id = 1
-node_type = 3
 next_nodes = [NodePath("../N2")]
 
 [node name="N2" type="Marker3D" parent="Environment/TrackNetwork/LoadingZone" unique_id=492672816 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.279742, 0, 21.34427)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.711662, 0, 21.34427)
 script = ExtResource("4_fj5ke")
 zone_type = 0
 node_id = 2
+node_type = 3
 next_nodes = [NodePath("../N3")]
 
 [node name="N3" type="Marker3D" parent="Environment/TrackNetwork/LoadingZone" unique_id=853831771 node_paths=PackedStringArray("next_nodes")]
@@ -205,18 +205,18 @@ node_id = 6
 next_nodes = [NodePath("../NG3")]
 
 [node name="NG3" type="Marker3D" parent="Environment/TrackNetwork/GrindingZone" unique_id=600312894 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.377728, 0, 14.196288)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.377728, 0, 13.895934)
 script = ExtResource("4_fj5ke")
 zone_type = 1
 node_id = 7
-node_type = 3
 next_nodes = [NodePath("../NG4")]
 
 [node name="NG4" type="Marker3D" parent="Environment/TrackNetwork/GrindingZone" unique_id=1916129758 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.377728, 0, 11.831802)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.377728, 0, 12.451525)
 script = ExtResource("4_fj5ke")
 zone_type = 1
 node_id = 8
+node_type = 3
 next_nodes = [NodePath("../NG5")]
 
 [node name="NG5" type="Marker3D" parent="Environment/TrackNetwork/GrindingZone" unique_id=354315911 node_paths=PackedStringArray("next_nodes")]
@@ -319,23 +319,23 @@ zone_type = 4
 next_nodes = [NodePath("../NM12")]
 
 [node name="NM12" type="Marker3D" parent="Environment/TrackNetwork/GMSP_Zone" unique_id=1936174125 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.041996, 0, -8.503782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2109442, 0, -8.503782)
 script = ExtResource("4_fj5ke")
 zone_type = 4
 next_nodes = [NodePath("../NM13")]
 
 [node name="NM13" type="Marker3D" parent="Environment/TrackNetwork/GMSP_Zone" unique_id=1033728664 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9862587, 0, -8.503782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.22948, 0, -8.503782)
 script = ExtResource("4_fj5ke")
 zone_type = 4
 node_id = 13
-node_type = 3
 next_nodes = [NodePath("../NM14")]
 
 [node name="NM14" type="Marker3D" parent="Environment/TrackNetwork/GMSP_Zone" unique_id=485951486 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2818937, 0, -8.503782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.760707, 0, -8.503782)
 script = ExtResource("4_fj5ke")
 zone_type = 4
+node_type = 3
 next_nodes = [NodePath("../NM15")]
 
 [node name="NM15" type="Marker3D" parent="Environment/TrackNetwork/GMSP_Zone" unique_id=2003556747 node_paths=PackedStringArray("next_nodes")]
@@ -378,17 +378,17 @@ zone_type = 4
 next_nodes = [NodePath("../NM23")]
 
 [node name="NM23" type="Marker3D" parent="Environment/TrackNetwork/360T_Zone" unique_id=1867802760 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.617746, 0, 0.7276505)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.617746, 0, 1.0116905)
 script = ExtResource("4_fj5ke")
 zone_type = 4
 node_id = 23
-node_type = 3
 next_nodes = [NodePath("../NM24")]
 
 [node name="NM24" type="Marker3D" parent="Environment/TrackNetwork/360T_Zone" unique_id=36884468 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.617746, 0, 3.0595074)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.617746, 0, 2.491428)
 script = ExtResource("4_fj5ke")
 zone_type = 4
+node_type = 3
 next_nodes = [NodePath("../NM25")]
 
 [node name="NM25" type="Marker3D" parent="Environment/TrackNetwork/360T_Zone" unique_id=2000254817 node_paths=PackedStringArray("next_nodes")]
@@ -643,18 +643,18 @@ node_id = 22
 next_nodes = [NodePath("../NDB3")]
 
 [node name="NDB3" type="Marker3D" parent="Environment/TrackNetwork/Dunnage_Zone" unique_id=1251859964 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.07409, 0, 21.366274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.841693, 0, 21.366274)
 script = ExtResource("4_fj5ke")
 zone_type = 7
 node_id = 13
-node_type = 3
 next_nodes = [NodePath("../NDB4")]
 
 [node name="NDB4" type="Marker3D" parent="Environment/TrackNetwork/Dunnage_Zone" unique_id=615636206 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.651837, 0, 21.367)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.326055, 0, 21.367)
 script = ExtResource("4_fj5ke")
 zone_type = 7
 node_id = 22
+node_type = 3
 next_nodes = [NodePath("../NDB5")]
 
 [node name="NDB5" type="Marker3D" parent="Environment/TrackNetwork/Dunnage_Zone" unique_id=529502966 node_paths=PackedStringArray("next_nodes")]
@@ -680,18 +680,18 @@ node_id = 22
 next_nodes = [NodePath("../NDG3")]
 
 [node name="NDG3" type="Marker3D" parent="Environment/TrackNetwork/Dunnage_Zone" unique_id=2119037986 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40807056, 0, 21.351603)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61464405, 0, 21.351603)
 script = ExtResource("4_fj5ke")
 zone_type = 6
 node_id = 14
-node_type = 3
 next_nodes = [NodePath("../NDG4")]
 
 [node name="NDG4" type="Marker3D" parent="Environment/TrackNetwork/Dunnage_Zone" unique_id=1606969454 node_paths=PackedStringArray("next_nodes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.633841, 0, 21.332628)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.143227, 0, 21.332628)
 script = ExtResource("4_fj5ke")
 zone_type = 6
 node_id = 22
+node_type = 3
 next_nodes = [NodePath("../../LoadingZone/NL0")]
 
 [node name="TrafficManager" type="Node" parent="Environment" unique_id=1574997243]
@@ -700,7 +700,7 @@ script = ExtResource("6_04rp7")
 [node name="Vehicles" type="Node" parent="Environment" unique_id=1845568271]
 
 [node name="V1" type="Node3D" parent="Environment/Vehicles" unique_id=473014263]
-transform = Transform3D(-0.0013359105, 0, -0.9998266, 0, 1, 0, 0.9998266, 0, -0.0013359105, 8.433723, 0, 7.73451)
+transform = Transform3D(-0.0013201784, 0, -0.99982715, 0, 1, 0, 0.99982715, 0, -0.0013201784, 8.459952, 0, 7.734545)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -709,11 +709,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825362, 0, 21.440386)
 visible = false
 mesh = SubResource("BoxMesh_fj5ke")
 
-[node name="Pallet" parent="Environment/Vehicles/V1" unique_id=159928600 instance=ExtResource("7_nx2sc")]
+[node name="Pallet" parent="Environment/Vehicles/V1" unique_id=159928600 instance=ExtResource("8_deaqs")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="V2" type="Node3D" parent="Environment/Vehicles" unique_id=1875575113]
-transform = Transform3D(0.0038797904, 0, -0.9998232, 0, 1, 0, 0.9998232, 0, 0.0038797904, 6.6071177, 0, 7.7320642)
+transform = Transform3D(0.0038945596, 0, -0.99982053, 0, 1, 0, 0.99982053, 0, 0.0038945596, 6.6046515, 0, 7.732074)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -722,11 +722,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825362, 0, 21.440386)
 visible = false
 mesh = SubResource("BoxMesh_fj5ke")
 
-[node name="Pallet" parent="Environment/Vehicles/V2" unique_id=1580656892 instance=ExtResource("7_nx2sc")]
+[node name="Pallet" parent="Environment/Vehicles/V2" unique_id=1580656892 instance=ExtResource("8_deaqs")]
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V3" type="Node3D" parent="Environment/Vehicles" unique_id=1440789607]
-transform = Transform3D(-0.0026245643, 0, -0.9998194, 0, 1, 0, 0.9998194, 0, -0.0026245643, 4.6606846, 0, 7.739891)
+transform = Transform3D(-0.002623146, 0, -0.9998239, 0, 1, 0, 0.9998239, 0, -0.002623146, 4.614036, 0, 7.7397685)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -735,11 +735,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825362, 0, 21.440386)
 visible = false
 mesh = SubResource("BoxMesh_fj5ke")
 
-[node name="Pallet" parent="Environment/Vehicles/V3" unique_id=1467974670 instance=ExtResource("7_nx2sc")]
+[node name="Pallet" parent="Environment/Vehicles/V3" unique_id=1467974670 instance=ExtResource("8_deaqs")]
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V4" type="Node3D" parent="Environment/Vehicles" unique_id=908323127]
-transform = Transform3D(-4.811239e-06, 0, -0.9998246, 0, 1, 0, 0.9998246, 0, -4.811239e-06, 2.6035063, 0, 7.7345552)
+transform = Transform3D(-6.2415124e-06, 0, -0.99982667, 0, 1, 0, 0.99982667, 0, -6.2415124e-06, 2.6149557, 0, 7.7345552)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -748,11 +748,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825362, 0, 21.440386)
 visible = false
 mesh = SubResource("BoxMesh_fj5ke")
 
-[node name="Pallet" parent="Environment/Vehicles/V4" unique_id=463119287 instance=ExtResource("7_nx2sc")]
+[node name="Pallet" parent="Environment/Vehicles/V4" unique_id=463119287 instance=ExtResource("8_deaqs")]
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V5" type="Node3D" parent="Environment/Vehicles" unique_id=1670675100]
-transform = Transform3D(-0.0015714294, 0, -0.9998276, 0, 1, 0, 0.9998276, 0, -0.0015714294, 0.6284497, 0, 7.7345185)
+transform = Transform3D(-0.0092914915, 0, -0.99978286, 0, 1, 0, 0.99978286, 0, -0.0092914915, 0.6112378, 0, 7.734184)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -761,11 +761,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825362, 0, 21.440386)
 visible = false
 mesh = SubResource("BoxMesh_fj5ke")
 
-[node name="Pallet" parent="Environment/Vehicles/V5" unique_id=860919903 instance=ExtResource("7_nx2sc")]
+[node name="Pallet" parent="Environment/Vehicles/V5" unique_id=860919903 instance=ExtResource("8_deaqs")]
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V6" type="Node3D" parent="Environment/Vehicles" unique_id=559032236]
-transform = Transform3D(-0.3692993, 0, -0.9291238, 0, 1, 0, 0.9291238, 0, -0.3692993, -1.3135235, 0, 7.7209334)
+transform = Transform3D(-0.37336007, 0, -0.9275004, 0, 1, 0, 0.9275004, 0, -0.37336007, -1.279252, 0, 7.7345552)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -774,11 +774,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825362, 0, 21.440386)
 visible = false
 mesh = SubResource("BoxMesh_fj5ke")
 
-[node name="Pallet" parent="Environment/Vehicles/V6" unique_id=880091692 instance=ExtResource("7_nx2sc")]
+[node name="Pallet" parent="Environment/Vehicles/V6" unique_id=880091692 instance=ExtResource("8_deaqs")]
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V7" type="Node3D" parent="Environment/Vehicles" unique_id=2077917968]
-transform = Transform3D(-0.9998298, 0, -8.74079e-08, 0, 1, 0, 8.74079e-08, 0, -0.9998298, 23.617746, 0, 0.7067321)
+transform = Transform3D(-0.681608, 0, 0.73148257, 0, 1, 0, -0.73148257, 0, -0.681608, 23.25773, 0, 15.756883)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V7" unique_id=1421086458]
@@ -786,11 +786,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825362, 0, 21.440386)
 visible = false
 mesh = SubResource("BoxMesh_fj5ke")
 
-[node name="Pallet" parent="Environment/Vehicles/V7" unique_id=762224846 instance=ExtResource("7_nx2sc")]
+[node name="Pallet" parent="Environment/Vehicles/V7" unique_id=762224846 instance=ExtResource("8_deaqs")]
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V8" type="Node3D" parent="Environment/Vehicles" unique_id=106614286]
-transform = Transform3D(-0.65458935, 0, -0.7557594, 0, 1, 0, 0.7557594, 0, -0.65458935, 5.422454, 0, -8.338869)
+transform = Transform3D(-4.370371e-08, 0, -0.99982435, 0, 1, 0, 0.99982435, 0, -4.370371e-08, 8.637483, 0, -7.50203)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V8" unique_id=875517463]
@@ -798,7 +798,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825362, 0, 21.440386)
 visible = false
 mesh = SubResource("BoxMesh_fj5ke")
 
-[node name="Pallet" parent="Environment/Vehicles/V8" unique_id=1377814085 instance=ExtResource("7_nx2sc")]
+[node name="Pallet" parent="Environment/Vehicles/V8" unique_id=1377814085 instance=ExtResource("8_deaqs")]
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V9" type="Node3D" parent="Environment/Vehicles" unique_id=368200718]
@@ -811,7 +811,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825362, 0, 21.440386)
 visible = false
 mesh = SubResource("BoxMesh_fj5ke")
 
-[node name="Pallet" parent="Environment/Vehicles/V9" unique_id=358379867 instance=ExtResource("7_nx2sc")]
+[node name="Pallet" parent="Environment/Vehicles/V9" unique_id=358379867 instance=ExtResource("8_deaqs")]
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V10" type="Node3D" parent="Environment/Vehicles" unique_id=155902283]
@@ -824,7 +824,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825362, 0, 21.440386)
 visible = false
 mesh = SubResource("BoxMesh_fj5ke")
 
-[node name="Pallet" parent="Environment/Vehicles/V10" unique_id=1573868259 instance=ExtResource("7_nx2sc")]
+[node name="Pallet" parent="Environment/Vehicles/V10" unique_id=1573868259 instance=ExtResource("8_deaqs")]
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="RouteFinder" type="Node" parent="Environment" unique_id=607585202]
@@ -1058,7 +1058,7 @@ process_mode = 1
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.021320581, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -3142800.0
+j1_angle = -3148920.0
 
 [node name="Robo_3" parent="280GMachines" unique_id=1798611370 instance=ExtResource("8_cp5ni")]
 unique_name_in_owner = true
@@ -1072,6 +1072,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
 j1_angle = -1722960.0
+j4_angle = 25.0
 
 [node name="Washer" parent="." unique_id=787296881 instance=ExtResource("29_ofljq")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.484662, -0.17350519, -10.977738)
@@ -1104,6 +1105,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
 j1_angle = -1794600.0
+j4_angle = 25.0
 
 [node name="300_GMSP_NANO_Bl3" parent="300GMSP" unique_id=954246795 instance=ExtResource("31_hl73b")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 14.766684, -1.4453292, -14.08897)
@@ -1125,6 +1127,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
 j1_angle = -1707120.0
+j4_angle = 25.0
 
 [node name="360T" type="Node3D" parent="." unique_id=473571316]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7766495)
@@ -1248,10 +1251,8 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1786500.0
-j2_angle = 20.0
-j3_angle = 85.0
-j5_angle = 65.0
+j1_angle = -1787040.0
+j4_angle = 25.0
 
 [node name="PhotoBooth" parent="." unique_id=1087032330 instance=ExtResource("52_acppy")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 26.809772, -0.0071823597, 12.656346)
@@ -1281,6 +1282,7 @@ waypoints = {
 selected_waypoint = "1: Point1"
 new_waypoint_name = "Point2"
 j1_angle = -1120680.0
+j4_angle = 25.0
 
 [node name="Platform" parent="BadDunnage" unique_id=1857520093 instance=ExtResource("8_cp5ni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.005, 10.75)
@@ -1338,6 +1340,7 @@ waypoints = {
 selected_waypoint = "1: Point1"
 new_waypoint_name = "Point2"
 j1_angle = -1119960.0
+j4_angle = 25.0
 
 [node name="Platform" parent="GoodDunnage" unique_id=264313457 instance=ExtResource("8_cp5ni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.005, 10.75)

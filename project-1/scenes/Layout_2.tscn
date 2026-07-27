@@ -1,0 +1,333 @@
+[gd_scene format=3 uid="uid://dolfx1xgylpxy"]
+
+[ext_resource type="PackedScene" uid="uid://dyhvoundu2kqc" path="res://parts/Building.tscn" id="1_mjcxr"]
+[ext_resource type="PackedScene" uid="uid://dbrn1opmefege" path="res://CAD Models/Conveyor new model 6-15-26.glb" id="3_evn2v"]
+[ext_resource type="PackedScene" uid="uid://bahfcxplgs3wi" path="res://CAD Models/360T_simplified.glb" id="4_v6lpk"]
+[ext_resource type="PackedScene" uid="uid://cdrr7i0dlbnod" path="res://CAD Models/300_GMSP_NANO_Bl.glb" id="5_o4dyq"]
+[ext_resource type="PackedScene" uid="uid://dwvkxiwuxu3im" path="res://parts/Platform.tscn" id="6_cv4j0"]
+[ext_resource type="PackedScene" uid="uid://c3hjw2y68g3a5" path="res://CAD Models/Dunnage.glb" id="7_ic5cc"]
+[ext_resource type="PackedScene" uid="uid://cc72d4e7jy02o" path="res://CAD Models/280g.glb" id="9_mmm8b"]
+[ext_resource type="PackedScene" uid="uid://c3uyhenic4q0k" path="res://CAD Models/gear3.glb" id="10_rkeel"]
+[ext_resource type="PackedScene" uid="uid://bvgy1g5ncryvb" path="res://CAD Models/Meshy_AI_Industrial_Vacuum_Coa_0608115533_texture.glb" id="10_uvv3w"]
+[ext_resource type="PackedScene" uid="uid://dc6o7qkwd60ha" path="res://parts/SixAxisRobot.tscn" id="11_dkuss"]
+[ext_resource type="PackedScene" uid="uid://vjlols11scsy" path="res://CAD Models/Palates.glb" id="14_2hjqg"]
+[ext_resource type="Script" uid="uid://cs2pegx4dm0xu" path="res://DefaultScript.gd" id="15_f36d0"]
+[ext_resource type="PackedScene" uid="uid://b7yybreepit1g" path="res://CAD Models/PhotoBooth.glb" id="16_eaa10"]
+
+[sub_resource type="Curve3D" id="Curve3D_lwlvf"]
+closed = true
+bake_interval = 0.01
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5.3986735, -1.9998779, -14.403358, 0, 0, 0, 0, 0, 0, 2.1228564, -1.9998779, -14.418115, 0, 0, 0, 0, 0, 0, 9.777952, -1.9998779, -14.401901, 0, 0, 0, 0, 0, 0, 14.574652, -1.9998779, -14.418221, 0, 0, 0, 0, 0, 0, 15.054598, -1.9998779, -14.24824, 0, 0, 0, 0, 0, 0, 15.194581, -1.9998779, -13.778295, 0, 0, 0, 0, 0, 0, 15.198116, -1.9998779, -9.247852, 0, 0, 0, 0, 0, 0, 15.358099, -1.9998779, -8.807902, 0, 0, 0, 0, 0, 0, 15.828045, -1.9998779, -8.597927, 0, 0, 0, 0, 0, 0, 20.432838, -1.9998779, -8.634186, 0, 0, 0, 0, 0, 0, 20.892786, -1.9998779, -8.414211, 0, 0, 0, 0, 0, 0, 21.03277, -1.9998779, -7.864274, 0, 0, 0, 0, 0, 0, 21.022772, -1.9998779, -5.6145315, 0, 0, 0, 0, 0, 0, 20.85279, -1.9998779, -5.1245875, 0, 0, 0, 0, 0, 0, 20.332851, -1.9998779, -4.9646063, 0, 0, 0, 0, 0, 0, -0.18842411, -1.9998779, -4.95001, 0, 0, 0, 0, 0, 0, -9.743778, -1.9998779, -4.9721885, 0, 0, 0, 0, 0, 0, -10.223722, -1.9998779, -4.7922096, 0, 0, 0, 0, 0, 0, -10.383704, -1.9998779, -4.282268, 0, 0, 0, 0, 0, 0, -10.376537, -1.9998779, 13.286015, 0, 0, 0, 0, 0, 0, -10.526522, -1.9998779, 13.775958, 0, 0, 0, 0, 0, 0, -10.976613, -1.9998779, 13.973725, 0, 0, 0, 0, 0, 0, -15.645934, -1.9998779, 13.955937, 0, 0, 0, 0, 0, 0, -16.045889, -1.9998779, 13.795956, 0, 0, 0, 0, 0, 0, -16.21587, -1.9998779, 13.336008, 0, 0, 0, 0, 0, 0, -16.244085, -1.9998779, 10.374596, 0, 0, 0, 0, 0, 0, -16.20687, -1.9998779, 0.41763952, 0, 0, 0, 0, 0, 0, -16.205505, -1.9998779, -10.046685, 0, 0, 0, 0, 0, 0, -15.9914665, -2, -14.244952, 0, 0, 0, 0, 0, 0, -13.039435, -1.9998779, -14.40534),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 30
+
+[sub_resource type="PointMesh" id="PointMesh_esdow"]
+
+[sub_resource type="Curve3D" id="Curve3D_ul5aa"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -15.859224, -1.9998779, -14.184502, 0, 0, 0, 0, 0, 0, -15.456572, -1.9998779, -14.37559, 0, 0, 0, 0, 0, 0, -12.829098, -1.9998779, -14.37559, 0, 0, 0, 0, 0, 0, -5.2834, -1.9998779, -14.363898, 0, 0, 0, 0, 0, 0, 2.2498055, -1.9998779, -14.3605995, 0, 0, 0, 0, 0, 0, 9.80979, -1.9999521, -14.34408, 0, 0, 0, 0, 0, 0, 14.831362, -1.9998779, -14.40029, 0, 0, 0, 0, 0, 0, 15.221324, -1.9998779, -14.223878, 0, 0, 0, 0, 0, 0, 15.379166, -1.9998779, -13.750353, 0, 0, 0, 0, 0, 0, 15.360596, -1.9998779, -12.116227, 0, 0, 0, 0, 0, 0, 15.404682, -1.9998779, -9.154053, 0, 0, 0, 0, 0, 0, 15.581094, -1.9998779, -8.764091, 0, 0, 0, 0, 0, 0, 15.952486, -1.9998779, -8.578395, 0, 0, 0, 0, 0, 0, 20.59489, -1.9998779, -8.578395, 0, 0, 0, 0, 0, 0, 21.04056, -1.9998779, -8.448407, 0, 0, 0, 0, 0, 0, 21.216972, -1.9998779, -8.002737, 0, 0, 0, 0, 0, 0, 21.226194, -1.9998779, -5.5710096, 0, 0, 0, 0, 0, 0, 21.068352, -1.9998779, -5.0974846, 0, 0, 0, 0, 0, 0, 20.576258, -1.9998779, -4.939643, 0, 0, 0, 0, 0, 0, 15.870924, -1.9998779, -4.905383, 0, 0, 0, 0, 0, 0, 15.852353, -1.9998779, -4.3482947, 0, 0, 0, 0, 0, 0, 12.97392, -1.9998779, -4.339259, 0, 0, 0, 0, 0, 0, 12.537678, -1.9998779, -4.171883, 0, 0, 0, 0, 0, 0, 12.407713, -1.9998863, -3.707642, 0, 0, 0, 0, 0, 0, 12.4045315, -1.9998779, 3.1289785, 0, 0, 0, 0, 0, 0, 12.36033, -1.9998779, 7.9911404, 0, 0, 0, 0, 0, 0, 12.346032, -1.9998779, 13.941461, 0, 0, 0, 0, 0, 0, 12.197102, -1.9998779, 14.457246, 0, 0, 0, 0, 0, 0, 11.769681, -1.9998853, 14.601554, 0, 0, 0, 0, 0, 0, 9.798968, -1.9999106, 14.591164, 0, 0, 0, 0, 0, 0, 2.461701, -1.9998779, 14.572157, 0, 0, 0, 0, 0, 0, -5.833481, -1.9998779, 14.606997, 0, 0, 0, 0, 0, 0, -6.33442, -1.9998779, 14.801259, 0, 0, 0, 0, 0, 0, -6.528633, -1.9998908, 15.24525, 0, 0, 0, 0, 0, 0, -6.5799336, -1.9998795, 19.857395, 0, 0, 0, 0, 0, 0, -6.7487264, -1.9998779, 20.314234, 0, 0, 0, 0, 0, 0, -7.1774273, -1.9998964, 20.426712, 0, 0, 0, 0, 0, 0, -9.548258, -1.9998819, 20.396086, 0, 0, 0, 0, 0, 0, -10.049103, -1.9998779, 20.314234, 0, 0, 0, 0, 0, 0, -10.196441, -1.9998779, 19.783817, 0, 0, 0, 0, 0, 0, -10.196441, -1.9998779, 15.275267, 0, 0, 0, 0, 0, 0, -10.343779, -1.9998779, 14.7595825, 0, 0, 0, 0, 0, 0, -10.836969, -1.9998914, 14.566543, 0, 0, 0, 0, 0, 0, -13.584959, -1.9998779, 14.622134, 0, 0, 0, 0, 0, 0, -13.599692, -1.9998779, 14.062249, 0, 0, 0, 0, 0, 0, -15.44142, -1.9998779, 13.98858, 0, 0, 0, 0, 0, 0, -15.898169, -1.9998779, 13.811774, 0, 0, 0, 0, 0, 0, -16.016039, -1.9998779, 13.325558, 0, 0, 0, 0, 0, 0, -16.014301, -1.9999039, 10.278952, 0, 0, 0, 0, 0, 0, -16.027983, -1.9998779, 0.4874554, 0, 0, 0, 0, 0, 0, -15.94259, -1.9998779, -10.034761, 0, 0, 0, 0, 0, 0, -15.961594, -1.9998779, -13.734077),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 52
+
+[sub_resource type="DPITexture" id="DPITexture_ul5aa"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_rkeel"]
+albedo_color = Color(1, 1, 0.08627451, 1)
+albedo_texture = SubResource("DPITexture_ul5aa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f36d0"]
+albedo_color = Color(1, 1, 0.22352941, 1)
+metallic = 0.4
+
+[node name="Simulation" type="Node3D" unique_id=276152647]
+
+[node name="Building" parent="." unique_id=183560046 instance=ExtResource("1_mjcxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.0548162)
+width_sections = 10
+length_sections = 7
+brightness = 20.0
+
+[node name="Conveyor new model 6-15-262" parent="." unique_id=264782526 instance=ExtResource("3_evn2v")]
+transform = Transform3D(-3, 0, -4.5298742e-07, 0, 2, 0, 4.5298742e-07, 0, -3, 8.9546585, -0.8856205, -15.034567)
+
+[node name="360T_Series" type="Node" parent="." unique_id=449596853]
+
+[node name="360T_simplified" parent="360T_Series" unique_id=1974783508 instance=ExtResource("4_v6lpk")]
+transform = Transform3D(-8.742278e-08, 2, -8.742278e-08, 0, -8.742278e-08, -2, -2, -8.742278e-08, 3.821371e-15, 2.4371734, 0.31003654, 19.215279)
+
+[node name="360T_simplified2" parent="360T_Series" unique_id=349813946 instance=ExtResource("4_v6lpk")]
+transform = Transform3D(-8.742278e-08, 2, -8.742278e-08, 0, -8.742278e-08, -2, -2, -8.742278e-08, 3.821371e-15, 9.390822, 0.40125096, 19.229143)
+
+[node name="300_GMSP_Series" type="Node" parent="." unique_id=646867792]
+
+[node name="300_GMSP_NANO_Bl" parent="300_GMSP_Series" unique_id=993083634 instance=ExtResource("5_o4dyq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 17.362122, -1.8228779, 8.177849)
+
+[node name="300_GMSP_NANO_Bl2" parent="300_GMSP_Series" unique_id=1601106904 instance=ExtResource("5_o4dyq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 17.211802, -1.8228779, 3.21842)
+
+[node name="Input_Loader" type="Node3D" parent="." unique_id=1584232389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.415169, 0, -10)
+
+[node name="Platform3" parent="Input_Loader" unique_id=793067781 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.816021, 0, 0.00015735626)
+show_railings = false
+show_middle_supports = false
+floor_y = -1.9949999
+size = Vector3(6.832117, 1.9949999, 5.5139413)
+
+[node name="Dunnage2" parent="Input_Loader" unique_id=727401838 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.8158951, 0, 0)
+
+[node name="Dunnage3" parent="Input_Loader" unique_id=1174562363 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.8158951, 0, 0)
+
+[node name="Dunnage4" parent="Input_Loader" unique_id=1357507507 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.8158951, 0, 0)
+
+[node name="Dunnage5" parent="Input_Loader" unique_id=1540950848 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.8158951, 0, 0)
+
+[node name="Dunnage_Good" type="Node3D" parent="." unique_id=1332175230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.415169, 0, -5.123)
+
+[node name="Platform3" parent="Dunnage_Good" unique_id=591969036 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(1, 0, 5.563627e-08, 0, 1, 0, -5.563627e-08, 0, 1, -1.7182236, 0, 5.7365937)
+show_railings = false
+show_middle_supports = false
+floor_y = -1.9949999
+size = Vector3(6.667322, 1.9949999, 5.5499806)
+
+[node name="Dunnage2" parent="Dunnage_Good" unique_id=765155085 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.7798576, 0, 5.7489796)
+
+[node name="Dunnage3" parent="Dunnage_Good" unique_id=2007919007 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.7798576, 0, 5.7489796)
+
+[node name="Dunnage4" parent="Dunnage_Good" unique_id=291375950 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.7798576, 0, 5.7489796)
+
+[node name="Dunnage5" parent="Dunnage_Good" unique_id=990535327 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.7798576, 0, 5.7489796)
+
+[node name="280G_Series" type="Node" parent="." unique_id=960549111]
+
+[node name="280g" parent="280G_Series" unique_id=24211437 instance=ExtResource("9_mmm8b")]
+transform = Transform3D(-6.556708e-08, -1.5, 6.556708e-08, 0, -6.556708e-08, -1.5, 1.5, -6.556708e-08, 2.8660283e-15, -12.258515, -0.45156193, -18.815184)
+
+[node name="280g2" parent="280G_Series" unique_id=1377010248 instance=ExtResource("9_mmm8b")]
+transform = Transform3D(-6.556708e-08, -1.5, 6.556708e-08, 0, -6.556708e-08, -1.5, 1.5, -6.556708e-08, 2.8660283e-15, -4.70236, -0.27955127, -18.911596)
+
+[node name="280g3" parent="280G_Series" unique_id=1593160880 instance=ExtResource("9_mmm8b")]
+transform = Transform3D(-6.556708e-08, -1.5, 6.556708e-08, 0, -6.556708e-08, -1.5, 1.5, -6.556708e-08, 2.8660283e-15, 2.8800087, -0.29170895, -18.76232)
+
+[node name="280g4" parent="280G_Series" unique_id=1006397266 instance=ExtResource("9_mmm8b")]
+transform = Transform3D(-6.556708e-08, -1.5, 6.556708e-08, 0, -6.556708e-08, -1.5, 1.5, -6.556708e-08, 2.8660283e-15, 10.568189, -0.3131895, -18.826117)
+
+[node name="Dunnage_Bad" type="Node3D" parent="." unique_id=834890070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.415169, 0, 0)
+
+[node name="Platform3" parent="Dunnage_Bad" unique_id=556939742 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8693562, 0, 10.308039)
+show_railings = false
+show_middle_supports = false
+floor_y = -1.9949999
+size = Vector3(6.869602, 1.9949999, 5.694134)
+
+[node name="Dunnage2" parent="Dunnage_Bad" unique_id=780167773 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.886528, 0, 10.348164)
+
+[node name="Dunnage3" parent="Dunnage_Bad" unique_id=1583489468 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.886528, 0, 10.348164)
+
+[node name="Dunnage4" parent="Dunnage_Bad" unique_id=1307619254 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.886528, 0, 10.348164)
+
+[node name="Dunnage5" parent="Dunnage_Bad" unique_id=1374242290 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1.886528, 0, 10.348164)
+
+[node name="Quarantine_Zone" type="Node" parent="." unique_id=1411180997]
+
+[node name="Platform3" parent="Quarantine_Zone" unique_id=1766961623 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012400627, 0.0050001144, 0.6451812)
+show_railings = false
+show_middle_supports = false
+floor_y = -1.9949999
+size = Vector3(6.6311455, 2, 5.5588803)
+
+[node name="Dunnage2" parent="Quarantine_Zone" unique_id=3617348 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -0.006987095, 0.118685365, 0.6003375)
+
+[node name="Dunnage3" parent="Quarantine_Zone" unique_id=1124920272 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -0.006987095, 0.3621043, 0.6003375)
+
+[node name="Dunnage4" parent="Quarantine_Zone" unique_id=973906015 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -0.006987095, 0.6231289, 0.6003375)
+
+[node name="Dunnage5" parent="Quarantine_Zone" unique_id=39444130 instance=ExtResource("7_ic5cc")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -0.006987095, 0.8665478, 0.6003375)
+
+[node name="PhotoBooth" parent="." unique_id=1087032330 instance=ExtResource("16_eaa10")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2.4, -1.9681234, 0.048907876, 14.444604)
+
+[node name="Washer" type="Node" parent="." unique_id=494914889]
+
+[node name="Meshy_AI_Industrial_Vacuum_Coa_0608115533_texture" parent="Washer" unique_id=787296881 instance=ExtResource("10_uvv3w")]
+transform = Transform3D(-1.7484555e-07, 0, -3, 0, 3, 0, 4, 0, -1.3113416e-07, 19.494967, 0.24916244, -6.8387184)
+
+[node name="Meshy_AI_Industrial_Vacuum_Coa_0608115533_texture2" parent="Washer" unique_id=1541903345 instance=ExtResource("10_uvv3w")]
+transform = Transform3D(-4, 0, 4.5298742e-07, 0, 3, 0, -6.039832e-07, 0, -3, -8.432243, 0.24916244, 18.729723)
+
+[node name="Robo_Arms" type="Node" parent="." unique_id=193388806]
+
+[node name="Robo_1" parent="Robo_Arms" unique_id=1523272223 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -18.16514, 0, -10.032637)
+floor_y = -1.9949999
+size = Vector3(1.2, 1.9949999, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_1" unique_id=594105420 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+waypoints = {
+"1: Point1": Array[float]([0.0, 64.30000000000001, 72.4, 0.0, 49.5, 0.0])
+}
+selected_waypoint = "1: Point1"
+new_waypoint_name = "Point2"
+j2_angle = 50.5
+j3_angle = 71.1
+j5_angle = 49.5
+
+[node name="Robo_2" parent="Robo_Arms" unique_id=1245817753 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -12.834941, 0.120997906, -16.240267)
+floor_y = -1.9949999
+size = Vector3(1.2, 2.1159978, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_2" unique_id=127516807 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.021320581, 0)
+
+[node name="Robo_3" parent="Robo_Arms" unique_id=1723976434 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.217067, 0.0050001144, -16.240267)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_3" unique_id=416167136 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Robo_4" parent="Robo_Arms" unique_id=1572810838 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2891245, 0.0050001144, -16.240267)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_4" unique_id=1242975341 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Robo_5" parent="Robo_Arms" unique_id=443759 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.962506, 0.0050001144, -16.240267)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_5" unique_id=1609261088 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Robo_6" parent="Robo_Arms" unique_id=1464820969 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.0184092, 0.0050001144, -2.7342591)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_6" unique_id=2005866245 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Robo_7" parent="Robo_Arms" unique_id=312218980 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14.427017, 0.0050001144, 3.0253098)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_7" unique_id=551933704 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Robo_8" parent="Robo_Arms" unique_id=375860863 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14.427017, 0.0050001144, 8.006946)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_8" unique_id=416926834 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Robo_9" parent="Robo_Arms" unique_id=1663264081 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.720726, 0.0050001144, 16.356632)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_9" unique_id=1971622095 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Robo_10" parent="Robo_Arms" unique_id=1533414837 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4906273, 0.0050001144, 16.395147)
+floor_y = -1.9949999
+size = Vector3(1.2, 2, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_10" unique_id=942698095 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Robo_11" parent="Robo_Arms" unique_id=1649845702 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -18.249723, 0, 10.336069)
+floor_y = -1.9949999
+size = Vector3(1.2, 1.9949999, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_11" unique_id=2105267444 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Robo_12" parent="Robo_Arms" unique_id=1814806641 instance=ExtResource("6_cv4j0")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -18.199732, 0, 0.47180414)
+floor_y = -1.9949999
+size = Vector3(1.2, 1.9949999, 1.2)
+
+[node name="SixAxisRobot" parent="Robo_Arms/Robo_12" unique_id=20878890 instance=ExtResource("11_dkuss")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="QuarantinePath" type="Path3D" parent="." unique_id=1122679736]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19322205, 0, 0.032203674)
+curve = SubResource("Curve3D_lwlvf")
+
+[node name="PathFollow_1" type="PathFollow3D" parent="QuarantinePath" unique_id=709558339]
+unique_name_in_owner = true
+transform = Transform3D(-0.4079392, 0, -0.9130091, 0, 1.206741, 0, 0.9130091, 0, -0.4079392, 15.674895, -1.9998778, -8.666356)
+progress = 26.319109
+rotation_mode = 4
+
+[node name="gear3" parent="QuarantinePath/PathFollow_1" unique_id=2086740075 instance=ExtResource("10_rkeel")]
+transform = Transform3D(0.3, 0, -1.1175872e-09, 0, 0.3, 0, 1.1175872e-09, 0, 0.3, -0.109641075, 2.220263, -0.6708554)
+
+[node name="MeshInstance3D_1" type="MeshInstance3D" parent="QuarantinePath/PathFollow_1" unique_id=691242138]
+transform = Transform3D(0.99999994, 0, 7.450581e-09, 0, 0.9999999, 0, -7.450581e-09, 0, 0.99999994, -0.1, 2, -0.922)
+mesh = SubResource("PointMesh_esdow")
+
+[node name="Palates" parent="QuarantinePath/PathFollow_1/MeshInstance3D_1" unique_id=384995555 instance=ExtResource("14_2hjqg")]
+transform = Transform3D(4, 0, 0, 0, -1.7484555e-07, -4, 0, 4, -1.7484555e-07, 0, 0, 0)
+
+[node name="MeasurementPath" type="Path3D" parent="." unique_id=1321243301]
+curve = SubResource("Curve3D_ul5aa")
+
+[node name="PathFollow_2" type="PathFollow3D" parent="MeasurementPath" unique_id=913216716]
+unique_name_in_owner = true
+transform = Transform3D(-0.9998244, 1.962886e-05, 0.000465224, 1.962486e-05, 0.9999994, -1.220367e-06, -0.00046522403, -1.2114473e-06, -0.9998244, 12.405349, -1.9998801, 1.3703274)
+progress = 60.302994
+
+[node name="MeshInstance3D_2" type="MeshInstance3D" parent="MeasurementPath/PathFollow_2" unique_id=476664435]
+transform = Transform3D(0.9999998, 0, 7.450584e-09, 0, 0.9999999, 0, -7.450584e-09, 0, 0.9999998, -0.09999943, 2, -0.9219997)
+material_override = SubResource("ORMMaterial3D_rkeel")
+material_overlay = SubResource("StandardMaterial3D_f36d0")
+mesh = SubResource("PointMesh_esdow")
+
+[node name="Palates" parent="MeasurementPath/PathFollow_2/MeshInstance3D_2" unique_id=790835952 instance=ExtResource("14_2hjqg")]
+transform = Transform3D(4, 0, 0, 0, -1.7484555e-07, -4, 0, 4, -1.7484555e-07, 0, 0, 0)
+
+[node name="gear3" parent="MeasurementPath/PathFollow_2" unique_id=15671898 instance=ExtResource("10_rkeel")]
+transform = Transform3D(0.3, 0, -1.1175872e-09, 0, 0.3, 0, 1.1175872e-09, 0, 0.3, -0.109641075, 2.220263, -0.6708554)
+
+[node name="Node" type="Node" parent="." unique_id=1219373060]
+script = ExtResource("15_f36d0")
