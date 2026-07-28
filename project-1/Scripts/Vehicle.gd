@@ -30,6 +30,7 @@ var state:State = State.IDLE
 @onready var route_finder : RouteFinder = $"../../RouteFinder"
 @onready var robot_manager : RobotManager = $"../../RobotManager"
 @onready var job_manager: JobManager = $"../../JobManager"
+
 @export var retry_delay:float = 0.25
 @export var processing_time:float = 0.0
 
@@ -43,11 +44,13 @@ var target_node: TrackNode
 var moving:bool = false
 var waiting:bool = false
 var waiting_for_node: TrackNode = null
-var retry_time:float = 0.5
+var retry_time:float = 1
 var retry_counter:float = 0.0
 
 func _process(delta: float)-> void:
 	if waiting:
+		if current_node.zone_type == TrackNode.ZoneType.QUEUE:
+			return
 		retry_timer -= delta
 		if retry_timer <= 0:
 			retry_timer = retry_delay
@@ -74,7 +77,7 @@ func _process(delta: float)-> void:
 	# Arrived?
 	if global_position.distance_to(target_node.global_position) < 0.05:
 		moving = false
-		arrive()
+		await arrive()
 		
 func start(node: TrackNode)-> void:
 	current_node = node
@@ -98,11 +101,6 @@ func arrive()-> void:
 	moving = false
 	state = State.IDLE
 	
-	# Current node is already reserved
-	# Release the old node
-	if previous_node:
-		previous_node.release()
-		
 	traffic.arrived(self, current_node, previous_node)	
 	
 	# Trigger Robot
@@ -114,21 +112,35 @@ func arrive()-> void:
 			TrackNode.ZoneType.DUNNAGE_GOOD: await robot_manager._run_robot(self, 10)
 			TrackNode.ZoneType.MEASUREMENT: 
 				match current_node.node_id:
-					13: await robot_manager._run_robot(self, 6)
-					23: await robot_manager._run_robot(self, 8)
+					14: await robot_manager._run_robot(self, 6)
+					24: await robot_manager._run_robot(self, 8)
 					_ : print("Invalid operation")
-			
+		
+	# Vehicles inside the queue do NOT move by themselves.
+	if current_node.zone_type == TrackNode.ZoneType.QUEUE:
+		return
+
 	go_next()
 	
-func go_next()->void:
+func go_next()->void:		
 	if current_node.next_nodes.is_empty():
 		return
 	var next:TrackNode = route_finder.get_next_node(self,current_node)
 	move_to(next)
 	
 func move_to(node: TrackNode)-> void:
+	if moving:
+		return
+
+	#if waiting and waiting_for_node == node:
+		#return
+		
+	if target_node == node:
+		return
+	
 	if node == null:
 		return
+		
 	if traffic.request_move(self, current_node, node, previous_node):
 		target_node = node
 		moving = true

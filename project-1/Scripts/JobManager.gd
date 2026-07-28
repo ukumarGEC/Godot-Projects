@@ -12,6 +12,12 @@ var measurement_zone_capacity := 2      # Number of nodes in measurement zone
 var quarantine_queue_capacity := 6     # Number of queue nodes
 
 func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) -> void:
+	if current.zone_type == TrackNode.ZoneType.QUEUE:
+		if previous.zone_type != TrackNode.ZoneType.QUEUE:
+			print(vehicle.name," REACHED QUEUE")
+		else :
+			print(vehicle.name," MOVED IN QUEUE")
+	
 	if measurement_queue.is_empty() and quarantine_queue.is_empty():
 		reset_cycle()
 		

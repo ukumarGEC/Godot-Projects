@@ -7,27 +7,50 @@ signal QuarantineCleared
 signal QuarantineQueueFull
 var quarantine_full_notified := false
 var measurement_completed_notified := false
+var queue_vehicle_can_move:= false
 
 #@onready var zone_controller : ZoneController = $ZoneController
 @onready var job_manager: JobManager = $"../JobManager"
+@onready var queue_manager: QueueManager = $"../QueueManager"
 
 func request_move(vehicle: Vehicle, current:TrackNode, target: TrackNode, previous: TrackNode) -> bool:
 	if target == null:
 		return false
+		
+	#if current.zone_type == TrackNode.ZoneType.QUEUE:
+		#if current.node_type == TrackNode.NodeType.WAIT && %NQ4.is_free():
+			#return false
+		#if previous.is_free():
+			#return false
+			
+		#if %NQ4.occupied_by!=null:
+			#return true
+		#if previous.occupied_by!=null:
+			#return true
+		#if previous.node_type == TrackNode.NodeType.WAIT:
+			#return false
+		
 	if target.is_free():
-		# Handle waiting queue
+		# Handle waiting queued nodes on front
 		if current.node_type == TrackNode.NodeType.WAIT \
 			&& target.node_type != TrackNode.NodeType.WAIT:
 			match current.zone_type:
-				TrackNode.ZoneType.QUEUE: return job_manager.can_queue_release(vehicle)
-				TrackNode.ZoneType.MEASUREMENT: return job_manager.can_measurement_release(vehicle)
+				TrackNode.ZoneType.QUEUE: 
+					if !job_manager.can_queue_release(vehicle):
+						target.release()
+						return false
+				TrackNode.ZoneType.MEASUREMENT: 
+					if !job_manager.can_measurement_release(vehicle):
+						target.release()
+						return false
 		
+		# Handle other waiting nodes
 		target.reserve(vehicle)
 		return true
 	else:
 		#Signal for Quarantine full
 		if target.node_type == TrackNode.NodeType.WAIT \
-			&& previous.node_type == TrackNode.NodeType.NORMAL:
+			&& previous.node_type == TrackNode.NodeType.ENTRY:
 			match current.zone_type:
 				TrackNode.ZoneType.MEASUREMENT: 
 					if !measurement_completed_notified:
@@ -37,7 +60,7 @@ func request_move(vehicle: Vehicle, current:TrackNode, target: TrackNode, previo
 					if !quarantine_full_notified:
 						quarantine_full_notified = true
 						QuarantineQueueFull.emit()
-				_: print("Invalid operation")
+				#_: print("Invalid operation")
 	return false
 
 func arrived(vehicle: Vehicle, current_node: TrackNode, previous: TrackNode)->void:
@@ -47,14 +70,17 @@ func arrived(vehicle: Vehicle, current_node: TrackNode, previous: TrackNode)->vo
 	if previous:
 		previous.release()
 		
-		# log status
-		match current_node.node_type:
-			TrackNode.NodeType.MACHINE: print(vehicle.name, " Reached ", current_node.name)
-			TrackNode.NodeType.ENTRY: print(vehicle.name, " Reached ", current_node.name)
-			#TrackNode.NodeType.WAIT: print(vehicle.name, " Reached ", current_node.name)
-			_: pass
-			
-		job_manager.update_status(vehicle, current_node, previous)
+	# log status
+	match current_node.node_type:
+		TrackNode.NodeType.MACHINE: print(vehicle.name, " Reached ", current_node.name)
+		TrackNode.NodeType.ENTRY: print(vehicle.name, " Reached ", current_node.name)
+		#TrackNode.NodeType.WAIT: print(vehicle.name, " Reached ", current_node.name)
+		_: pass
+		
+	job_manager.update_status(vehicle, current_node, previous)
+	if current_node.name == "NQ4":
+		queue_manager.advance_queue()	
+		
 		
 func reset_notification_controll()-> void:
 	measurement_completed_notified = false
