@@ -24,8 +24,16 @@ func _ready()-> void:
 		q1
 	]
 
+var queue_moving := false
 
-func advance_queue()-> void:
+func vehicle_entered_queue(vehicle:Vehicle)-> void:
+	if queue_moving:
+		return
+	queue_moving = true
+	await advance_queue(vehicle)
+	queue_moving = false
+
+func advance_queue(entry_vehicle:Vehicle)-> void:
 
 	# Move from back toward front
 	for i in range(queue_nodes.size()-1,0,-1):
@@ -43,6 +51,26 @@ func advance_queue()-> void:
 
 		print(vehicle.name," ",from.name," -> ",to.name)
 
-		vehicle.move_to(to)
-		while vehicle.moving:
-			await get_tree().process_frame
+		await move_vehicle(vehicle,to)
+		# Move new vehicle into Q6
+
+	if queue_nodes[0].is_free():
+
+		print(
+			"QUEUE ENTRY ",
+			entry_vehicle.name,
+			" NQ4 -> Q6"
+		)
+
+
+		await move_vehicle(
+			entry_vehicle,
+			queue_nodes[0]
+		)
+
+
+
+func move_vehicle(vehicle:Vehicle,target:TrackNode)->void:
+	vehicle.move_to(target)
+	while vehicle.moving:
+		await get_tree().process_frame

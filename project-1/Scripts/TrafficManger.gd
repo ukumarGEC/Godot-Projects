@@ -17,28 +17,15 @@ func request_move(vehicle: Vehicle, current:TrackNode, target: TrackNode, previo
 	if target == null:
 		return false
 		
-	#if current.zone_type == TrackNode.ZoneType.QUEUE:
-		#if current.node_type == TrackNode.NodeType.WAIT && %NQ4.is_free():
-			#return false
-		#if previous.is_free():
-			#return false
-			
-		#if %NQ4.occupied_by!=null:
-			#return true
-		#if previous.occupied_by!=null:
-			#return true
-		#if previous.node_type == TrackNode.NodeType.WAIT:
-			#return false
-		
 	if target.is_free():
 		# Handle waiting queued nodes on front
 		if current.node_type == TrackNode.NodeType.WAIT \
 			&& target.node_type != TrackNode.NodeType.WAIT:
 			match current.zone_type:
-				TrackNode.ZoneType.QUEUE: 
-					if !job_manager.can_queue_release(vehicle):
-						target.release()
-						return false
+				#TrackNode.ZoneType.QUEUE: 
+					#if !job_manager.can_queue_release(vehicle):
+						#target.release()
+						#return false
 				TrackNode.ZoneType.MEASUREMENT: 
 					if !job_manager.can_measurement_release(vehicle):
 						target.release()
@@ -79,8 +66,8 @@ func arrived(vehicle: Vehicle, current_node: TrackNode, previous: TrackNode)->vo
 		
 	job_manager.update_status(vehicle, current_node, previous)
 	if current_node.name == "NQ4":
-		queue_manager.advance_queue()	
-		
+		queue_manager.vehicle_entered_queue(vehicle)
+		return		
 		
 func reset_notification_controll()-> void:
 	measurement_completed_notified = false

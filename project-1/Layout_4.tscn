@@ -786,7 +786,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V7" type="Node3D" parent="Environment/Vehicles" unique_id=2077917968]
-transform = Transform3D(-0.018564872, 0, 0.9996608, 0, 1, 0, -0.9996608, 0, -0.018564872, 21.20067, 0, 20.353949)
+transform = Transform3D(-0.0005397329, 0, 0.99983233, 0, 1, 0, -0.99983233, 0, -0.0005397329, 19.031645, 0, 20.369448)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V7" unique_id=1421086458]
@@ -798,7 +798,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V8" type="Node3D" parent="Environment/Vehicles" unique_id=106614286]
-transform = Transform3D(-0.9998274, 0, -0.00024019703, 0, 1, 0, 0.00024019703, 0, -0.9998274, 23.61774, 0, 2.4689972)
+transform = Transform3D(-0.01856298, 0, 0.9996616, 0, 1, 0, -0.9996616, 0, -0.01856298, 20.404736, 0, 20.36873)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V8" unique_id=875517463]
@@ -1261,10 +1261,7 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1807740.0
-j2_angle = 55.0
-j3_angle = 75.0
-j5_angle = 45.0
+j1_angle = -1807920.0
 
 [node name="PhotoBooth" parent="." unique_id=1087032330 instance=ExtResource("52_acppy")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 26.809772, -0.0071823597, 12.656346)
