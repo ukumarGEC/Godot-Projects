@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://cdrr7i0dlbnod" path="res://CAD Models/300_GMSP_NANO_Bl.glb" id="31_hl73b"]
 [ext_resource type="Texture2D" uid="uid://2mxuh8cks0py" path="res://assets/png/label2.png" id="32_j3qeb"]
 [ext_resource type="PackedScene" uid="uid://bahfcxplgs3wi" path="res://CAD Models/360T_simplified.glb" id="33_kok3v"]
+[ext_resource type="Texture2D" uid="uid://c5iw1r5cadkat" path="res://assets/png/fault.png" id="34_f6ypw"]
 [ext_resource type="Texture2D" uid="uid://bj28a1a7rpgpm" path="res://assets/png/360T_rightview_a.png" id="34_qljfv"]
 [ext_resource type="Texture2D" uid="uid://cfaasgn4q3y6n" path="res://assets/png/360T_rightview_b.png" id="35_0ibec"]
 [ext_resource type="Texture2D" uid="uid://bqqey5vnfvj1d" path="res://assets/png/360T_rightview_c.png" id="36_v7g80"]
@@ -83,7 +84,9 @@ load_path = "res://.godot/imported/280G_right_view_a.png-798a6923df0f436a15a1868
 [node name="Simulation" type="Node3D" unique_id=1269275433]
 
 [node name="Environment" type="Node3D" parent="." unique_id=1301383595]
+unique_name_in_owner = true
 script = ExtResource("1_fj5ke")
+StartLoading = true
 
 [node name="Building" parent="Environment" unique_id=183560046 instance=ExtResource("1_7d13r")]
 unique_name_in_owner = true
@@ -163,7 +166,6 @@ next_nodes = [NodePath("../N3")]
 [node name="N3" type="Marker3D" parent="Environment/TrackNetwork/LoadingZone" unique_id=853831771 node_paths=PackedStringArray("next_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.005456, 0, 20.368162)
 script = ExtResource("4_fj5ke")
-zone_type = 0
 node_id = 3
 next_nodes = [NodePath("../../NT11")]
 
@@ -708,7 +710,7 @@ script = ExtResource("6_04rp7")
 [node name="Vehicles" type="Node" parent="Environment" unique_id=1845568271]
 
 [node name="V1" type="Node3D" parent="Environment/Vehicles" unique_id=473014263]
-transform = Transform3D(0.0053187464, 0, 0.99981683, 0, 1, 0, -0.99981683, 0, 0.0053187464, 7.7123194, 0, 20.370195)
+transform = Transform3D(-0.3693025, 0, -0.9291265, 0, 1, 0, 0.9291265, 0, -0.3693025, -1.302749, 0, 7.725216)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -721,7 +723,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="V2" type="Node3D" parent="Environment/Vehicles" unique_id=1875575113]
-transform = Transform3D(-0.99983084, 0, -0.00071695447, 0, 1, 0, 0.00071695447, 0, -0.99983084, 17.866959, 0, 16.756004)
+transform = Transform3D(0.99983054, 0, 0, 0, 1, 0, 0, 0, 0.99983054, -19.377728, 0, 12.304584)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -734,7 +736,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V3" type="Node3D" parent="Environment/Vehicles" unique_id=1440789607]
-transform = Transform3D(0.0021491735, 0, -0.9998288, 0, 1, 0, 0.9998288, 0, 0.0021491735, 17.035976, 0, 6.736807)
+transform = Transform3D(0.0025439255, 0, 0.9998274, 0, 1, 0, -0.9998274, 0, 0.0025439255, -12.611652, 0, 21.375044)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -747,7 +749,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V4" type="Node3D" parent="Environment/Vehicles" unique_id=908323127]
-transform = Transform3D(0.6106413, 0, -0.7916971, 0, 1, 0, 0.7916971, 0, 0.6106413, 9.740053, 0, 6.752516)
+transform = Transform3D(0.9998312, 0, 0, 0, 1, 0, 0, 0, 0.9998312, -18.394426, 0, 5.522558)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -760,7 +762,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V5" type="Node3D" parent="Environment/Vehicles" unique_id=1670675100]
-transform = Transform3D(-0.0012868091, 0, -0.99983, 0, 1, 0, 0.99983, 0, -0.0012868091, 7.5155306, 0, 7.7333302)
+transform = Transform3D(0.6021708, 0, 0.7981536, 0, 1, 0, -0.7981536, 0, 0.6021708, -14.096204, 0, 21.054152)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -773,7 +775,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V6" type="Node3D" parent="Environment/Vehicles" unique_id=559032236]
-transform = Transform3D(-0.0025745265, 0, -0.9998277, 0, 1, 0, 0.9998277, 0, -0.0025745265, 4.6606846, 0, 7.739891)
+transform = Transform3D(-0.9998307, 0, -8.7407976e-08, 0, 1, 0, 8.7407976e-08, 0, -0.9998307, -4.0342455, 0, -0.67690414)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -786,7 +788,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V7" type="Node3D" parent="Environment/Vehicles" unique_id=2077917968]
-transform = Transform3D(-1.7206887e-05, 0, 0.99982786, 0, 1, 0, -0.99982786, 0, -1.7206887e-05, 19.034718, 0, 20.369467)
+transform = Transform3D(-4.3703878e-08, 0, 0.99982816, 0, 1, 0, -0.99982816, 0, -4.3703878e-08, -11.478991, 0, 21.37793)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V7" unique_id=1421086458]
@@ -798,7 +800,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V8" type="Node3D" parent="Environment/Vehicles" unique_id=106614286]
-transform = Transform3D(-0.017956557, 0, 0.99966776, 0, 1, 0, -0.99966776, 0, -0.017956557, 20.36867, 0, 20.369402)
+transform = Transform3D(-0.27833745, 0, 0.96030444, 0, 1, 0, -0.96030444, 0, -0.27833745, -10.4258585, 0, 21.37793)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V8" unique_id=875517463]
@@ -994,6 +996,13 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.0780525, -2.87480
 billboard = 1
 texture = ExtResource("27_esq7h")
 
+[node name="FaultyAlert" type="Sprite3D" parent="280GMachines/280g" unique_id=617458301]
+unique_name_in_owner = true
+transform = Transform3D(-0.2, 3.019916e-08, 6.211763e-23, -3.019916e-08, -0.2, -8.881784e-16, -1.0587912e-22, -8.881784e-16, 0.2, -0.98729706, 0.22000504, -1.3447372)
+visible = false
+billboard = 1
+texture = ExtResource("34_f6ypw")
+
 [node name="280g2" parent="280GMachines" unique_id=788838252 instance=ExtResource("13_ruckw")]
 transform = Transform3D(2.5, 0, 0, 0, -1.09278474e-07, -2.5, 0, 2.5, -1.09278474e-07, -25.285421, 0.731835, -1.7574115)
 
@@ -1069,7 +1078,10 @@ process_mode = 1
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.021320581, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -3560400.0
+j1_angle = -3609720.0
+j2_angle = 30.838399976491928
+j3_angle = 81.90331429243088
+j5_angle = 58.806628584861755
 
 [node name="Robo_3" parent="280GMachines" unique_id=1798611370 instance=ExtResource("8_cp5ni")]
 unique_name_in_owner = true
@@ -1115,7 +1127,7 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1844640.0
+j1_angle = -1856880.0
 
 [node name="300_GMSP_NANO_Bl3" parent="300GMSP" unique_id=954246795 instance=ExtResource("31_hl73b")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 14.766684, -1.4453292, -14.08897)
@@ -1261,7 +1273,7 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1836000.0
+j1_angle = -1848240.0
 
 [node name="PhotoBooth" parent="." unique_id=1087032330 instance=ExtResource("52_acppy")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 26.809772, -0.0071823597, 12.656346)

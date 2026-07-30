@@ -10,9 +10,13 @@ var quarantine_queue: Array[Vehicle] = []
 var buffer_queue: Array[Vehicle] = []
 
 @onready var queue_manager: QueueManager = $"../QueueManager"
+@onready var route_finder : RouteFinder = $"../RouteFinder"
 
 var measurement_zone_capacity := 2      # Number of nodes in measurement zone
 var quarantine_queue_capacity := 6     # Number of queue nodes
+
+func _ready()->void:
+	randomize()
 
 func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) -> void:
 	#if current.zone_type == TrackNode.ZoneType.QUEUE:
@@ -128,6 +132,10 @@ func print_status()-> void:
 
 func _on_TrafficManager_measurement_ready() -> void:
 	parts_measured = true
+	
+	#update measurement result - good/bad
+	route_finder.is_Good = randi() % 2 == 0
+
 	print("Parts measurement completed")
 	queue_manager.release_queue()
 

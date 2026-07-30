@@ -31,6 +31,7 @@ var state:State = State.IDLE
 @onready var robot_manager : RobotManager = $"../../RobotManager"
 @onready var job_manager: JobManager = $"../../JobManager"
 @onready var queue_manager: QueueManager = $"../../QueueManager"
+@onready var factory_manager: Factory = $"../../../Environment"
 
 @export var retry_delay:float = 0.25
 @export var processing_time:float = 0.0
@@ -137,7 +138,8 @@ func go_next()->void:
 	
 	# Pause at loading station
 	if current_node.zone_type == TrackNode.ZoneType.LOADING:
-		while !route_finder.is_Good:
+		#while !route_finder.is_Good:
+		while !factory_manager.StartLoading:
 			state = State.WAITING
 			await get_tree().create_timer(0.2).timeout
 	

@@ -2,6 +2,8 @@
 class_name Factory
 extends Node3D
 
+@export var StartLoading := false
+
 func _ready()->void:
 	
 	#Set Building dimension
@@ -29,7 +31,6 @@ func _ready()->void:
 
 func  _process(delta: float) -> void:
 	pass
-	
 
 func _update_gear(vehicle: Vehicle, isvisible:bool)-> void:
 	var pallet := vehicle.find_child("Pallet")

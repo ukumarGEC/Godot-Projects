@@ -2,7 +2,21 @@
 class_name RouteFinder
 extends Node
 
-@export var is_Good:= false
+@export var is_Good: bool = false:
+	set(value):
+		if is_Good == value:
+			return
+		is_Good = value
+		print("Route status changed:", is_Good)
+		
+		# Alert
+		%FaultyAlert.visible = !value
+		
+		# Update loader
+		if !value:
+			%Environment.StartLoading = false
+	get:
+		return is_Good
 
 func get_next_node(vehicle: Vehicle, current: TrackNode) -> TrackNode:
 	if current.next_nodes.is_empty():
