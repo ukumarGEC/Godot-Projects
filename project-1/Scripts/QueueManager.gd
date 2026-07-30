@@ -95,6 +95,7 @@ func can_release_front() -> bool:
 
 	return job_manager.can_queue_release(vehicle)
 
+
 func release_front() -> void:
 
 	var vehicle : Vehicle = q1.occupied_by
@@ -105,6 +106,7 @@ func release_front() -> void:
 	print("Release ", vehicle.name)
 
 	vehicle.leave_queue()
+	
 	
 func shift_queue() -> void:
 	await shift_after_release()
@@ -133,6 +135,7 @@ func shift_queue() -> void:
 		#await get_tree().create_timer(0.1).timeout
 #
 	#print("Queue Empty")
+
 
 func shift_after_release()->void:
 
@@ -163,34 +166,3 @@ func shift_after_release()->void:
 		)
 
 		await move_vehicle(vehicle,to)
-
-#
-#func release_front_vehicle()->void:
-#
-	#var front : TrackNode = %Q1
-#
-	#if front.occupied_by == null:
-		#return
-#
-	#var vehicle : Vehicle = front.occupied_by
-#
-	#print(
-		#"QUEUE RELEASE ",
-		#vehicle.name,
-		#" Q1 -> EXIT"
-	#)
-#
-	#vehicle.move_to(vehicle.target_node)
-	#while vehicle.moving:
-		#await get_tree().process_frame
-
-#
-#func queue_vehicle_left(vehicle:Vehicle)->void:
-#
-	#print(
-		#vehicle.name,
-		#" left queue"
-	#)
-#
-	#shift_after_release()
-	#

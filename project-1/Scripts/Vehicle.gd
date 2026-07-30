@@ -134,6 +134,13 @@ func arrive()-> void:
 func go_next()->void:		
 	if current_node.next_nodes.is_empty():
 		return
+	
+	# Pause at loading station
+	if current_node.zone_type == TrackNode.ZoneType.LOADING:
+		while !route_finder.is_Good:
+			state = State.WAITING
+			await get_tree().create_timer(0.2).timeout
+	
 	var next:TrackNode = route_finder.get_next_node(self,current_node)
 	move_to(next)
 	
