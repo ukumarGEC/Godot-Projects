@@ -707,7 +707,7 @@ script = ExtResource("6_04rp7")
 [node name="Vehicles" type="Node" parent="Environment" unique_id=1845568271]
 
 [node name="V1" type="Node3D" parent="Environment/Vehicles" unique_id=473014263]
-transform = Transform3D(-0.0013421128, 0, -0.9998299, 0, 1, 0, 0.9998299, 0, -0.0013421128, 8.466839, 0, 7.7345543)
+transform = Transform3D(0.6106415, 0, -0.79169595, 0, 1, 0, 0.79169595, 0, 0.6106415, 9.740053, 0, 6.752516)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -720,7 +720,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="V2" type="Node3D" parent="Environment/Vehicles" unique_id=1875575113]
-transform = Transform3D(0.0040194783, 0, -0.99982244, 0, 1, 0, 0.99982244, 0, 0.0040194783, 6.6071177, 0, 7.7320642)
+transform = Transform3D(0.0040237713, 0, -0.999823, 0, 1, 0, 0.999823, 0, 0.0040237713, 6.6071177, 0, 7.7320642)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -733,7 +733,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V3" type="Node3D" parent="Environment/Vehicles" unique_id=1440789607]
-transform = Transform3D(-0.002638887, 0, -0.999827, 0, 1, 0, 0.999827, 0, -0.002638887, 4.6606846, 0, 7.739891)
+transform = Transform3D(-0.00263555, 0, -0.99982715, 0, 1, 0, 0.99982715, 0, -0.00263555, 4.6606846, 0, 7.739891)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -746,7 +746,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V4" type="Node3D" parent="Environment/Vehicles" unique_id=908323127]
-transform = Transform3D(-4.370403e-08, 0, -0.9998317, 0, 1, 0, 0.9998317, 0, -4.370403e-08, 2.6378613, 0, 7.7345552)
+transform = Transform3D(-1.4739702e-06, 0, -0.99982864, 0, 1, 0, 0.99982864, 0, -1.4739702e-06, 2.5923285, 0, 7.7345552)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -759,7 +759,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V5" type="Node3D" parent="Environment/Vehicles" unique_id=1670675100]
-transform = Transform3D(-4.3703892e-08, 0, -0.9998285, 0, 1, 0, 0.9998285, 0, -4.3703892e-08, 0.6511259, 0, 7.7345543)
+transform = Transform3D(-4.370397e-08, 0, -0.9998303, 0, 1, 0, 0.9998303, 0, -4.370397e-08, 0.6511259, 0, 7.7345543)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -772,7 +772,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V6" type="Node3D" parent="Environment/Vehicles" unique_id=559032236]
-transform = Transform3D(-0.3714283, 0, -0.92827857, 0, 1, 0, 0.92827857, 0, -0.3714283, -1.279252, 0, 7.7345552)
+transform = Transform3D(-0.3693018, 0, -0.9291263, 0, 1, 0, 0.9291263, 0, -0.3693018, -1.279252, 0, 7.7345552)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -785,7 +785,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V7" type="Node3D" parent="Environment/Vehicles" unique_id=2077917968]
-transform = Transform3D(-4.3704055e-08, 0, 0.9998322, 0, 1, 0, -0.9998322, 0, -4.3704055e-08, 18.997139, 0, 20.369467)
+transform = Transform3D(-4.370386e-08, 0, 0.9998278, 0, 1, 0, -0.9998278, 0, -4.370386e-08, 19.001423, 0, 20.369467)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V7" unique_id=1421086458]
@@ -797,7 +797,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V8" type="Node3D" parent="Environment/Vehicles" unique_id=106614286]
-transform = Transform3D(-0.013583714, 0, 0.99973744, 0, 1, 0, -0.99973744, 0, -0.013583714, 20.371304, 0, 20.369383)
+transform = Transform3D(-0.013581795, 0, 0.99973655, 0, 1, 0, -0.99973655, 0, -0.013581795, 20.374422, 0, 20.36934)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V8" unique_id=875517463]
@@ -1068,7 +1068,7 @@ process_mode = 1
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.021320581, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -3503880.0
+j1_angle = -3515400.0
 
 [node name="Robo_3" parent="280GMachines" unique_id=1798611370 instance=ExtResource("8_cp5ni")]
 unique_name_in_owner = true
@@ -1114,7 +1114,7 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1832400.0
+j1_angle = -1835280.0
 
 [node name="300_GMSP_NANO_Bl3" parent="300GMSP" unique_id=954246795 instance=ExtResource("31_hl73b")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 14.766684, -1.4453292, -14.08897)
@@ -1260,7 +1260,7 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1823760.0
+j1_angle = -1826640.0
 
 [node name="PhotoBooth" parent="." unique_id=1087032330 instance=ExtResource("52_acppy")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 26.809772, -0.0071823597, 12.656346)

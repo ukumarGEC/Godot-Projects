@@ -28,10 +28,8 @@ func request_move(vehicle: Vehicle, current:TrackNode, target: TrackNode, previo
 						#return false
 				TrackNode.ZoneType.MEASUREMENT: 
 					if !job_manager.can_measurement_release(vehicle):
-						target.release()
 						return false
-		
-		# Handle other waiting nodes
+						
 		target.reserve(vehicle)
 		return true
 	else:

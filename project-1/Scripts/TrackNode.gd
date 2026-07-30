@@ -45,6 +45,7 @@ func reserve(vehicle: Vehicle) -> bool:
 	return true
 
 func release()-> void:
+	print("Release : ", self.name)
 	occupied_by = null
 	
 func updated()-> bool:
