@@ -151,3 +151,11 @@ func reset_cycle()->void :
 	parts_measured = false
 	parts_quarantined = false
 	#print("Batch reset")
+
+func _on_Technician_finished() -> void:
+	route_finder.is_Good = true
+
+func _on_TrafficManager_batchfinished() -> void:
+	print("Batch finished")
+	if !route_finder.is_Good:
+		%Environment.start_Repair()

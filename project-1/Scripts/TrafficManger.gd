@@ -8,6 +8,7 @@ signal QuarantineQueueFull
 var quarantine_full_notified := false
 var measurement_completed_notified := false
 var queue_vehicle_can_move:= false
+signal batchfinished
 
 #@onready var zone_controller : ZoneController = $ZoneController
 @onready var job_manager: JobManager = $"../JobManager"
@@ -49,8 +50,9 @@ func request_move(vehicle: Vehicle, current:TrackNode, target: TrackNode, previo
 	return false
 
 func arrived(vehicle: Vehicle, current_node: TrackNode, previous: TrackNode)->void:
-	if vehicle.name == "V8" && current_node.name == "N1":
+	if vehicle.name == "V8" && current_node.name == "NL1":
 		reset_notification_controll()
+		batchfinished.emit()
 	
 	if previous:
 		previous.release()

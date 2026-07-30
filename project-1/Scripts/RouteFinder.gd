@@ -2,6 +2,8 @@
 class_name RouteFinder
 extends Node
 
+@export var faulty_alert :Sprite3D
+
 @export var is_Good: bool = false:
 	set(value):
 		if is_Good == value:
@@ -10,7 +12,8 @@ extends Node
 		print("Route status changed:", is_Good)
 		
 		# Alert
-		%FaultyAlert.visible = !value
+		if faulty_alert!= null:
+			faulty_alert.visible = !value
 		
 		# Update loader
 		if !value:
@@ -42,4 +45,3 @@ func choose_branch(vehicle: Vehicle, junction: TrackNode) -> TrackNode:
 				if is_Good: return junction.next_nodes[0]
 				else : return junction.next_nodes[1]
 	return junction.next_nodes[0]
-	

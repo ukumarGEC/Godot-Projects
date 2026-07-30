@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://dx80mosbgqtxl"]
+
+[ext_resource type="Texture2D" uid="uid://bqmn6oturtd3f" path="res://scenes/charwalk.png" id="1_i5h2e"]
+
+[sub_resource type="Animation" id="2"]
+resource_name = "standing"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 4, 8, 12]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "stunned"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:stunned")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.28319, 0.0]
+}
+
+[sub_resource type="Animation" id="4"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 4, 8, 12]
+}
+
+[sub_resource type="Animation" id="5"]
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 5, 9, 13]
+}
+
+[sub_resource type="Animation" id="6"]
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 7, 11, 15]
+}
+
+[sub_resource type="Animation" id="7"]
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [2, 6, 10, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3s1fy"]
+_data = {
+&"standing": SubResource("2"),
+&"stunned": SubResource("3"),
+&"walk_down": SubResource("4"),
+&"walk_left": SubResource("5"),
+&"walk_right": SubResource("6"),
+&"walk_up": SubResource("7")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5evkf"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=988208406]
+
+[node name="sprite" type="Sprite3D" parent="." unique_id=737036807]
+transform = Transform3D(10, 0, 0, 0, 4.82463, 8.759164, 0, -8.759164, 4.82463, 0.07503511, -0.42004108, 1.1094561)
+offset = Vector2(-0.0750351, -6.23615)
+billboard = 1
+texture = ExtResource("1_i5h2e")
+hframes = 4
+vframes = 4
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=915502307]
+libraries/ = SubResource("AnimationLibrary_3s1fy")
+
+[node name="label" type="Label3D" parent="." unique_id=806761977]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, 0.19894406, 1.7772133, -0.5851363)
+billboard = 1
+text = "Technician"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=16903207]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_5evkf")

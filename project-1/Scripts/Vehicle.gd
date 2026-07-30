@@ -49,7 +49,7 @@ var waiting_for_node: TrackNode = null
 var retry_time:float = 1
 var retry_counter:float = 0.0
 
-func _process(delta: float)-> void:
+func _process(delta: float)-> void:	
 	if waiting:
 		if current_node.zone_type == TrackNode.ZoneType.QUEUE:
 			return

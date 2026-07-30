@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dbp8ungxsmwsl" path="res://Scripts/RouteFinder.gd" id="7_fxbbc"]
 [ext_resource type="PackedScene" uid="uid://dwvkxiwuxu3im" path="res://parts/Platform.tscn" id="8_cp5ni"]
 [ext_resource type="PackedScene" uid="uid://cpwdo2a7jjnsy" path="res://scenes/Pallet.tscn" id="8_deaqs"]
+[ext_resource type="Script" uid="uid://gg2a6hj1c2yn" path="res://Scripts/Technician.gd" id="9_40a4t"]
 [ext_resource type="PackedScene" uid="uid://dc6o7qkwd60ha" path="res://parts/SixAxisRobot.tscn" id="9_f6ypw"]
 [ext_resource type="Script" uid="uid://b3oxekjp8rmy" path="res://Scripts/RobotManager.gd" id="10_04rp7"]
 [ext_resource type="Script" uid="uid://tc6oj6hpr38" path="res://Scripts/robo_script_2.gd" id="10_ngllm"]
@@ -63,6 +64,7 @@
 [ext_resource type="Texture2D" uid="uid://ddnfvji5excr4" path="res://assets/png/label5.png" id="53_l4632"]
 [ext_resource type="Texture2D" uid="uid://dik7etawoemp" path="res://assets/png/label8.png" id="54_icfhr"]
 [ext_resource type="Texture2D" uid="uid://lk4llq4t6kp4" path="res://assets/png/label7.png" id="55_sowrr"]
+[ext_resource type="PackedScene" uid="uid://dx80mosbgqtxl" path="res://scenes/CharBody.tscn" id="64_ngllm"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fj5ke"]
 
@@ -83,10 +85,11 @@ load_path = "res://.godot/imported/280G_right_view_a.png-798a6923df0f436a15a1868
 
 [node name="Simulation" type="Node3D" unique_id=1269275433]
 
-[node name="Environment" type="Node3D" parent="." unique_id=1301383595]
+[node name="Environment" type="Node3D" parent="." unique_id=1301383595 node_paths=PackedStringArray("faulty_alert", "techinician")]
 unique_name_in_owner = true
 script = ExtResource("1_fj5ke")
-StartLoading = true
+faulty_alert = NodePath("../280GMachines/280g/FaultyAlert")
+techinician = NodePath("Vehicles/Technician")
 
 [node name="Building" parent="Environment" unique_id=183560046 instance=ExtResource("1_7d13r")]
 unique_name_in_owner = true
@@ -704,13 +707,42 @@ node_id = 22
 node_type = 3
 next_nodes = [NodePath("../../LoadingZone/NL0")]
 
+[node name="NTech1" type="Marker3D" parent="Environment/TrackNetwork" unique_id=61677372 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.929794, 0, 29.231705)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NTech2")]
+
+[node name="NTech2" type="Marker3D" parent="Environment/TrackNetwork" unique_id=620036636 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.0075, 0, 29.231705)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NTech3")]
+
+[node name="NTech3" type="Marker3D" parent="Environment/TrackNetwork" unique_id=54548357 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.0075, 0, 14.5180855)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NTech4")]
+
+[node name="NTech4" type="Marker3D" parent="Environment/TrackNetwork" unique_id=2135879030 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.93, 0, 14.518)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NTech5")]
+
+[node name="NTech5" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1718618413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.929794, 0, 29.231705)
+script = ExtResource("4_fj5ke")
+node_id = 3
+
 [node name="TrafficManager" type="Node" parent="Environment" unique_id=1574997243]
 script = ExtResource("6_04rp7")
 
 [node name="Vehicles" type="Node" parent="Environment" unique_id=1845568271]
 
 [node name="V1" type="Node3D" parent="Environment/Vehicles" unique_id=473014263]
-transform = Transform3D(-0.3693025, 0, -0.9291265, 0, 1, 0, 0.9291265, 0, -0.3693025, -1.302749, 0, 7.725216)
+transform = Transform3D(-0.0013378211, 0, -0.99982923, 0, 1, 0, 0.99982923, 0, -0.0013378211, 8.466839, 0, 7.7345543)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -723,7 +755,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="V2" type="Node3D" parent="Environment/Vehicles" unique_id=1875575113]
-transform = Transform3D(0.99983054, 0, 0, 0, 1, 0, 0, 0, 0.99983054, -19.377728, 0, 12.304584)
+transform = Transform3D(0.0040209033, 0, -0.99982107, 0, 1, 0, 0.99982107, 0, 0.0040209033, 6.559644, 0, 7.732255)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -736,7 +768,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V3" type="Node3D" parent="Environment/Vehicles" unique_id=1440789607]
-transform = Transform3D(0.0025439255, 0, 0.9998274, 0, 1, 0, -0.9998274, 0, 0.0025439255, -12.611652, 0, 21.375044)
+transform = Transform3D(-0.0026345972, 0, -0.9998274, 0, 1, 0, 0.9998274, 0, -0.0026345972, 4.6606846, 0, 7.739891)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -749,7 +781,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V4" type="Node3D" parent="Environment/Vehicles" unique_id=908323127]
-transform = Transform3D(0.9998312, 0, 0, 0, 1, 0, 0, 0, 0.9998312, -18.394426, 0, 5.522558)
+transform = Transform3D(-4.3703928e-08, 0, -0.99982935, 0, 1, 0, 0.99982935, 0, -4.3703928e-08, 2.6378613, 0, 7.7345552)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -762,7 +794,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V5" type="Node3D" parent="Environment/Vehicles" unique_id=1670675100]
-transform = Transform3D(0.6021708, 0, 0.7981536, 0, 1, 0, -0.7981536, 0, 0.6021708, -14.096204, 0, 21.054152)
+transform = Transform3D(2.3400767e-06, 0, -0.9998301, 0, 1, 0, 0.9998301, 0, 2.3400767e-06, 0.63866127, 0, 7.7345543)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -775,7 +807,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V6" type="Node3D" parent="Environment/Vehicles" unique_id=559032236]
-transform = Transform3D(-0.9998307, 0, -8.7407976e-08, 0, 1, 0, 8.7407976e-08, 0, -0.9998307, -4.0342455, 0, -0.67690414)
+transform = Transform3D(-0.36930254, 0, -0.92912817, 0, 1, 0, 0.92912817, 0, -0.36930254, -1.279252, 0, 7.7345552)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -788,7 +820,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V7" type="Node3D" parent="Environment/Vehicles" unique_id=2077917968]
-transform = Transform3D(-4.3703878e-08, 0, 0.99982816, 0, 1, 0, -0.99982816, 0, -4.3703878e-08, -11.478991, 0, 21.37793)
+transform = Transform3D(-4.370399e-08, 0, -0.9998308, 0, 1, 0, 0.9998308, 0, -4.370399e-08, 4.722837, 0, -8.503782)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V7" unique_id=1421086458]
@@ -800,7 +832,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V8" type="Node3D" parent="Environment/Vehicles" unique_id=106614286]
-transform = Transform3D(-0.27833745, 0, 0.96030444, 0, 1, 0, -0.96030444, 0, -0.27833745, -10.4258585, 0, 21.37793)
+transform = Transform3D(0.027955221, 0, 0.99944425, 0, 1, 0, -0.99944425, 0, 0.027955221, -13.699232, 0, 21.344618)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V8" unique_id=875517463]
@@ -837,8 +869,22 @@ mesh = SubResource("BoxMesh_fj5ke")
 [node name="Pallet" parent="Environment/Vehicles/V10" unique_id=1573868259 instance=ExtResource("8_deaqs")]
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
-[node name="RouteFinder" type="Node" parent="Environment" unique_id=607585202]
+[node name="Technician" type="Node3D" parent="Environment/Vehicles" unique_id=321636539]
+unique_name_in_owner = true
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -33.929695, 0, 29.18462)
+script = ExtResource("9_40a4t")
+speed = 1.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/Technician" unique_id=1414602120]
+visible = false
+mesh = SubResource("BoxMesh_fj5ke")
+
+[node name="CharacterBody3D" parent="Environment/Vehicles/Technician" unique_id=988208406 instance=ExtResource("64_ngllm")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="RouteFinder" type="Node" parent="Environment" unique_id=607585202 node_paths=PackedStringArray("faulty_alert")]
 script = ExtResource("7_fxbbc")
+faulty_alert = NodePath("../../280GMachines/280g/FaultyAlert")
 is_Good = true
 
 [node name="RobotManager" type="Node" parent="Environment" unique_id=480108640]
@@ -997,7 +1043,6 @@ billboard = 1
 texture = ExtResource("27_esq7h")
 
 [node name="FaultyAlert" type="Sprite3D" parent="280GMachines/280g" unique_id=617458301]
-unique_name_in_owner = true
 transform = Transform3D(-0.2, 3.019916e-08, 6.211763e-23, -3.019916e-08, -0.2, -8.881784e-16, -1.0587912e-22, -8.881784e-16, 0.2, -0.98729706, 0.22000504, -1.3447372)
 visible = false
 billboard = 1
@@ -1078,10 +1123,7 @@ process_mode = 1
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.021320581, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -3609720.0
-j2_angle = 30.838399976491928
-j3_angle = 81.90331429243088
-j5_angle = 58.806628584861755
+j1_angle = -3643200.0
 
 [node name="Robo_3" parent="280GMachines" unique_id=1798611370 instance=ExtResource("8_cp5ni")]
 unique_name_in_owner = true
@@ -1127,7 +1169,10 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1856880.0
+j1_angle = -1864800.0
+j2_angle = 20.0
+j3_angle = 85.0
+j5_angle = 65.0
 
 [node name="300_GMSP_NANO_Bl3" parent="300GMSP" unique_id=954246795 instance=ExtResource("31_hl73b")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 14.766684, -1.4453292, -14.08897)
@@ -1273,7 +1318,7 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1848240.0
+j1_angle = -1855800.0
 
 [node name="PhotoBooth" parent="." unique_id=1087032330 instance=ExtResource("52_acppy")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 26.809772, -0.0071823597, 12.656346)
@@ -1397,6 +1442,24 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3.6073518, 2.005931, 14
 billboard = 1
 texture = ExtResource("55_sowrr")
 
+[node name="MaintenanceArea" parent="." unique_id=644220249 instance=ExtResource("8_cp5ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.65732, -1.7299578, 30.367983)
+show_railings = false
+show_middle_supports = false
+steel_color = Color(0.99554414, 0.9776328, 0.87791634, 1)
+floor_y = -2.0299578309059143
+size = Vector3(6.914, 0.3, 4.788)
+metadata/_snap_transform = Callable()
+
+[node name="label" type="Label3D" parent="MaintenanceArea" unique_id=1767188226]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, -0.47430038, 1.7772133, -3.1000938)
+billboard = 1
+text = "Maintenance
+"
+font_size = 25
+
 [connection signal="MeasurementReady" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_measurement_ready"]
 [connection signal="QuarantineCleared" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_quarantine_cleared"]
 [connection signal="QuarantineQueueFull" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_quarantine_queue_full"]
+[connection signal="batchfinished" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_batchfinished"]
+[connection signal="finished" from="Environment/Vehicles/Technician" to="Environment/JobManager" method="_on_Technician_finished"]
