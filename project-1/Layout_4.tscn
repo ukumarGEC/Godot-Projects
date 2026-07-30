@@ -508,7 +508,6 @@ next_nodes = [NodePath("../NMW")]
 [node name="NMW" type="Marker3D" parent="Environment/TrackNetwork" unique_id=124398462 node_paths=PackedStringArray("next_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.722677, 0, 20.370192)
 script = ExtResource("4_fj5ke")
-zone_type = 4
 node_id = 22
 next_nodes = [NodePath("../NC2")]
 
@@ -708,7 +707,7 @@ script = ExtResource("6_04rp7")
 [node name="Vehicles" type="Node" parent="Environment" unique_id=1845568271]
 
 [node name="V1" type="Node3D" parent="Environment/Vehicles" unique_id=473014263]
-transform = Transform3D(-0.37234887, 0, -0.9279067, 0, 1, 0, 0.9279067, 0, -0.37234887, -1.2808496, 0, 7.7339144)
+transform = Transform3D(-0.0013421128, 0, -0.9998299, 0, 1, 0, 0.9998299, 0, -0.0013421128, 8.466839, 0, 7.7345543)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -721,7 +720,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="V2" type="Node3D" parent="Environment/Vehicles" unique_id=1875575113]
-transform = Transform3D(-0.0013402016, 0, -0.9998268, 0, 1, 0, 0.9998268, 0, -0.0013402016, 8.440408, 0, 7.734519)
+transform = Transform3D(0.0040194783, 0, -0.99982244, 0, 1, 0, 0.99982244, 0, 0.0040194783, 6.6071177, 0, 7.7320642)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -734,7 +733,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V3" type="Node3D" parent="Environment/Vehicles" unique_id=1440789607]
-transform = Transform3D(0.003983246, 0, -0.9998229, 0, 1, 0, 0.9998229, 0, 0.003983246, 6.6068788, 0, 7.732065)
+transform = Transform3D(-0.002638887, 0, -0.999827, 0, 1, 0, 0.999827, 0, -0.002638887, 4.6606846, 0, 7.739891)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -747,7 +746,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V4" type="Node3D" parent="Environment/Vehicles" unique_id=908323127]
-transform = Transform3D(-0.0026012238, 0, -0.9998273, 0, 1, 0, 0.9998273, 0, -0.0026012238, 4.645582, 0, 7.739852)
+transform = Transform3D(-4.370403e-08, 0, -0.9998317, 0, 1, 0, 0.9998317, 0, -4.370403e-08, 2.6378613, 0, 7.7345552)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -760,7 +759,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V5" type="Node3D" parent="Environment/Vehicles" unique_id=1670675100]
-transform = Transform3D(-4.370401e-08, 0, -0.9998312, 0, 1, 0, 0.9998312, 0, -4.370401e-08, 2.6378613, 0, 7.7345552)
+transform = Transform3D(-4.3703892e-08, 0, -0.9998285, 0, 1, 0, 0.9998285, 0, -4.3703892e-08, 0.6511259, 0, 7.7345543)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -773,7 +772,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V6" type="Node3D" parent="Environment/Vehicles" unique_id=559032236]
-transform = Transform3D(4.2470974e-06, 0, -0.9998292, 0, 1, 0, 0.9998292, 0, 4.2470974e-06, 0.61111045, 0, 7.7345543)
+transform = Transform3D(-0.3714283, 0, -0.92827857, 0, 1, 0, 0.92827857, 0, -0.3714283, -1.279252, 0, 7.7345552)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -786,7 +785,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V7" type="Node3D" parent="Environment/Vehicles" unique_id=2077917968]
-transform = Transform3D(-4.1998155e-05, 0, 0.99982804, 0, 1, 0, -0.99982804, 0, -4.1998155e-05, 19.00839, 0, 20.369467)
+transform = Transform3D(-4.3704055e-08, 0, 0.9998322, 0, 1, 0, -0.9998322, 0, -4.3704055e-08, 18.997139, 0, 20.369467)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V7" unique_id=1421086458]
@@ -798,7 +797,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V8" type="Node3D" parent="Environment/Vehicles" unique_id=106614286]
-transform = Transform3D(-0.013576087, 0, 0.9997375, 0, 1, 0, -0.9997375, 0, -0.013576087, 20.412016, 0, 20.36883)
+transform = Transform3D(-0.013583714, 0, 0.99973744, 0, 1, 0, -0.99973744, 0, -0.013583714, 20.371304, 0, 20.369383)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V8" unique_id=875517463]
@@ -1069,7 +1068,7 @@ process_mode = 1
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.021320581, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -3448800.0
+j1_angle = -3503880.0
 
 [node name="Robo_3" parent="280GMachines" unique_id=1798611370 instance=ExtResource("8_cp5ni")]
 unique_name_in_owner = true
@@ -1115,7 +1114,7 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1820880.0
+j1_angle = -1832400.0
 
 [node name="300_GMSP_NANO_Bl3" parent="300GMSP" unique_id=954246795 instance=ExtResource("31_hl73b")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 14.766684, -1.4453292, -14.08897)
@@ -1261,7 +1260,7 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1812240.0
+j1_angle = -1823760.0
 
 [node name="PhotoBooth" parent="." unique_id=1087032330 instance=ExtResource("52_acppy")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 26.809772, -0.0071823597, 12.656346)

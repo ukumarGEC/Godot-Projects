@@ -103,7 +103,7 @@ func arrive()-> void:
 	state = State.IDLE
 	
 	traffic.arrived(self, current_node, previous_node)	
-	
+
 	# Trigger Robot
 	if current_node.node_type == TrackNode.NodeType.MACHINE:
 		match current_node.zone_type:
@@ -163,10 +163,5 @@ func move_to(node: TrackNode)-> void:
 		waiting_for_node = node
 		
 func leave_queue()->void:
-
-	var next := route_finder.get_next_node(
-		self,
-		current_node
-	)
-
+	var next := route_finder.get_next_node(self,current_node)
 	move_to(next)
