@@ -7,6 +7,7 @@ var parts_measured :bool = false
 var parts_quarantined :bool = false
 var measurement_queue: Array[Vehicle] = []
 var quarantine_queue: Array[Vehicle] = []
+@onready var queue_manager: QueueManager = $"../QueueManager"
 
 var measurement_zone_capacity := 2      # Number of nodes in measurement zone
 var quarantine_queue_capacity := 6     # Number of queue nodes
@@ -107,6 +108,8 @@ func print_status()-> void:
 
 func _on_TrafficManager_measurement_ready() -> void:
 	parts_measured = true
+	queue_manager.release_queue()
+	#queue_manager.shift_after_release()
 	print("Parts measurement completed")
 
 func _on_TrafficManager_quarantine_cleared() -> void:

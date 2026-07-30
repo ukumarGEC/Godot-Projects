@@ -30,6 +30,7 @@ var state:State = State.IDLE
 @onready var route_finder : RouteFinder = $"../../RouteFinder"
 @onready var robot_manager : RobotManager = $"../../RobotManager"
 @onready var job_manager: JobManager = $"../../JobManager"
+@onready var queue_manager: QueueManager = $"../../QueueManager"
 
 @export var retry_delay:float = 0.25
 @export var processing_time:float = 0.0
@@ -116,10 +117,18 @@ func arrive()-> void:
 					24: await robot_manager._run_robot(self, 8)
 					_ : print("Invalid operation")
 		
+
+
+	if previous_node != null:
+		if previous_node.zone_type == TrackNode.ZoneType.QUEUE \
+		and current_node.zone_type != TrackNode.ZoneType.QUEUE:
+			#queue_manager.queue_vehicle_left(self)
+			queue_manager.shift_after_release()
+	
 	# Vehicles inside the queue do NOT move by themselves.
 	if current_node.zone_type == TrackNode.ZoneType.QUEUE:
 		return
-
+		
 	go_next()
 	
 func go_next()->void:		
@@ -152,3 +161,12 @@ func move_to(node: TrackNode)-> void:
 		state = State.WAITING
 		retry_timer = retry_delay
 		waiting_for_node = node
+		
+func leave_queue()->void:
+
+	var next := route_finder.get_next_node(
+		self,
+		current_node
+	)
+
+	move_to(next)
