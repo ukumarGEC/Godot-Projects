@@ -7,6 +7,8 @@ var parts_measured :bool = false
 var parts_quarantined :bool = false
 var measurement_queue: Array[Vehicle] = []
 var quarantine_queue: Array[Vehicle] = []
+var buffer_queue: Array[Vehicle] = []
+
 @onready var queue_manager: QueueManager = $"../QueueManager"
 
 var measurement_zone_capacity := 2      # Number of nodes in measurement zone
@@ -30,6 +32,12 @@ func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) ->
 
 	var left_queue := previous.zone_type == TrackNode.ZoneType.QUEUE \
 		and current.zone_type != TrackNode.ZoneType.QUEUE
+		
+	var entered_queue_buffer := previous.zone_type != TrackNode.ZoneType.QUEUEBUFFER \
+		and current.zone_type == TrackNode.ZoneType.QUEUEBUFFER
+
+	var left_queue_buffer := previous.zone_type == TrackNode.ZoneType.QUEUEBUFFER \
+		and current.zone_type != TrackNode.ZoneType.QUEUEBUFFER
 
 	var entered_measurement := previous.zone_type != TrackNode.ZoneType.MEASUREMENT \
 		and current.zone_type == TrackNode.ZoneType.MEASUREMENT
@@ -45,6 +53,15 @@ func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) ->
 
 		elif left_queue:
 			quarantine_queue.erase(vehicle)
+			print_status()
+			
+		if entered_queue_buffer:
+			if !buffer_queue.has(vehicle):
+				buffer_queue.append(vehicle)
+				print_status()
+
+		elif left_queue_buffer:
+			buffer_queue.erase(vehicle)
 			print_status()
 			
 	if vehicle.destination == Vehicle.Destination.MEASUREMENT:
@@ -89,6 +106,9 @@ func can_queue_release(vehicle: Vehicle) -> bool:
 
 func can_measurement_release(vehicle: Vehicle) -> bool:
 	if !quarantine_queue.is_empty():
+		return false
+	
+	if !buffer_queue.is_empty():
 		return false
 	
 	if measurement_queue.is_empty():
