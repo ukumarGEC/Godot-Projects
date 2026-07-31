@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b782umj8vywnl"]
+[gd_scene format=4 uid="uid://b782umj8vywnl"]
 
 [ext_resource type="PackedScene" uid="uid://dyhvoundu2kqc" path="res://parts/Building.tscn" id="1_7d13r"]
 [ext_resource type="Script" uid="uid://vqjisxqt7s61" path="res://Scripts/Factory.gd" id="1_fj5ke"]
@@ -65,8 +65,81 @@
 [ext_resource type="Texture2D" uid="uid://dik7etawoemp" path="res://assets/png/label8.png" id="54_icfhr"]
 [ext_resource type="Texture2D" uid="uid://lk4llq4t6kp4" path="res://assets/png/label7.png" id="55_sowrr"]
 [ext_resource type="PackedScene" uid="uid://dx80mosbgqtxl" path="res://scenes/CharBody.tscn" id="64_ngllm"]
+[ext_resource type="PackedScene" uid="uid://dpd1xmbe4mvxc" path="res://vehicles/tow_truck_new.tscn" id="66_ruckw"]
+[ext_resource type="PackedScene" uid="uid://bx5lff3sebgu7" path="res://parts/GuardRail.tscn" id="67_e678l"]
+[ext_resource type="Script" uid="uid://c0ot6f2seo4rb" path="res://Scripts/AutoVehicle.gd" id="67_idxg4"]
+[ext_resource type="Shader" uid="uid://cfcar2nye4ktk" path="res://src/Conveyor/conveyor_frame_shader.gdshader" id="67_wovih"]
+[ext_resource type="Texture2D" uid="uid://b4rg48iqr8l2g" path="res://assets/3DModels/Textures/Metal.png" id="68_idxg4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fj5ke"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gx8q3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dv8e0"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_idxg4"]
+_surfaces = [{
+"aabb": AABB(-0.5313606, -0.006, -0.6969933, 1.0627213, 0.006, 1.3939866),
+"attribute_data": PackedByteArray("QAcIvyduMj9ABwi/J24yv0AHCD8nbjK/QAcIPyduMr9ABwg/J24yP0AHCL8nbjI/QAcIvyduMj9ABwg/J24yv0AHCL8nbjK/QAcIPyduMr9ABwi/J24yP0AHCD8nbjI/AAAAAAAAAAAnbrI/AAAAACdusj+mm8Q7AAAAAKabxDsAAAAAAAAAACdusj8AAAAAJ26yP6abxDsAAAAAppvEOwAAAAAAAAAAQAeIPwAAAABAB4g/ppvEOwAAAACmm8Q7AAAAAAAAAABAB4g/AAAAAEAHiD+mm8Q7AAAAAKabxDs="),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("QAcIvwAAAAAnbjI/QAcIvwAAAAAnbjK/QAcIPwAAAAAnbjK/QAcIPwAAAAAnbjK/QAcIPwAAAAAnbjI/QAcIvwAAAAAnbjI/QAcIv6abxLsnbjI/QAcIP6abxLsnbjK/QAcIv6abxLsnbjK/QAcIP6abxLsnbjK/QAcIv6abxLsnbjI/QAcIP6abxLsnbjI/QAcIPwAAAAAnbjK/QAcIPwAAAAAnbjI/QAcIP6abxLsnbjI/QAcIP6abxLsnbjK/QAcIvwAAAAAnbjI/QAcIvwAAAAAnbjK/QAcIv6abxLsnbjK/QAcIv6abxLsnbjI/QAcIPwAAAAAnbjI/QAcIvwAAAAAnbjI/QAcIv6abxLsnbjI/QAcIP6abxLsnbjI/QAcIvwAAAAAnbjK/QAcIPwAAAAAnbjK/QAcIP6abxLsnbjK/QAcIv6abxLsnbjK//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+/////f/9//7////9//3//v////3//f/+/////f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA//////9/AIA=")
+}, {
+"aabb": AABB(-0.63136065, -0.3, -0.7969933, 1.2627213, 0.29400003, 1.5939866),
+"attribute_data": PackedByteArray("AAAAAAAAAADNzMw9AAAAAM3MzD0rh5Y+AAAAACuHlj4AAAAAAAAAAM3MzD0AAAAAzczMPSuHlj4AAAAAK4eWPgAAAAAAAAAAzczMPQAAAADNzMw9K4eWPgAAAAArh5Y+AAAAAAAAAADNzMw9AAAAAM3MzD0rh5Y+AAAAACuHlj7NzEy9zcxMPc3MTD3NzEw9zcxMPc3MTL3NzEy9zcxMvc3MTL3NzEw9zcxMPc3MTD3NzEw9zcxMvc3MTL3NzEy9AAAAAAAAAADOzEw+AAAAAM7MTD7QzEw+AAAAANDMTD4AAAAAAAAAAM7MTD4AAAAAzsxMPtDMTD4AAAAA0MxMPgAAAAAAAAAAzczMPQAAAADNzMw9K4eWPgAAAAArh5Y+AAAAAAAAAADNzMw9AAAAAM3MzD0rh5Y+AAAAACuHlj4AAAAAAAAAAM3MzD0AAAAAzczMPSuHlj4AAAAAK4eWPgAAAAAAAAAAzczMPQAAAADNzMw9K4eWPgAAAAArh5Y+zcxMvc3MTD3NzEw9zcxMPc3MTD3NzEy9zcxMvc3MTL3NzEy9zcxMPc3MTD3NzEw9zcxMPc3MTL3NzEy9zcxMvQAAAAAAAAAAzsxMPgAAAADOzEw+0MxMPgAAAADQzEw+AAAAAAAAAADOzEw+AAAAAM7MTD7QzEw+AAAAANDMTD4AAAAAAAAAAM3MzD0AAAAAzczMPSuHlj4AAAAAK4eWPgAAAAAAAAAAzczMPQAAAADNzMw9K4eWPgAAAAArh5Y+AAAAAAAAAADNzMw9AAAAAM3MzD0rh5Y+AAAAACuHlj4AAAAAAAAAAM3MzD0AAAAAzczMPSuHlj4AAAAAK4eWPs3MTL3NzEw9zcxMPc3MTD3NzEw9zcxMvc3MTL3NzEy9zcxMvc3MTD3NzEw9zcxMPc3MTD3NzEy9zcxMvc3MTL0AAAAAAAAAAM7MTD4AAAAAzsxMPtDMTD4AAAAA0MxMPgAAAAAAAAAAzsxMPgAAAADOzEw+0MxMPgAAAADQzEw+AAAAAAAAAADNzMw9AAAAAM3MzD0rh5Y+AAAAACuHlj4AAAAAAAAAAM3MzD0AAAAAzczMPSuHlj4AAAAAK4eWPgAAAAAAAAAAzczMPQAAAADNzMw9K4eWPgAAAAArh5Y+AAAAAAAAAADNzMw9AAAAAM3MzD0rh5Y+AAAAACuHlj7NzEy9zcxMPc3MTD3NzEw9zcxMPc3MTL3NzEy9zcxMvc3MTL3NzEw9zcxMPc3MTD3NzEw9zcxMvc3MTL3NzEy9AAAAAAAAAADOzEw+AAAAAM7MTD7QzEw+AAAAANDMTD4AAAAAAAAAAM7MTD4AAAAAzsxMPtDMTD4AAAAA0MxMPgAAAAAAAAAAppvEOwAAAACmm8Q7QAeIPwAAAABAB4g/AAAAAAAAAACamRk+AAAAAJqZGT5AB4g/AAAAAEAHiD8AAAAAAAAAAKabxDsAAAAAppvEO0AHiD8AAAAAQAeIPwAAAAAAAAAAmpkZPgAAAACamRk+QAeIPwAAAABAB4g/AAAAgKabRLsAAAAApptEOwAAAACmm0Q7AAAAAKabRLsAAACApptEuwAAAACmm0Q7AAAAAKabRDsAAAAApptEuwAAAAAAAAAAppvEOwAAAACmm8Q7QAeIPwAAAABAB4g/AAAAAAAAAACamRk+AAAAAJqZGT5AB4g/AAAAAEAHiD8AAAAAAAAAAKabxDsAAAAAppvEO0AHiD8AAAAAQAeIPwAAAAAAAAAAmpkZPgAAAACamRk+QAeIPwAAAABAB4g/AAAAgKabRLsAAAAApptEOwAAAACmm0Q7AAAAAKabRLsAAACApptEuwAAAACmm0Q7AAAAAKabRDsAAAAApptEuwAAAAAAAAAAppvEOwAAAACmm8Q7J26yPwAAAAAnbrI/AAAAAAAAAACamRk+AAAAAJqZGT4nbrI/AAAAACdusj8AAAAAAAAAAKabxDsAAAAAppvEOydusj8AAAAAJ26yPwAAAAAAAAAAmpkZPgAAAACamRk+J26yPwAAAAAnbrI/pptEOwAAAACmm0S7AAAAAKabRLsAAAAApptEOwAAAICmm0Q7AAAAAKabRLsAAAAApptEuwAAAACmm0Q7AAAAgAAAAAAAAAAAppvEOwAAAACmm8Q7J26yPwAAAAAnbrI/AAAAAAAAAACamRk+AAAAAJqZGT4nbrI/AAAAACdusj8AAAAAAAAAAKabxDsAAAAAppvEOydusj8AAAAAJ26yPwAAAAAAAAAAmpkZPgAAAACamRk+J26yPwAAAAAnbrI/pptEOwAAAACmm0S7AAAAAKabRLsAAAAApptEOwAAAICmm0Q7AAAAAKabRLsAAAAApptEuwAAAACmm0Q7AAAAgA=="),
+"format": 34359742487,
+"index_count": 336,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAWABUAFAAXABYAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA2ADUANAA3ADYAOAA5ADoAOAA6ADsAPAA9AD4APAA+AD8AQABBAEIAQABCAEMARABFAEYARABGAEcASABJAEoASABKAEsATABNAE4ATABOAE8AUABRAFIAUABSAFMAVABWAFUAVABXAFYAWABZAFoAWABaAFsAXABdAF4AXABeAF8AYABhAGIAYABiAGMAZABlAGYAZABmAGcAaABpAGoAaABqAGsAbABtAG4AbABuAG8AcABxAHIAcAByAHMAdAB2AHUAdAB3AHYAeAB5AHoAeAB6AHsAfAB9AH4AfAB+AH8AgACBAIIAgACCAIMAhACFAIYAhACGAIcAiACJAIoAiACKAIsAjACNAI4AjACOAI8AkACRAJIAkACSAJMAlACVAJYAlACWAJcAmACZAJoAmACaAJsAnACdAJ4AnACeAJ8AoAChAKIAoACiAKMApAClAKYApACmAKcAqACpAKoAqACqAKsArACtAK4ArACuAK8AsACxALIAsACyALMAtAC1ALYAtAC2ALcAuAC5ALoAuAC6ALsAvAC9AL4AvAC+AL8AwADBAMIAwADCAMMAxADGAMUAxADHAMYAyADJAMoAyADKAMsAzADNAM4AzADOAM8A0ADRANIA0ADSANMA1ADVANYA1ADWANcA2ADZANoA2ADaANsA3ADeAN0A3ADfAN4A"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 224,
+"vertex_data": PackedByteArray("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QAcIP6CbxLuLqTG/QAcIP6CbxLvDMjO/QAcIv3e+H76LqTE/QAcIv3e+H77DMjM/QAcIP3e+H77DMjM/QAcIP3e+H76LqTE/QAcIv3e+H77DMjM/QAcIv6CbxLvDMjM/QAcIP6CbxLvDMjM/QAcIP3e+H77DMjM/QAcIv6CbxLvDMjM/QAcIv6CbxLuLqTE/QAcIP6CbxLuLqTE/QAcIP6CbxLvDMjM/QAcIv6CbxLuLqTE/QAcIv3e+H76LqTE/QAcIP3e+H76LqTE/QAcIP6CbxLuLqTE/QAcIv3e+H76LqTE/QAcIv3e+H77DMjM/QAcIv6CbxLvDMjM/QAcIv6CbxLuLqTE/QAcIP3e+H76LqTE/QAcIP3e+H77DMjM/QAcIP6CbxLvDMjM/QAcIP6CbxLuLqTE/pEIHv3e+H74nbjK/3MsIv3e+H74nbjK/3MsIv3e+H74nbjI/pEIHv3e+H74nbjI/3MsIv3e+H74nbjK/3MsIv6CbxLsnbjK/3MsIv6CbxLsnbjI/3MsIv3e+H74nbjI/3MsIv6CbxLsnbjK/pEIHv6CbxLsnbjK/pEIHv6CbxLsnbjI/3MsIv6CbxLsnbjI/pEIHv6CbxLsnbjK/pEIHv3e+H74nbjK/pEIHv3e+H74nbjI/pEIHv6CbxLsnbjI/pEIHv3e+H74nbjK/3MsIv3e+H74nbjK/3MsIv6CbxLsnbjK/pEIHv6CbxLsnbjK/pEIHv3e+H74nbjI/3MsIv3e+H74nbjI/3MsIv6CbxLsnbjI/pEIHv6CbxLsnbjI/3MsIP3e+H74nbjK/pEIHP3e+H74nbjK/pEIHP3e+H74nbjI/3MsIP3e+H74nbjI/pEIHP3e+H74nbjK/pEIHP6CbxLsnbjK/pEIHP6CbxLsnbjI/pEIHP3e+H74nbjI/pEIHP6CbxLsnbjK/3MsIP6CbxLsnbjK/3MsIP6CbxLsnbjI/pEIHP6CbxLsnbjI/3MsIP6CbxLsnbjK/3MsIP3e+H74nbjK/3MsIP3e+H74nbjI/3MsIP6CbxLsnbjI/3MsIP3e+H74nbjK/pEIHP3e+H74nbjK/pEIHP6CbxLsnbjK/3MsIP6CbxLsnbjK/3MsIP3e+H74nbjI/pEIHP3e+H74nbjI/pEIHP6CbxLsnbjI/3MsIP6CbxLsnbjI//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID///9//3//v////3//f/+/////f/9//7////9//3//v///////fwCA//////9/AID//////38AgP//////fwCAAAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//fwAAAAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA////f/9//7////9//3//v////3//f/+/////f/9//7///////38AgP//////fwCA//////9/AID//////38AgAAA/3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//fwAAAAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//38AAAAA/7//f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP///3//f/+/////f/9//7////9//3//v////3//f/+///////9/AID//////38AgP//////fwCA//////9/AIAAAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//38AAAAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID///9//3//v////3//f/+/////f/9//7////9//3//v///////fwCA//////9/AID//////38AgP//////fwCAAAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//fwAAAAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v///////fwCA//////9/AID//////38AgP//////fwCAAAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7////9//3//v////3//f/+/////f/9//7////9//3//v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v///////fwCA//////9/AID//////38AgP//////fwCAAAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7////9//3//v////3//f/+/////f/9//7////9//3//v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+/AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v////3//f/+/////f/9//7////9//3//v////3//f/+///////9/AID//////38AgP//////fwCA//////9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+/AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v////3//f/+/////f/9//7////9//3//v////3//f/+///////9/AID//////38AgP//////fwCA//////9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgA==")
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gx8q3"]
+render_priority = 0
+shader = ExtResource("67_wovih")
+shader_parameter/metal_texture = ExtResource("68_idxg4")
+shader_parameter/color = Color(0.337, 0.655, 0.784, 1)
+shader_parameter/metallic_value = 0.4
+shader_parameter/roughness_value = 0.65
+shader_parameter/specular_value = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dv8e0"]
+render_priority = 0
+shader = ExtResource("67_wovih")
+shader_parameter/metal_texture = ExtResource("68_idxg4")
+shader_parameter/color = Color(0.337, 0.655, 0.784, 1)
+shader_parameter/metallic_value = 0.3
+shader_parameter/roughness_value = 0.6
+shader_parameter/specular_value = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tvyiy"]
+resource_local_to_scene = true
+size = Vector3(1.0627213, 0.026, 1.3939866)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w47h7"]
+resource_local_to_scene = true
+size = Vector3(4, 1.07, 0.06)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mfb0u"]
+resource_local_to_scene = true
+size = Vector3(4, 1.07, 0.06)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p1gk4"]
+resource_local_to_scene = true
+size = Vector3(4, 1.07, 0.06)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_opxh8"]
+resource_local_to_scene = true
+size = Vector3(4, 1.07, 0.06)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gx8q3"]
+size = Vector3(1.0627213, 0.01, 1.3939866)
 
 [sub_resource type="MeshTexture" id="MeshTexture_cp5ni"]
 
@@ -85,11 +158,12 @@ load_path = "res://.godot/imported/280G_right_view_a.png-798a6923df0f436a15a1868
 
 [node name="Simulation" type="Node3D" unique_id=1269275433]
 
-[node name="Environment" type="Node3D" parent="." unique_id=1301383595 node_paths=PackedStringArray("faulty_alert", "techinician")]
+[node name="Environment" type="Node3D" parent="." unique_id=1301383595 node_paths=PackedStringArray("faulty_alert", "techinician", "tow_truck")]
 unique_name_in_owner = true
 script = ExtResource("1_fj5ke")
 faulty_alert = NodePath("../280GMachines/280g/FaultyAlert")
 techinician = NodePath("Vehicles/Technician")
+tow_truck = NodePath("Vehicles/TowTruck")
 
 [node name="Building" parent="Environment" unique_id=183560046 instance=ExtResource("1_7d13r")]
 unique_name_in_owner = true
@@ -736,13 +810,67 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.929794, 0, 29.231705)
 script = ExtResource("4_fj5ke")
 node_id = 3
 
+[node name="NAV1" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1246328705 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.949944, -2.1, 27.5)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NAV2")]
+
+[node name="NAV2" type="Marker3D" parent="Environment/TrackNetwork" unique_id=918034901 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2339706, -2.1, 27.5)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NAV3")]
+
+[node name="NAV3" type="Marker3D" parent="Environment/TrackNetwork" unique_id=226272590 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3389187, -2.1, 27.5)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NAV4")]
+
+[node name="NAV4" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1413612550 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.260746, -2.1, 27.5)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NAV5")]
+
+[node name="NAV5" type="Marker3D" parent="Environment/TrackNetwork" unique_id=106559347 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.086277, -2.1, 31.5)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NAV6")]
+
+[node name="NAV6" type="Marker3D" parent="Environment/TrackNetwork" unique_id=1084718095 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4552326, -2.1, 31.5)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NAV7")]
+
+[node name="NAV7" type="Marker3D" parent="Environment/TrackNetwork" unique_id=814755850 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9431953, -2.1, 31.5)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NAV8")]
+
+[node name="NAV8" type="Marker3D" parent="Environment/TrackNetwork" unique_id=382329967 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.785, -2.1, 31.5)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NAV9")]
+
+[node name="NAV9" type="Marker3D" parent="Environment/TrackNetwork" unique_id=18383999 node_paths=PackedStringArray("next_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.785, -2.1, 29.868004)
+script = ExtResource("4_fj5ke")
+node_id = 3
+next_nodes = [NodePath("../NAV1")]
+
 [node name="TrafficManager" type="Node" parent="Environment" unique_id=1574997243]
 script = ExtResource("6_04rp7")
 
 [node name="Vehicles" type="Node" parent="Environment" unique_id=1845568271]
 
 [node name="V1" type="Node3D" parent="Environment/Vehicles" unique_id=473014263]
-transform = Transform3D(-0.0013378211, 0, -0.99982923, 0, 1, 0, 0.99982923, 0, -0.0013378211, 8.466839, 0, 7.7345543)
+transform = Transform3D(0.0025343907, 0, 0.9998274, 0, 1, 0, -0.9998274, 0, 0.0025343907, -12.599264, 0, 21.375074)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -755,7 +883,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="V2" type="Node3D" parent="Environment/Vehicles" unique_id=1875575113]
-transform = Transform3D(0.0040209033, 0, -0.99982107, 0, 1, 0, 0.99982107, 0, 0.0040209033, 6.559644, 0, 7.732255)
+transform = Transform3D(-4.3703995e-08, 0, 0.99983084, 0, 1, 0, -0.99983084, 0, -4.3703995e-08, -11.466804, 0, 21.37793)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -768,7 +896,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V3" type="Node3D" parent="Environment/Vehicles" unique_id=1440789607]
-transform = Transform3D(-0.0026345972, 0, -0.9998274, 0, 1, 0, 0.9998274, 0, -0.0026345972, 4.6606846, 0, 7.739891)
+transform = Transform3D(-0.26131427, 0, 0.96507883, 0, 1, 0, -0.96507883, 0, -0.26131427, -10.406583, 0, 21.372711)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -781,7 +909,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V4" type="Node3D" parent="Environment/Vehicles" unique_id=908323127]
-transform = Transform3D(-4.3703928e-08, 0, -0.99982935, 0, 1, 0, 0.99982935, 0, -4.3703928e-08, 2.6378613, 0, 7.7345552)
+transform = Transform3D(-0.754154, 0, 0.6564389, 0, 1, 0, -0.6564389, 0, -0.754154, -9.429576, 0, 21.097692)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -794,7 +922,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V5" type="Node3D" parent="Environment/Vehicles" unique_id=1670675100]
-transform = Transform3D(2.3400767e-06, 0, -0.9998301, 0, 1, 0, 0.9998301, 0, 2.3400767e-06, 0.63866127, 0, 7.7345543)
+transform = Transform3D(-4.3703945e-08, 0, 0.9998297, 0, 1, 0, -0.9998297, 0, -4.3703945e-08, -8.796768, 0, 20.377714)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -807,7 +935,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V6" type="Node3D" parent="Environment/Vehicles" unique_id=559032236]
-transform = Transform3D(-0.36930254, 0, -0.92912817, 0, 1, 0, 0.92912817, 0, -0.36930254, -1.279252, 0, 7.7345552)
+transform = Transform3D(-4.370394e-08, 0, 0.99982953, 0, 1, 0, -0.99982953, 0, -4.370394e-08, -7.5475683, 0, 20.377714)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -820,7 +948,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V7" type="Node3D" parent="Environment/Vehicles" unique_id=2077917968]
-transform = Transform3D(-4.370399e-08, 0, -0.9998308, 0, 1, 0, 0.9998308, 0, -4.370399e-08, 4.722837, 0, -8.503782)
+transform = Transform3D(-4.3703945e-08, 0, 0.9998297, 0, 1, 0, -0.9998297, 0, -4.3703945e-08, -6.2658215, 0, 20.377714)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V7" unique_id=1421086458]
@@ -832,7 +960,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V8" type="Node3D" parent="Environment/Vehicles" unique_id=106614286]
-transform = Transform3D(0.027955221, 0, 0.99944425, 0, 1, 0, -0.99944425, 0, 0.027955221, -13.699232, 0, 21.344618)
+transform = Transform3D(-4.370395e-08, 0, 0.9998298, 0, 1, 0, -0.9998298, 0, -4.370395e-08, -4.978852, 0, 20.377714)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V8" unique_id=875517463]
@@ -871,7 +999,7 @@ transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 
 
 [node name="Technician" type="Node3D" parent="Environment/Vehicles" unique_id=321636539]
 unique_name_in_owner = true
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -33.929695, 0, 29.18462)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -33.92964, 0, 29.183167)
 script = ExtResource("9_40a4t")
 speed = 1.0
 
@@ -881,6 +1009,54 @@ mesh = SubResource("BoxMesh_fj5ke")
 
 [node name="CharacterBody3D" parent="Environment/Vehicles/Technician" unique_id=988208406 instance=ExtResource("64_ngllm")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="TowTruck" parent="Environment/Vehicles" unique_id=1775214323 instance=ExtResource("66_ruckw")]
+transform = Transform3D(-4.370407e-08, 0, -0.9998326, 0, 1, 0, 0.9998326, 0, -4.370407e-08, 8.083937, -2.1, 31.5)
+script = ExtResource("67_idxg4")
+
+[node name="Platform" parent="Environment/Vehicles/TowTruck" unique_id=793067781 instance=ExtResource("8_cp5ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004573822, 0.5815706, 1.3233566)
+show_railings = false
+show_middle_supports = false
+steel_color = Color(0.74774915, 0.70114493, 0.9961422, 1)
+floor_y = 0.12436247
+size = Vector3(1.0627213, 0.3, 1.3939866)
+
+[node name="MeshInstance3D" parent="Environment/Vehicles/TowTruck/Platform" index="0" unique_id=298531202]
+material_override = SubResource("StandardMaterial3D_gx8q3")
+material_overlay = SubResource("StandardMaterial3D_dv8e0")
+mesh = SubResource("ArrayMesh_idxg4")
+surface_material_override/0 = SubResource("ShaderMaterial_gx8q3")
+surface_material_override/1 = SubResource("ShaderMaterial_dv8e0")
+
+[node name="CollisionShape3D" parent="Environment/Vehicles/TowTruck/Platform/StaticBody3D" parent_id_path=PackedInt32Array(793067781, 251941045) index="0" unique_id=1517367029]
+shape = SubResource("BoxShape3D_tvyiy")
+
+[node name="SideGuardLeftCollision" parent="Environment/Vehicles/TowTruck/Platform/StaticBody3D" parent_id_path=PackedInt32Array(793067781, 251941045) index="1" unique_id=1417367030]
+shape = SubResource("BoxShape3D_w47h7")
+
+[node name="SideGuardRightCollision" parent="Environment/Vehicles/TowTruck/Platform/StaticBody3D" parent_id_path=PackedInt32Array(793067781, 251941045) index="2" unique_id=1417367031]
+shape = SubResource("BoxShape3D_mfb0u")
+
+[node name="SideGuardFrontCollision" parent="Environment/Vehicles/TowTruck/Platform/StaticBody3D" parent_id_path=PackedInt32Array(793067781, 251941045) index="3" unique_id=1417367032]
+shape = SubResource("BoxShape3D_p1gk4")
+
+[node name="SideGuardBackCollision" parent="Environment/Vehicles/TowTruck/Platform/StaticBody3D" parent_id_path=PackedInt32Array(793067781, 251941045) index="4" unique_id=1417367033]
+shape = SubResource("BoxShape3D_opxh8")
+
+[node name="ShadowPlate" parent="Environment/Vehicles/TowTruck/Platform" index="2" unique_id=1070343760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+mesh = SubResource("BoxMesh_gx8q3")
+
+[node name="GuardRail" parent="Environment/Vehicles/TowTruck" unique_id=1476938650 instance=ExtResource("67_e678l")]
+transform = Transform3D(0, 0, -1, 0, -1, 0, -1, 0, 0, -0.5267868, 1.1218834, 1.2145958)
+steel_color = Color(0.6841625, 0.72664684, 0.9942474, 1)
+size = Vector3(1.6115079, 0.5451475, 0.04)
+
+[node name="GuardRail2" parent="Environment/Vehicles/TowTruck" unique_id=136615054 instance=ExtResource("67_e678l")]
+transform = Transform3D(0, 0, -1, 0, -1, 0, -1, 0, 0, 0.5699997, 1.122, 1.206625)
+steel_color = Color(0.6841625, 0.72664684, 0.9942474, 1)
+size = Vector3(1.6083821, 0.5451475, 0.04)
 
 [node name="RouteFinder" type="Node" parent="Environment" unique_id=607585202 node_paths=PackedStringArray("faulty_alert")]
 script = ExtResource("7_fxbbc")
@@ -902,7 +1078,7 @@ script = ExtResource("13_cp5ni")
 [node name="InputLoader" type="Node3D" parent="." unique_id=776539885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.52779, 0, 13.532576)
 
-[node name="Robo_1" parent="InputLoader" unique_id=793067781 instance=ExtResource("8_cp5ni")]
+[node name="Robo_1" parent="InputLoader" unique_id=1392981115 instance=ExtResource("8_cp5ni")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6141682, 0.0050001144, 10.026588)
 floor_y = -1.9949999
@@ -1123,7 +1299,7 @@ process_mode = 1
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.021320581, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -3643200.0
+j1_angle = -3665520.0
 
 [node name="Robo_3" parent="280GMachines" unique_id=1798611370 instance=ExtResource("8_cp5ni")]
 unique_name_in_owner = true
@@ -1169,10 +1345,7 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1864800.0
-j2_angle = 20.0
-j3_angle = 85.0
-j5_angle = 65.0
+j1_angle = -1869840.0
 
 [node name="300_GMSP_NANO_Bl3" parent="300GMSP" unique_id=954246795 instance=ExtResource("31_hl73b")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 14.766684, -1.4453292, -14.08897)
@@ -1318,7 +1491,7 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1855800.0
+j1_angle = -1860840.0
 
 [node name="PhotoBooth" parent="." unique_id=1087032330 instance=ExtResource("52_acppy")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 26.809772, -0.0071823597, 12.656346)
@@ -1458,8 +1631,35 @@ text = "Maintenance
 "
 font_size = 25
 
+[node name="StorageArea" parent="." unique_id=122008331 instance=ExtResource("8_cp5ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.968513, -1.5871837, 29.3726)
+show_railings = false
+show_middle_supports = false
+floor_y = -1.9949999
+size = Vector3(7.985117, 0.40781617, 6.779914)
+
+[node name="label" type="Label3D" parent="StorageArea" unique_id=723840659]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, 0.023200989, 1.7772133, -4.2816563)
+billboard = 1
+text = "Warehouse"
+font_size = 25
+
+[node name="GuardRail" parent="StorageArea" unique_id=1723718171 instance=ExtResource("67_e678l")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -0.018062592, 0, -3.3899574)
+size = Vector3(7.94899, 1.07, 0.04)
+
+[node name="GuardRail2" parent="StorageArea" unique_id=1460224484 instance=ExtResource("67_e678l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24396896, 0, 3.3899574)
+size = Vector3(7.4789505, 1.07, 0.04)
+metadata/_snap_transform = Callable()
+
+[node name="GuardRail3" parent="StorageArea" unique_id=958722143 instance=ExtResource("67_e678l")]
+transform = Transform3D(0, 0, -1, 0, -1, 0, -1, 0, 0, -3.9925575, 1.1024127, -1.3901062)
+
 [connection signal="MeasurementReady" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_measurement_ready"]
 [connection signal="QuarantineCleared" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_quarantine_cleared"]
 [connection signal="QuarantineQueueFull" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_quarantine_queue_full"]
 [connection signal="batchfinished" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_batchfinished"]
 [connection signal="finished" from="Environment/Vehicles/Technician" to="Environment/JobManager" method="_on_Technician_finished"]
+
+[editable path="Environment/Vehicles/TowTruck/Platform"]

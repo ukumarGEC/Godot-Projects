@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dpd1xmbe4mvxc"]
+
+[ext_resource type="ArrayMesh" uid="uid://bqrwin8ccgptt" path="res://vehicles/meshes/wheel.res" id="2_8ucst"]
+[ext_resource type="ArrayMesh" uid="uid://ctglc27jx8xe2" path="res://vehicles/meshes/truck_cab.res" id="13_w10ko"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hvgqm"]
+friction = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hbuqf"]
+size = Vector3(0.954078, 1, 2.32662)
+
+[node name="TowTruck" type="Node3D" unique_id=1775214323]
+
+[node name="Body2" type="VehicleBody3D" parent="." unique_id=1376132408]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.00169557, 0.222867, -0.0042083263)
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_hvgqm")
+center_of_mass_mode = 1
+
+[node name="Wheel1" type="VehicleWheel3D" parent="Body2" unique_id=537335536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573678, 0.115169, 1.10416)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.25
+wheel_friction_slip = 1.0
+suspension_travel = 2.0
+suspension_stiffness = 40.0
+damping_compression = 0.88
+
+[node name="Wheel1" type="MeshInstance3D" parent="Body2/Wheel1" unique_id=1384069206]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_8ucst")
+
+[node name="Wheel2" type="VehicleWheel3D" parent="Body2" unique_id=1824369258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573678, 0.115169, -0.783403)
+use_as_traction = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.25
+wheel_friction_slip = 1.0
+suspension_travel = 2.0
+suspension_stiffness = 40.0
+damping_compression = 0.88
+
+[node name="Wheel2" type="MeshInstance3D" parent="Body2/Wheel2" unique_id=229833674]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_8ucst")
+
+[node name="Wheel3" type="VehicleWheel3D" parent="Body2" unique_id=1214503060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573678, 0.115169, 1.10416)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.25
+wheel_friction_slip = 1.0
+suspension_travel = 2.0
+suspension_stiffness = 40.0
+damping_compression = 0.88
+
+[node name="Wheel3" type="MeshInstance3D" parent="Body2/Wheel3" unique_id=538985204]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_8ucst")
+
+[node name="Wheel4" type="VehicleWheel3D" parent="Body2" unique_id=1563138953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573678, 0.115169, -0.783403)
+use_as_traction = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.25
+wheel_friction_slip = 1.0
+suspension_travel = 2.0
+suspension_stiffness = 40.0
+damping_compression = 0.88
+
+[node name="Wheel4" type="MeshInstance3D" parent="Body2/Wheel4" unique_id=1085085640]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_8ucst")
+
+[node name="Body" type="MeshInstance3D" parent="Body2" unique_id=1135896339]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("13_w10ko")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body2" unique_id=585780685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.588269, 0.0774262)
+shape = SubResource("BoxShape3D_hbuqf")

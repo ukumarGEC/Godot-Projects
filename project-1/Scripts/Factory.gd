@@ -5,6 +5,7 @@ extends Node3D
 @export var StartLoading := false
 @export var faulty_alert :Sprite3D
 @export var techinician :Technician
+@export var tow_truck :AutoVehicle
 
 func _ready()->void:
 	
@@ -32,9 +33,12 @@ func _ready()->void:
 	# Hide gear from pallets
 	for vehicle in vehicles:
 		#vehicle.start($TrackNetwork/NC1)
-		if vehicle.name =="Technician":
+		if vehicle.name =="Technician" || vehicle.name == "TowTruck":
 			continue
 		_update_gear(vehicle, false)
+	
+	start_towing()
+	#start_Repair()
 
 func  _process(delta: float) -> void:
 	pass
@@ -47,5 +51,10 @@ func _update_gear(vehicle: Vehicle, isvisible:bool)-> void:
 func start_Repair()->void:
 	if techinician!= null:
 		techinician.start($TrackNetwork/NTech1)
+	pass
+	
+func start_towing()->void:
+	if tow_truck!= null:
+		tow_truck.start($TrackNetwork/NAV9)
 	pass
 	

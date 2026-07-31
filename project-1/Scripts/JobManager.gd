@@ -159,3 +159,4 @@ func _on_TrafficManager_batchfinished() -> void:
 	print("Batch finished")
 	if !route_finder.is_Good:
 		%Environment.start_Repair()
+		%Environment.start_towing()
