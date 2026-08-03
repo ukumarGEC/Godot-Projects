@@ -2,32 +2,36 @@
 class_name AutoVehicle
 extends Node3D
 
-@export var speed := 2.0
-signal finished 
+enum VehicleLocation
+{
+	BadDunage,
+	GoodDunnage,
+	Loader
+}
 
+@export var speed := 2.0
+
+signal finished
 var current_node: TrackNode
 var target_node: TrackNode
+var pick_location: TrackNode
 var moving := false
 
 
-func start(node: TrackNode) -> void:
+func start(node: TrackNode, pick_point: TrackNode) -> void:
 	current_node = node
+	pick_location = pick_point
 	target_node = null
 	moving = false
 
 	global_position = node.global_position
-
 	go_next()
+	await finished
 
-
-func _process(delta: float) -> void:
-	if current_node!=null && current_node.name == "NTech3":
-		await get_tree().create_timer(3).timeout
-		finished.emit()
-	
+func _process(delta: float) -> void:			
 	if !moving:
 		return
-
+	
 	global_position = global_position.move_toward(
 		target_node.global_position,
 		speed * delta
@@ -41,26 +45,37 @@ func _process(delta: float) -> void:
 		look_at(global_position + direction, Vector3.UP)
 		
 	if global_position.distance_to(target_node.global_position) < 0.05:
-		arrive()
+		await arrive()
 
 
 func arrive() -> void:
 	current_node = target_node
 	target_node = null
 	moving = false
-
-	print("Technician reached ", current_node.name)
-
-	go_next()
+	print("Carrier reached ", current_node.name)
+	await go_next()
 
 
 func go_next() -> void:
 	if current_node.next_nodes.is_empty():
-		print("Technician finished.")
-		#finished.emit()
+		print(current_node.name)
+		print("Carrier finished.")
+		finished.emit()
 		return
 
-	move_to(current_node.next_nodes[0])
+	var next:TrackNode
+	if current_node.node_type == TrackNode.NodeType.JUNCTION\
+	&& pick_location == current_node :
+		if current_node!= null:
+			match current_node.name:
+				"NAV2" : await get_tree().create_timer(3).timeout
+				"NAV3" : await get_tree().create_timer(3).timeout
+				"NAV4" : await get_tree().create_timer(3).timeout 
+		next = current_node.next_nodes[1]
+	else:
+		next = current_node.next_nodes[0]
+	
+	move_to(next)
 
 
 func move_to(node: TrackNode) -> void:

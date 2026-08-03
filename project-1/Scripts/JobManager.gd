@@ -158,5 +158,15 @@ func _on_Technician_finished() -> void:
 func _on_TrafficManager_batchfinished() -> void:
 	print("Batch finished")
 	if !route_finder.is_Good:
-		%Environment.start_Repair()
-		%Environment.start_towing()
+		await %Environment.start_Repair()
+		print("Clearing dunnage........")
+		await %Environment.start_towing(AutoVehicle.VehicleLocation.BadDunage)
+		print("Dunnage cleared........")
+	else:
+		print("Clearing dunnage........")
+		await %Environment.start_towing(AutoVehicle.VehicleLocation.GoodDunnage)
+		print("Dunnage cleared........")
+
+	print("Loading Gears........")
+	await %Environment.start_towing(AutoVehicle.VehicleLocation.Loader)
+	print("Gears Loaded")

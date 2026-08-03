@@ -19,7 +19,7 @@ run/main_scene="uid://cixj5psgkdi6q"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/stretch_mode=0
 boot_splash/image="res://assets/png/splash.png"
-run/scene_time_scale=2.0
+run/scene_time_scale=4.0
 
 [autoload]
 

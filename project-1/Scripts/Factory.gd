@@ -3,6 +3,7 @@ class_name Factory
 extends Node3D
 
 @export var StartLoading := false
+@export var StartTowing := false
 @export var faulty_alert :Sprite3D
 @export var techinician :Technician
 @export var tow_truck :AutoVehicle
@@ -10,8 +11,8 @@ extends Node3D
 func _ready()->void:
 	
 	#Set Building dimension
-	$Building.width_sections = 10
-	$Building.length_sections = 7
+	$Building.width_sections = 13
+	$Building.length_sections = 10
 	
 	#Reset fault alert
 	faulty_alert.visible = false
@@ -37,10 +38,19 @@ func _ready()->void:
 			continue
 		_update_gear(vehicle, false)
 	
-	start_towing()
+	#start_towing()
 	#start_Repair()
 
 func  _process(delta: float) -> void:
+	if StartTowing:
+		StartTowing = false
+		print("Starting towing...................")
+		print("Clearing dunnage........")
+		await tow_truck.start($"TrackNetwork/NAV9", $"TrackNetwork/NAV2")
+		print("Dunnage cleared........")
+		print("Loading........")
+		await tow_truck.start($"TrackNetwork/NAV9", $"TrackNetwork/NAV4")
+		print("Loaded")
 	pass
 
 func _update_gear(vehicle: Vehicle, isvisible:bool)-> void:
@@ -53,8 +63,17 @@ func start_Repair()->void:
 		techinician.start($TrackNetwork/NTech1)
 	pass
 	
-func start_towing()->void:
+func start_towing(pick_location: AutoVehicle.VehicleLocation )->void:
 	if tow_truck!= null:
-		tow_truck.start($TrackNetwork/NAV9)
+		match pick_location:
+			AutoVehicle.VehicleLocation.BadDunage:
+				print("Towing started for bad dunnage")
+				await tow_truck.start($"TrackNetwork/NAV9", $"TrackNetwork/NAV2")
+			AutoVehicle.VehicleLocation.GoodDunnage:
+				print("Towing started for good dunnage")
+				await tow_truck.start($"TrackNetwork/NAV9", $"TrackNetwork/NAV3")
+			AutoVehicle.VehicleLocation.Loader:
+				print("Towing started for loader input")
+				await tow_truck.start($"TrackNetwork/NAV9", $"TrackNetwork/NAV4")
 	pass
 	
