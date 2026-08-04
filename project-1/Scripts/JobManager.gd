@@ -2,6 +2,8 @@
 class_name JobManager
 extends Node
 
+var BatchCount := 0
+
 var queue_empty := true
 var parts_measured :bool = false
 var parts_quarantined :bool = false
@@ -135,7 +137,8 @@ func _on_TrafficManager_measurement_ready() -> void:
 	parts_measured = true
 	
 	#update measurement result - good/bad
-	route_finder.is_Good = randi() % 2 == 0
+	BatchCount = BatchCount + 1
+	route_finder.is_Good = BatchCount % 2 == 0
 
 	print("Parts measurement completed")
 	
