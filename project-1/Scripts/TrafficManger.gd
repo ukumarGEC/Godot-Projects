@@ -33,26 +33,32 @@ func request_move(vehicle: Vehicle, current:TrackNode, target: TrackNode, previo
 						
 		target.reserve(vehicle)
 		return true
-	else:
-		#Signal for Quarantine full
-		if target.node_type == TrackNode.NodeType.WAIT \
-			&& previous.node_type == TrackNode.NodeType.ENTRY:
-			match current.zone_type:
-				TrackNode.ZoneType.MEASUREMENT: 
-					if !measurement_completed_notified:
-						measurement_completed_notified = true
-						MeasurementReady.emit()
-				TrackNode.ZoneType.QUEUE: 
-					if !quarantine_full_notified:
-						quarantine_full_notified = true
-						QuarantineQueueFull.emit()
-				#_: print("Invalid operation")
+	#else:
+		##Signal for Quarantine full
+		#if target.node_type == TrackNode.NodeType.WAIT \
+			#&& previous.node_type == TrackNode.NodeType.ENTRY:
+			#match current.zone_type:
+				#TrackNode.ZoneType.MEASUREMENT: 
+					#if !measurement_completed_notified:
+						#measurement_completed_notified = true
+						#MeasurementReady.emit()
+				#TrackNode.ZoneType.QUEUE: 
+					#if !quarantine_full_notified:
+						#quarantine_full_notified = true
+						#QuarantineQueueFull.emit()
+				##_: print("Invalid operation")
 	return false
 
 func arrived(vehicle: Vehicle, current_node: TrackNode, previous: TrackNode)->void:
 	if vehicle.name == "V8" && current_node.name == "NL1":
 		reset_notification_controll()
 		batchfinished.emit()
+	
+	#if vehicle.name == "V2" && current_node.name == "NL1":
+		#print("Measurement completed")
+		#if !measurement_completed_notified:
+			#measurement_completed_notified = true
+			#MeasurementReady.emit()
 	
 	if previous:
 		previous.release()

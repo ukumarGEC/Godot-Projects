@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 		speed * delta
 	)
 
-		# Calculate movement direction
+	# Calculate movement direction
 	var direction:Vector3 = (target_node.global_position - global_position).normalized()
 
 	# Face the movement direction
@@ -68,9 +68,9 @@ func go_next() -> void:
 	&& pick_location == current_node :
 		if current_node!= null:
 			match current_node.name:
-				"NAV2" : await get_tree().create_timer(3).timeout
-				"NAV3" : await get_tree().create_timer(3).timeout
-				"NAV4" : await get_tree().create_timer(3).timeout 
+				"NAV2" : await get_tree().create_timer(10).timeout
+				"NAV3" : await get_tree().create_timer(10).timeout
+				"NAV4" : await get_tree().create_timer(10).timeout 
 		next = current_node.next_nodes[1]
 	else:
 		next = current_node.next_nodes[0]

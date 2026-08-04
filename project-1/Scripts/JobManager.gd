@@ -79,7 +79,8 @@ func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) ->
 			measurement_queue.erase(vehicle)
 
 			if measurement_queue.is_empty():
-				parts_measured = true
+				#parts_measured = true
+				_on_TrafficManager_measurement_ready()
 
 			print_status()
 
@@ -137,6 +138,8 @@ func _on_TrafficManager_measurement_ready() -> void:
 	route_finder.is_Good = randi() % 2 == 0
 
 	print("Parts measurement completed")
+	
+	#while !queue.empty()
 	queue_manager.release_queue()
 
 func _on_TrafficManager_quarantine_cleared() -> void:

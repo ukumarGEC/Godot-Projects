@@ -18,6 +18,11 @@ var queue_moving := false
 func _ready()-> void:
 	queue_nodes = [q6, q5, q4, q3, q2, q1]
 
+func _process(delta: float) -> void:
+	if queue_moving: return
+	if job_manager.parts_measured:
+		release_queue()
+
 
 func vehicle_entered_queue(vehicle:Vehicle)-> void:
 	if queue_moving:
@@ -42,8 +47,6 @@ func advance_queue(entry_vehicle:Vehicle)-> void:
 			continue
 
 		var vehicle : Vehicle = from.occupied_by
-
-		print(vehicle.name," ",from.name," -> ",to.name)
 
 		await move_vehicle(vehicle,to)
 		# Move new vehicle into Q6

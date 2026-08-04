@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dx80mosbgqtxl"]
 
 [ext_resource type="Texture2D" uid="uid://bqmn6oturtd3f" path="res://scenes/charwalk.png" id="1_i5h2e"]
+[ext_resource type="PackedScene" uid="uid://b6l04t6h4fsj3" path="res://CAD Models/Technician.glb" id="1_nfwpp"]
+[ext_resource type="PackedScene" uid="uid://3wsnhjol6pw0" path="res://CAD Models/Tiny_Technician.glb" id="2_jqo6b"]
 
 [sub_resource type="Animation" id="2"]
 resource_name = "standing"
@@ -140,8 +142,12 @@ _data = {
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=988208406]
 
+[node name="Technician" parent="." unique_id=82335039 instance=ExtResource("1_nfwpp")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 2.5, 0)
+
 [node name="sprite" type="Sprite3D" parent="." unique_id=737036807]
 transform = Transform3D(10, 0, 0, 0, 4.82463, 8.759164, 0, -8.759164, 4.82463, 0.07503511, -0.42004108, 1.1094561)
+visible = false
 offset = Vector2(-0.0750351, -6.23615)
 billboard = 1
 texture = ExtResource("1_i5h2e")
@@ -152,10 +158,14 @@ vframes = 4
 libraries/ = SubResource("AnimationLibrary_3s1fy")
 
 [node name="label" type="Label3D" parent="." unique_id=806761977]
-transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, 0.19894406, 1.7772133, -0.5851363)
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, 0, 7, 0)
 billboard = 1
 text = "Technician"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=16903207]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 shape = SubResource("BoxShape3D_5evkf")
+
+[node name="Tiny_Technician" parent="." unique_id=606982230 instance=ExtResource("2_jqo6b")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3, 0)
+visible = false

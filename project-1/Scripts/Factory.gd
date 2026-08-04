@@ -4,6 +4,7 @@ extends Node3D
 
 @export var StartLoading := false
 @export var StartTowing := false
+@export var StartRepairing := false
 @export var faulty_alert :Sprite3D
 @export var techinician :Technician
 @export var tow_truck :AutoVehicle
@@ -42,6 +43,10 @@ func _ready()->void:
 	#start_Repair()
 
 func  _process(delta: float) -> void:
+	if StartRepairing:
+		StartRepairing = false
+		start_Repair()
+	
 	if StartTowing:
 		StartTowing = false
 		print("Starting towing...................")

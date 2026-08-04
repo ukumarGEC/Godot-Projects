@@ -33,6 +33,13 @@ func _process(delta: float) -> void:
 		speed * delta
 	)
 
+	# Calculate movement direction
+	var direction:Vector3 = (target_node.global_position - global_position).normalized()
+
+	# Face the movement direction
+	if direction.length() > 0.001:
+		look_at(global_position + direction, Vector3.UP)
+
 	if global_position.distance_to(target_node.global_position) < 0.05:
 		arrive()
 
@@ -48,6 +55,8 @@ func arrive() -> void:
 
 
 func go_next() -> void:
+	print(current_node.next_nodes)
+	
 	if current_node.next_nodes.is_empty():
 		print("Technician finished.")
 		#finished.emit()
