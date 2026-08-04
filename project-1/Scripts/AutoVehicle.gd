@@ -58,7 +58,6 @@ func arrive() -> void:
 
 func go_next() -> void:
 	if current_node.next_nodes.is_empty():
-		print(current_node.name)
 		print("Carrier finished.")
 		finished.emit()
 		return

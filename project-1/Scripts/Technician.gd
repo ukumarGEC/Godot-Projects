@@ -55,8 +55,6 @@ func arrive() -> void:
 
 
 func go_next() -> void:
-	print(current_node.next_nodes)
-	
 	if current_node.next_nodes.is_empty():
 		print("Technician finished.")
 		#finished.emit()

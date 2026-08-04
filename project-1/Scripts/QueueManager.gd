@@ -14,23 +14,34 @@ extends Node
 
 var queue_nodes : Array[TrackNode]
 var queue_moving := false
+var queue_releasing := false
 
 func _ready()-> void:
 	queue_nodes = [q6, q5, q4, q3, q2, q1]
 
-func _process(delta: float) -> void:
-	if queue_moving: return
-	if job_manager.parts_measured:
-		release_queue()
-
+#func _process(delta: float) -> void:
+	#if queue_releasing: return
+	#if job_manager.parts_measured:
+		#queue_releasing = true
+		#release_queue()
+		#queue_releasing = false
 
 func vehicle_entered_queue(vehicle:Vehicle)-> void:
 	if queue_moving:
 		return
 	queue_moving = true
 	await advance_queue(vehicle)
+	
+	if is_queue_full() and job_manager.parts_measured:
+		print("Queue full")
+		release_queue()
 	queue_moving = false
 
+func is_queue_full() -> bool:
+	for node in queue_nodes:
+		if node.is_free():
+			return false
+	return true
 
 func advance_queue(entry_vehicle:Vehicle)-> void:
 
@@ -52,14 +63,6 @@ func advance_queue(entry_vehicle:Vehicle)-> void:
 		# Move new vehicle into Q6
 
 	if queue_nodes[0].is_free():
-
-		print(
-			"QUEUE ENTRY ",
-			entry_vehicle.name,
-			" NQ4 -> Q6"
-		)
-
-
 		await move_vehicle(
 			entry_vehicle,
 			queue_nodes[0]
@@ -73,20 +76,19 @@ func move_vehicle(vehicle:Vehicle,target:TrackNode)->void:
 		
 		
 func release_queue()->void:
-	if queue_moving:
-		return
-	if !job_manager.parts_measured:
-		return
-	while true:
-		if !job_manager.parts_measured:
-			break
-		if !can_release_front():
-			break
+	#if queue_moving:
+		#return
+	#if !job_manager.parts_measured:
+		#return
+	while can_release_front():
+		#if !job_manager.parts_measured:
+			#break
+		#if !can_release_front():
+			#break
 		release_front()
-		print("Q1 occupied:", q1.occupied_by)
 		await shift_queue()
 		await get_tree().create_timer(0.3).timeout
-	queue_moving = false
+	#queue_moving = false
 
 
 func can_release_front() -> bool:
@@ -106,39 +108,11 @@ func release_front() -> void:
 	if vehicle == null:
 		return
 
-	print("Release ", vehicle.name)
-
 	vehicle.leave_queue()
 	
 	
 func shift_queue() -> void:
 	await shift_after_release()
-	
-#func release_all() -> void:
-#
-	#while true:
-#
-		#var front := q1
-#
-		#if front.occupied_by == null:
-			#break
-#
-		#var vehicle : Vehicle = front.occupied_by
-#
-		#if !job_manager.can_queue_release(vehicle):
-			#break
-#
-		#print("Release ", vehicle.name)
-#
-		#await vehicle.leave_queue()
-#
-		#await shift_after_release()
-#
-		## Small delay so movement looks like conveyor indexing
-		#await get_tree().create_timer(0.1).timeout
-#
-	#print("Queue Empty")
-
 
 func shift_after_release()->void:
 
@@ -149,8 +123,6 @@ func shift_after_release()->void:
 		var from := queue_nodes[i]
 		var to := queue_nodes[i+1]
 		
-		print("from ", from.name, " to ", to.name)
-
 		if from.occupied_by == null:
 			continue
 
@@ -158,14 +130,4 @@ func shift_after_release()->void:
 			continue
 
 		var vehicle: Vehicle = from.occupied_by
-
-		print(
-			"QUEUE SHIFT ",
-			vehicle.name,
-			" ",
-			from.name,
-			" -> ",
-			to.name
-		)
-
 		await move_vehicle(vehicle,to)
