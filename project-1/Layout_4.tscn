@@ -840,7 +840,7 @@ script = ExtResource("6_04rp7")
 [node name="Vehicles" type="Node" parent="Environment" unique_id=1845568271]
 
 [node name="V1" type="Node3D" parent="Environment/Vehicles" unique_id=473014263]
-transform = Transform3D(0.0025420126, 0, 0.99982506, 0, 1, 0, -0.99982506, 0, 0.0025420126, -12.611652, 0, 21.375044)
+transform = Transform3D(0.0025401062, 0, 0.99982524, 0, 1, 0, -0.99982524, 0, 0.0025401062, -12.611652, 0, 21.375044)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V1" unique_id=157157124]
@@ -852,7 +852,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="V2" type="Node3D" parent="Environment/Vehicles" unique_id=1875575113]
-transform = Transform3D(-0.0012796557, 0, -0.99982846, 0, 1, 0, 0.99982846, 0, -0.0012796557, 8.450725, 0, 7.734534)
+transform = Transform3D(-4.3703924e-08, 0, 0.99982923, 0, 1, 0, -0.99982923, 0, -4.3703924e-08, -11.478991, 0, 21.37793)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -865,7 +865,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V3" type="Node3D" parent="Environment/Vehicles" unique_id=1440789607]
-transform = Transform3D(0.0040213824, 0, -0.99982166, 0, 1, 0, 0.99982166, 0, 0.0040213824, 6.6071177, 0, 7.7320642)
+transform = Transform3D(-0.26132727, 0, 0.9650738, 0, 1, 0, -0.9650738, 0, -0.26132727, -10.4258585, 0, 21.37793)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -878,7 +878,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V4" type="Node3D" parent="Environment/Vehicles" unique_id=908323127]
-transform = Transform3D(-0.0026374569, 0, -0.9998271, 0, 1, 0, 0.9998271, 0, -0.0026374569, 4.6606846, 0, 7.739891)
+transform = Transform3D(-0.75414854, 0, 0.65644586, 0, 1, 0, -0.65644586, 0, -0.75414854, -9.441485, 0, 21.111374)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -891,7 +891,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V5" type="Node3D" parent="Environment/Vehicles" unique_id=1670675100]
-transform = Transform3D(-4.3703977e-08, 0, -0.9998305, 0, 1, 0, 0.9998305, 0, -4.3703977e-08, 2.6378613, 0, 7.7345552)
+transform = Transform3D(-4.3703977e-08, 0, 0.9998305, 0, 1, 0, -0.9998305, 0, -4.3703977e-08, -8.802884, 0, 20.377714)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -904,7 +904,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V6" type="Node3D" parent="Environment/Vehicles" unique_id=559032236]
-transform = Transform3D(-4.3703988e-08, 0, -0.9998307, 0, 1, 0, 0.9998307, 0, -4.3703988e-08, 0.6511259, 0, 7.7345543)
+transform = Transform3D(-4.3703988e-08, 0, 0.9998307, 0, 1, 0, -0.9998307, 0, -4.3703988e-08, -7.554592, 0, 20.377714)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -917,7 +917,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V7" type="Node3D" parent="Environment/Vehicles" unique_id=2077917968]
-transform = Transform3D(-0.36930135, 0, -0.9291278, 0, 1, 0, 0.9291278, 0, -0.36930135, -1.279252, 0, 7.7345552)
+transform = Transform3D(-4.3704e-08, 0, 0.99983096, 0, 1, 0, -0.99983096, 0, -4.3704e-08, -6.3010054, 0, 20.377714)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -990,6 +990,7 @@ speed = 4.0
 [node name="RouteFinder" type="Node" parent="Environment" unique_id=607585202 node_paths=PackedStringArray("faulty_alert")]
 script = ExtResource("7_fxbbc")
 faulty_alert = NodePath("../../280GMachines/280g/FaultyAlert")
+is_Good = true
 
 [node name="RobotManager" type="Node" parent="Environment" unique_id=480108640]
 script = ExtResource("10_04rp7")
@@ -1003,8 +1004,11 @@ script = ExtResource("12_uem70")
 [node name="QueueManager" type="Node" parent="Environment" unique_id=1245000465]
 script = ExtResource("13_cp5ni")
 
-[node name="GearRepositoryManager" type="Node" parent="Environment" unique_id=487988137]
+[node name="GearRepositoryManager" type="Node" parent="Environment" unique_id=487988137 node_paths=PackedStringArray("Loader_Gears", "Bad_Dunnage_Gears", "Good_Dunnage_Gears")]
 script = ExtResource("18_wovih")
+Loader_Gears = [NodePath("../../InputLoader/Platform/lgear0"), NodePath("../../InputLoader/Platform/lgear1"), NodePath("../../InputLoader/Platform/lgear2"), NodePath("../../InputLoader/Platform/lgear3"), NodePath("../../InputLoader/Platform/lgear6"), NodePath("../../InputLoader/Platform/lgear5"), NodePath("../../InputLoader/Platform/lgear4")]
+Bad_Dunnage_Gears = [NodePath("../../BadDunnage/Platform/bgear0"), NodePath("../../BadDunnage/Platform/bgear1"), NodePath("../../BadDunnage/Platform/bgear2"), NodePath("../../BadDunnage/Platform/bgear3"), NodePath("../../BadDunnage/Platform/bgear6"), NodePath("../../BadDunnage/Platform/bgear5"), NodePath("../../BadDunnage/Platform/bgear4")]
+Good_Dunnage_Gears = [NodePath("../../GoodDunnage/Platform/ggear0"), NodePath("../../GoodDunnage/Platform/ggear1"), NodePath("../../GoodDunnage/Platform/ggear2"), NodePath("../../GoodDunnage/Platform/ggear3"), NodePath("../../GoodDunnage/Platform/ggear6"), NodePath("../../GoodDunnage/Platform/ggear5"), NodePath("../../GoodDunnage/Platform/ggear4")]
 
 [node name="InputLoader" type="Node3D" parent="." unique_id=776539885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.52779, 0, 13.532576)
@@ -1038,31 +1042,25 @@ material_override = SubResource("StandardMaterial3D_f6ypw")
 material_overlay = SubResource("StandardMaterial3D_ngllm")
 mesh = SubResource("BoxMesh_40a4t")
 
-[node name="gear0" parent="InputLoader/Platform" unique_id=2086740075 instance=ExtResource("16_deaqs")]
+[node name="lgear0" parent="InputLoader/Platform" unique_id=2086740075 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.91889095, 0.087332845, -0.7491417)
 
-[node name="gear1" parent="InputLoader/Platform" unique_id=1072237740 instance=ExtResource("16_deaqs")]
+[node name="lgear1" parent="InputLoader/Platform" unique_id=1072237740 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.91889095, 0.087332845, 0.01468277)
 
-[node name="gear2" parent="InputLoader/Platform" unique_id=237525037 instance=ExtResource("16_deaqs")]
+[node name="lgear2" parent="InputLoader/Platform" unique_id=237525037 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.91889095, 0.087332845, 0.8078861)
 
-[node name="gear3" parent="InputLoader/Platform" unique_id=256359572 instance=ExtResource("16_deaqs")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.014684677, 0.087332845, -0.7491417)
-
-[node name="gear4" parent="InputLoader/Platform" unique_id=1654496838 instance=ExtResource("16_deaqs")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.014684677, 0.087332845, 0.01468277)
-
-[node name="gear5" parent="InputLoader/Platform" unique_id=2050183213 instance=ExtResource("16_deaqs")]
+[node name="lgear3" parent="InputLoader/Platform" unique_id=2050183213 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.014684677, 0.087332845, 0.8078861)
 
-[node name="gear6" parent="InputLoader/Platform" unique_id=73835682 instance=ExtResource("16_deaqs")]
+[node name="lgear4" parent="InputLoader/Platform" unique_id=73835682 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.9319153, 0.087332845, -0.7491417)
 
-[node name="gear7" parent="InputLoader/Platform" unique_id=581154631 instance=ExtResource("16_deaqs")]
+[node name="lgear5" parent="InputLoader/Platform" unique_id=581154631 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.9319153, 0.087332845, 0.01468277)
 
-[node name="gear8" parent="InputLoader/Platform" unique_id=1128206431 instance=ExtResource("16_deaqs")]
+[node name="lgear6" parent="InputLoader/Platform" unique_id=1128206431 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.9319153, 0.087332845, 0.8078861)
 
 [node name="Platform2" parent="InputLoader" unique_id=1437852808 instance=ExtResource("8_cp5ni")]
@@ -1150,6 +1148,7 @@ texture = ExtResource("27_esq7h")
 
 [node name="FaultyAlert" type="Sprite3D" parent="280GMachines/280g" unique_id=617458301]
 transform = Transform3D(-0.2, 3.019916e-08, 6.211763e-23, -3.019916e-08, -0.2, -8.881784e-16, -1.0587912e-22, -8.881784e-16, 0.2, -0.98729706, 0.22000504, -1.9825995)
+visible = false
 billboard = 1
 texture = ExtResource("34_f6ypw")
 
@@ -1455,6 +1454,7 @@ j1_angle = -1120680.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.005, 10.75)
 floor_y = -1.9950000001117587
 size = Vector3(3, 2, 2.9996028)
+metadata/_snap_transform = Callable()
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="BadDunnage/Platform" unique_id=314839865]
 transform = Transform3D(2.9846025, 0, 0, 0, 0.09860021, 0, 0, 0, 2.9942875, 0, -0.03029108, 0)
@@ -1462,14 +1462,33 @@ material_override = SubResource("StandardMaterial3D_f6ypw")
 material_overlay = SubResource("StandardMaterial3D_ngllm")
 mesh = SubResource("BoxMesh_40a4t")
 
-[node name="gear0" parent="BadDunnage/Platform" unique_id=1447300361 instance=ExtResource("16_deaqs")]
+[node name="bgear0" parent="BadDunnage/Platform" unique_id=501784002 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.91889095, 0.087332845, -0.7491417)
+visible = false
 
-[node name="gear1" parent="BadDunnage/Platform" unique_id=122987418 instance=ExtResource("16_deaqs")]
+[node name="bgear1" parent="BadDunnage/Platform" unique_id=434188424 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.91889095, 0.087332845, 0.01468277)
+visible = false
 
-[node name="gear2" parent="BadDunnage/Platform" unique_id=1418833115 instance=ExtResource("16_deaqs")]
+[node name="bgear2" parent="BadDunnage/Platform" unique_id=1878453151 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.91889095, 0.087332845, 0.8078861)
+visible = false
+
+[node name="bgear3" parent="BadDunnage/Platform" unique_id=507948878 instance=ExtResource("16_deaqs")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.014684677, 0.087332845, 0.8078861)
+visible = false
+
+[node name="bgear4" parent="BadDunnage/Platform" unique_id=217904277 instance=ExtResource("16_deaqs")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.9319153, 0.087332845, -0.7491417)
+visible = false
+
+[node name="bgear5" parent="BadDunnage/Platform" unique_id=892018839 instance=ExtResource("16_deaqs")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.9319153, 0.087332845, 0.01468277)
+visible = false
+
+[node name="bgear6" parent="BadDunnage/Platform" unique_id=563706161 instance=ExtResource("16_deaqs")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.9319153, 0.087332845, 0.8078861)
+visible = false
 
 [node name="Platform2" parent="BadDunnage" unique_id=738200956 instance=ExtResource("8_cp5ni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8, 0.005, 10.75)
@@ -1512,6 +1531,7 @@ j1_angle = -1119960.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.005, 10.75)
 floor_y = -1.9950000001117587
 size = Vector3(3, 2, 2.9996028)
+metadata/_snap_transform = Callable()
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="GoodDunnage/Platform" unique_id=935184296]
 transform = Transform3D(2.9846025, 0, 0, 0, 0.09860021, 0, 0, 0, 2.9942875, 0, -0.03029108, 0)
@@ -1519,14 +1539,33 @@ material_override = SubResource("StandardMaterial3D_f6ypw")
 material_overlay = SubResource("StandardMaterial3D_ngllm")
 mesh = SubResource("BoxMesh_40a4t")
 
-[node name="gear0" parent="GoodDunnage/Platform" unique_id=822854527 instance=ExtResource("16_deaqs")]
+[node name="ggear0" parent="GoodDunnage/Platform" unique_id=750647071 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.91889095, 0.087332845, -0.7491417)
+visible = false
 
-[node name="gear1" parent="GoodDunnage/Platform" unique_id=1532843107 instance=ExtResource("16_deaqs")]
+[node name="ggear1" parent="GoodDunnage/Platform" unique_id=1665246562 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.91889095, 0.087332845, 0.01468277)
+visible = false
 
-[node name="gear2" parent="GoodDunnage/Platform" unique_id=1724386934 instance=ExtResource("16_deaqs")]
+[node name="ggear2" parent="GoodDunnage/Platform" unique_id=822306300 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.91889095, 0.087332845, 0.8078861)
+visible = false
+
+[node name="ggear3" parent="GoodDunnage/Platform" unique_id=273731092 instance=ExtResource("16_deaqs")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.014684677, 0.087332845, 0.8078861)
+visible = false
+
+[node name="ggear4" parent="GoodDunnage/Platform" unique_id=1680990968 instance=ExtResource("16_deaqs")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.9319153, 0.087332845, -0.7491417)
+visible = false
+
+[node name="ggear5" parent="GoodDunnage/Platform" unique_id=1483099743 instance=ExtResource("16_deaqs")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.9319153, 0.087332845, 0.01468277)
+visible = false
+
+[node name="ggear6" parent="GoodDunnage/Platform" unique_id=1128332727 instance=ExtResource("16_deaqs")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.9319153, 0.087332845, 0.8078861)
+visible = false
 
 [node name="Platform2" parent="GoodDunnage" unique_id=1066121814 instance=ExtResource("8_cp5ni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8, 0.005, 10.75)
