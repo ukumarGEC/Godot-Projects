@@ -116,7 +116,7 @@ func shift_queue() -> void:
 
 func shift_after_release()->void:
 
-	print("SHIFT QUEUE AFTER RELEASE")
+	#print("SHIFT QUEUE AFTER RELEASE")
 
 	for i in range(queue_nodes.size()-1):
 

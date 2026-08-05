@@ -27,7 +27,7 @@ func _ready()->void:
 	vehicles[4].start($TrackNetwork/LoadingZone/NL3)
 	vehicles[5].start($TrackNetwork/LoadingZone/NL2)
 	vehicles[6].start($TrackNetwork/LoadingZone/NL1)
-	vehicles[7].start($TrackNetwork/LoadingZone/NL0)
+	#vehicles[7].start($TrackNetwork/LoadingZone/NL0)
 	#vechicles[8].start($TrackNetwork/LoadingZone/NL0)
 	#vechicles[9].start($TrackNetwork/LoadingZone/NL0)
 	#$Vehicles/V1.start($TrackNetwork/N1)

@@ -48,7 +48,7 @@ func pick_place(vehicle:Vehicle) -> void:
 	vacuum_on = false
 	await _move([180, 20, 85, 0, 65, 0])
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(10).timeout
 	
 	await _move([180, 55, 75, 0, 45, 0])
 	await get_tree().create_timer(0.3).timeout

@@ -31,6 +31,7 @@ var state:State = State.IDLE
 @onready var robot_manager : RobotManager = $"../../RobotManager"
 @onready var job_manager: JobManager = $"../../JobManager"
 @onready var queue_manager: QueueManager = $"../../QueueManager"
+@onready var gear_repository_manager: GearRepositoryManager = $"../../GearRepositoryManager"
 @onready var factory_manager: Factory = $"../../../Environment"
 
 @export var retry_delay:float = 0.25
@@ -108,16 +109,30 @@ func arrive()-> void:
 	# Trigger Robot
 	if current_node.node_type == TrackNode.NodeType.MACHINE:
 		match current_node.zone_type:
-			TrackNode.ZoneType.LOADING: await robot_manager._run_robot(self, 1)
-			TrackNode.ZoneType.GRINDING: await robot_manager._run_robot(self, 2)
-			TrackNode.ZoneType.DUNNAGE_BAD: await robot_manager._run_robot(self, 9)
-			TrackNode.ZoneType.DUNNAGE_GOOD: await robot_manager._run_robot(self, 10)
+			TrackNode.ZoneType.LOADING: 
+				await robot_manager._run_robot(self, 1)
+				gear_repository_manager.remove_from_loader()
+			TrackNode.ZoneType.GRINDING: 
+				await robot_manager._run_robot(self, 2)
+			TrackNode.ZoneType.DUNNAGE_BAD: 
+				await robot_manager._run_robot(self, 9)
+				gear_repository_manager.add_to_bad_dunnage()
+			TrackNode.ZoneType.DUNNAGE_GOOD: 
+				await robot_manager._run_robot(self, 10)
+				gear_repository_manager.add_to_good_dunnage()
 			TrackNode.ZoneType.MEASUREMENT: 
 				match current_node.node_id:
-					14: await robot_manager._run_robot(self, 6)
-					24: await robot_manager._run_robot(self, 8)
+					14: 
+						await robot_manager._run_robot(self, 6)
+					24: 
+						await robot_manager._run_robot(self, 8)
 					_ : print("Invalid operation")
+			TrackNode.ZoneType.PHOTOBOOTH: 
+				await get_tree().create_timer(5).timeout
+			TrackNode.ZoneType.WASHING: 
+				await get_tree().create_timer(5).timeout
 		
+		gear_repository_manager.print_status()
 
 
 	if previous_node != null:

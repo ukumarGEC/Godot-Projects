@@ -11,6 +11,13 @@ enum Robos{
 	GoodDunnage
 }
 
+signal grinder_robo_finished
+signal loader_robo_finished
+signal bad_dunnage_robo_finished
+signal good_dunnage_robo_finished
+signal gmsp_robo_finished
+signal gearset_robo_finished
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

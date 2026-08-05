@@ -50,7 +50,7 @@ func request_move(vehicle: Vehicle, current:TrackNode, target: TrackNode, previo
 	return false
 
 func arrived(vehicle: Vehicle, current_node: TrackNode, previous: TrackNode)->void:
-	if vehicle.name == "V8" && current_node.name == "NL1":
+	if vehicle.name == "V7" && current_node.name == "NL1":
 		reset_notification_controll()
 		if job_manager.BatchCount !=0:
 			batchfinished.emit()

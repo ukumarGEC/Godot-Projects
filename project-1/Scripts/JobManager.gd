@@ -13,6 +13,7 @@ var buffer_queue: Array[Vehicle] = []
 
 @onready var queue_manager: QueueManager = $"../QueueManager"
 @onready var route_finder : RouteFinder = $"../RouteFinder"
+@onready var gear_repository_manager: GearRepositoryManager = $"../GearRepositoryManager"
 
 var measurement_zone_capacity := 2      # Number of nodes in measurement zone
 var quarantine_queue_capacity := 6     # Number of queue nodes
@@ -51,6 +52,9 @@ func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) ->
 	var left_measurement := previous.zone_type == TrackNode.ZoneType.MEASUREMENT \
 		and current.zone_type != TrackNode.ZoneType.MEASUREMENT
 		
+	var photobooth_finished := previous.node_type == TrackNode.NodeType.MACHINE \
+		and current.zone_type == TrackNode.ZoneType.PHOTOBOOTH
+		
 	if vehicle.destination == Vehicle.Destination.QUEUE:
 		if entered_queue:
 			if !quarantine_queue.has(vehicle):
@@ -80,10 +84,13 @@ func update_status(vehicle: Vehicle, current: TrackNode, previous: TrackNode) ->
 		elif left_measurement:
 			measurement_queue.erase(vehicle)
 
-			if measurement_queue.is_empty():
+			#if measurement_queue.is_empty():
 				#parts_measured = true
-				_on_TrafficManager_measurement_ready()
-
+				#_on_TrafficManager_measurement_ready()
+			print_status()
+				
+		elif photobooth_finished:
+			_on_TrafficManager_measurement_ready()
 			print_status()
 
 func is_measurement_zone_empty() -> bool:
@@ -167,12 +174,15 @@ func _on_TrafficManager_batchfinished() -> void:
 		await %Environment.start_Repair()
 		print("Clearing dunnage........")
 		await %Environment.start_towing(AutoVehicle.VehicleLocation.BadDunage)
+		gear_repository_manager.reset_bad_dunnage()
 		print("Dunnage cleared........")
 	else:
 		print("Clearing dunnage........")
 		await %Environment.start_towing(AutoVehicle.VehicleLocation.GoodDunnage)
+		gear_repository_manager.reset_good_dunnage()
 		print("Dunnage cleared........")
 
 	print("Loading Gears........")
 	await %Environment.start_towing(AutoVehicle.VehicleLocation.Loader)
+	gear_repository_manager.reload()
 	print("Gears Loaded")

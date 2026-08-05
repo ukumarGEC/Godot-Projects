@@ -52,7 +52,7 @@ func arrive() -> void:
 	current_node = target_node
 	target_node = null
 	moving = false
-	print("Carrier reached ", current_node.name)
+	#print("Carrier reached ", current_node.name)
 	await go_next()
 
 
