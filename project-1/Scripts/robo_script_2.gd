@@ -3,6 +3,7 @@ class_name Robo_script_2
 extends SixAxisRobot
 
 @onready var factory_manager:Factory = $"../../../Environment"
+@onready var gear_repo_manager:GearRepositoryManager = $"../../../Environment/GearRepositoryManager"
 
 var counter := 0
 var _running := false
@@ -52,6 +53,12 @@ func pick_place(vehicle:Vehicle) -> void:
 		
 	vacuum_on = false
 	await get_tree().create_timer(0.3).timeout
+	
+	# Animate gear movement
+	var parent_name := get_parent().get_parent().name
+	match parent_name:
+		"GoodDunnage": gear_repo_manager.place_gear_to_good_dunnage()
+		"BadDunnage": gear_repo_manager.place_gear_to_bad_dunnage()
 	
 	# Return Home
 	move_to_home()

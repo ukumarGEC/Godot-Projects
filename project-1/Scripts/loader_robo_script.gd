@@ -5,6 +5,7 @@ extends SixAxisRobot
 var counter := 0
 var _running := false
 @onready var factory_manager:Factory = $"../../../Environment"
+@onready var gear_repo_manager:GearRepositoryManager = $"../../../Environment/GearRepositoryManager"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,6 +41,7 @@ func pick_place(vehicle:Vehicle) -> void:
 
 	vacuum_on = true
 	factory_manager._update_gear(vehicle, false)
+	gear_repo_manager.pick_gear()
 	await get_tree().create_timer(0.3).timeout
 	
 	#if counter % 2 == 0 :

@@ -64,6 +64,9 @@ func remove_from_bad_dunnage() -> void:
 	print("Gear removed from bad dunnage")
 	update_gears(DunnageType.BadDunnage, bad_dunnage_count)
 
+func place_gear_to_bad_dunnage()->void:
+	Bad_Dunnage_Gears[0].visible = true
+
 # -------------------------------------------------------------------------
 # Good Dunnage
 # -------------------------------------------------------------------------
@@ -96,6 +99,9 @@ func remove_from_good_dunnage() -> void:
 	# TODO: Play good dunnage remove animation using gear
 	print("Gear removed from good dunnage")
 	update_gears(DunnageType.GoodDunnage, good_dunnage_count)
+
+func place_gear_to_good_dunnage()->void:
+	Good_Dunnage_Gears[0].visible = true
 
 # -------------------------------------------------------------------------
 # Loader
@@ -134,7 +140,8 @@ func remove_from_loader() -> void:
 	if loader_count == 0:
 		LoaderEmpty.emit()
 	
-
+func pick_gear()->void:
+	Loader_Gears[0].visible = false
 
 # -------------------------------------------------------------------------
 # Utility
