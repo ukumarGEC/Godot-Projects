@@ -17,6 +17,8 @@ var target_node: TrackNode
 var pick_location: TrackNode
 var moving := false
 
+@onready var gear_repository_manager: GearRepositoryManager = $"../../GearRepositoryManager"
+
 
 func start(node: TrackNode, pick_point: TrackNode) -> void:
 	current_node = node
@@ -67,9 +69,16 @@ func go_next() -> void:
 	&& pick_location == current_node :
 		if current_node!= null:
 			match current_node.name:
-				"NAV2" : await get_tree().create_timer(10).timeout
-				"NAV3" : await get_tree().create_timer(10).timeout
-				"NAV4" : await get_tree().create_timer(10).timeout 
+				"NAV2" : 
+					await get_tree().create_timer(10).timeout
+					gear_repository_manager.reset_bad_dunnage()
+				"NAV3" : 
+					await get_tree().create_timer(10).timeout
+					gear_repository_manager.reset_good_dunnage()
+				"NAV4" : 
+					await get_tree().create_timer(10).timeout 
+					gear_repository_manager.reload()
+
 		next = current_node.next_nodes[1]
 	else:
 		next = current_node.next_nodes[0]

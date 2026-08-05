@@ -172,17 +172,36 @@ func _on_TrafficManager_batchfinished() -> void:
 	print("Batch finished")
 	if !route_finder.is_Good:
 		await %Environment.start_Repair()
-		print("Clearing dunnage........")
-		await %Environment.start_towing(AutoVehicle.VehicleLocation.BadDunage)
-		gear_repository_manager.reset_bad_dunnage()
-		print("Dunnage cleared........")
-	else:
-		print("Clearing dunnage........")
-		await %Environment.start_towing(AutoVehicle.VehicleLocation.GoodDunnage)
-		gear_repository_manager.reset_good_dunnage()
-		print("Dunnage cleared........")
+		print("Machine repair process completed")
+		#print("Clearing dunnage........")
+		#await %Environment.start_towing(AutoVehicle.VehicleLocation.BadDunage)
+		#gear_repository_manager.reset_bad_dunnage()
+		#print("Dunnage cleared........")
+	#else:
+		#print("Clearing dunnage........")
+		#await %Environment.start_towing(AutoVehicle.VehicleLocation.GoodDunnage)
+		#gear_repository_manager.reset_good_dunnage()
+		#print("Dunnage cleared........")
+#
+	#print("Loading Gears........")
+	#await %Environment.start_towing(AutoVehicle.VehicleLocation.Loader)
+	#gear_repository_manager.reload()
+	#print("Gears Loaded")
 
+
+func _on_GearRepositoryManager_loader_empty() -> void:
 	print("Loading Gears........")
 	await %Environment.start_towing(AutoVehicle.VehicleLocation.Loader)
-	gear_repository_manager.reload()
 	print("Gears Loaded")
+
+
+func _on_GearRepositoryManager_good_dunnage_full() -> void:
+	print("Clearing good dunnage........")
+	await %Environment.start_towing(AutoVehicle.VehicleLocation.GoodDunnage)
+	print("Good Dunnage cleared........")
+
+
+func _on_GearRepositoryManager_bad_dunnage_full() -> void:
+	print("Clearing bad dunnage........")
+	await %Environment.start_towing(AutoVehicle.VehicleLocation.BadDunage)
+	print("Bad Dunnage cleared........")

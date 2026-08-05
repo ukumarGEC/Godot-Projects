@@ -92,6 +92,7 @@ load_path = "res://.godot/imported/280G_right_view_a.png-798a6923df0f436a15a1868
 [node name="Environment" type="Node3D" parent="." unique_id=1301383595 node_paths=PackedStringArray("faulty_alert", "techinician", "tow_truck")]
 unique_name_in_owner = true
 script = ExtResource("1_fj5ke")
+StartLoading = true
 faulty_alert = NodePath("../280GMachines/280g/FaultyAlert")
 techinician = NodePath("Vehicles/Technician")
 tow_truck = NodePath("Vehicles/TowTruck")
@@ -840,7 +841,7 @@ script = ExtResource("6_04rp7")
 [node name="Vehicles" type="Node" parent="Environment" unique_id=1845568271]
 
 [node name="V1" type="Node3D" parent="Environment/Vehicles" unique_id=473014263]
-transform = Transform3D(0.0025401062, 0, 0.99982524, 0, 1, 0, -0.99982524, 0, 0.0025401062, -12.611652, 0, 21.375044)
+transform = Transform3D(-0.9998299, 0, -8.7407905e-08, 0, 1, 0, 8.7407905e-08, 0, -0.9998299, 23.617746, 0, 2.491428)
 script = ExtResource("5_nx2sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Vehicles/V1" unique_id=157157124]
@@ -852,7 +853,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="V2" type="Node3D" parent="Environment/Vehicles" unique_id=1875575113]
-transform = Transform3D(-4.3703924e-08, 0, 0.99982923, 0, 1, 0, -0.99982923, 0, -4.3703924e-08, -11.478991, 0, 21.37793)
+transform = Transform3D(-0.3693001, 0, -0.9291272, 0, 1, 0, 0.9291272, 0, -0.3693001, -1.279252, 0, 7.7345552)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -865,7 +866,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V3" type="Node3D" parent="Environment/Vehicles" unique_id=1440789607]
-transform = Transform3D(-0.26132727, 0, 0.9650738, 0, 1, 0, -0.9650738, 0, -0.26132727, -10.4258585, 0, 21.37793)
+transform = Transform3D(-0.9998303, 0, -8.740794e-08, 0, 1, 0, 8.740794e-08, 0, -0.9998303, -4.0342455, 0, -0.33193496)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -878,7 +879,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V4" type="Node3D" parent="Environment/Vehicles" unique_id=908323127]
-transform = Transform3D(-0.75414854, 0, 0.65644586, 0, 1, 0, -0.65644586, 0, -0.75414854, -9.441485, 0, 21.111374)
+transform = Transform3D(0.9998294, 0, 0, 0, 1, 0, 0, 0, 0.9998294, -19.377728, 0, 12.274708)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -891,7 +892,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V5" type="Node3D" parent="Environment/Vehicles" unique_id=1670675100]
-transform = Transform3D(-4.3703977e-08, 0, 0.9998305, 0, 1, 0, -0.9998305, 0, -4.3703977e-08, -8.802884, 0, 20.377714)
+transform = Transform3D(0.9998283, 0, 0.00020977232, 0, 1, 0, -0.00020977232, 0, 0.9998283, -19.377728, 0, 13.895934)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -904,7 +905,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V6" type="Node3D" parent="Environment/Vehicles" unique_id=559032236]
-transform = Transform3D(-4.3703988e-08, 0, 0.9998307, 0, 1, 0, -0.9998307, 0, -4.3703988e-08, -7.554592, 0, 20.377714)
+transform = Transform3D(0.7354733, 0, 0.6773023, 0, 1, 0, -0.6773023, 0, 0.7354733, -19.377254, 0, 16.150356)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -917,7 +918,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3655746e-08, 0.011, 0, 0)
 
 [node name="V7" type="Node3D" parent="Environment/Vehicles" unique_id=2077917968]
-transform = Transform3D(-4.3704e-08, 0, 0.99983096, 0, 1, 0, -0.99983096, 0, -4.3704e-08, -6.3010054, 0, 20.377714)
+transform = Transform3D(0.99971604, 0, 0.0150960125, 0, 1, 0, -0.0150960125, 0, 0.99971604, -18.41039, 0, 17.200258)
 script = ExtResource("5_nx2sc")
 destination = 0
 
@@ -971,7 +972,7 @@ transform = Transform3D(-4.3655746e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 
 
 [node name="Technician" type="Node3D" parent="Environment/Vehicles" unique_id=321636539]
 unique_name_in_owner = true
-transform = Transform3D(-0.29547244, 5.226421e-05, -0.68935376, 0, 0.75, 5.6863453e-05, 0.68935376, 2.240161e-05, -0.29547244, -41, -1.733, 38)
+transform = Transform3D(-0.3022641, 5.1958577e-05, -0.6864029, 0, 0.75, 5.6773948e-05, 0.6864029, 2.2880458e-05, -0.3022641, -41.025936, -1.7329979, 37.98858)
 script = ExtResource("9_40a4t")
 speed = 1.0
 
@@ -983,7 +984,7 @@ mesh = SubResource("BoxMesh_fj5ke")
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0, 0)
 
 [node name="TowTruck" parent="Environment/Vehicles" unique_id=1775214323 instance=ExtResource("66_ruckw")]
-transform = Transform3D(0.99982923, 0, 0, 0, 1, 0, 0, 0, 0.99982923, 44, -2.1, 34.649)
+transform = Transform3D(0.9998295, 0, 0, 0, 1, 0, 0, 0, 0.9998295, 44, -2.1, 34.649)
 script = ExtResource("67_idxg4")
 speed = 4.0
 
@@ -1227,7 +1228,7 @@ process_mode = 1
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.021320581, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -4059360.0
+j1_angle = -4073760.0
 
 [node name="Robo_3" parent="280GMachines" unique_id=1798611370 instance=ExtResource("8_cp5ni")]
 unique_name_in_owner = true
@@ -1273,7 +1274,7 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1985760.0
+j1_angle = -1987920.0
 
 [node name="300_GMSP_NANO_Bl3" parent="300GMSP" unique_id=954246795 instance=ExtResource("31_hl73b")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 14.766684, -1.4453292, -14.08897)
@@ -1419,7 +1420,10 @@ process_mode = 1
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("28_37s4p")
 home_position = Array[float]([0.0, -45.0, 90.0, 0.0, 75.0, 0.0])
-j1_angle = -1975680.0
+j1_angle = -1977660.0
+j2_angle = 20.0
+j3_angle = 85.0
+j5_angle = 65.0
 
 [node name="PhotoBooth" parent="." unique_id=1087032330 instance=ExtResource("52_acppy")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 26.809772, -0.0071823597, 12.656346)
@@ -1541,7 +1545,6 @@ mesh = SubResource("BoxMesh_40a4t")
 
 [node name="ggear0" parent="GoodDunnage/Platform" unique_id=750647071 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.91889095, 0.087332845, -0.7491417)
-visible = false
 
 [node name="ggear1" parent="GoodDunnage/Platform" unique_id=1665246562 instance=ExtResource("16_deaqs")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.91889095, 0.087332845, 0.01468277)
@@ -1628,3 +1631,6 @@ transform = Transform3D(0, 0, -1, 0, -1, 0, -1, 0, 0, -3.9925575, 1.1024127, -1.
 [connection signal="QuarantineQueueFull" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_quarantine_queue_full"]
 [connection signal="batchfinished" from="Environment/TrafficManager" to="Environment/JobManager" method="_on_TrafficManager_batchfinished"]
 [connection signal="finished" from="Environment/Vehicles/Technician" to="Environment/JobManager" method="_on_Technician_finished"]
+[connection signal="BadDunnageFull" from="Environment/GearRepositoryManager" to="Environment/JobManager" method="_on_GearRepositoryManager_bad_dunnage_full"]
+[connection signal="GoodDunnageFull" from="Environment/GearRepositoryManager" to="Environment/JobManager" method="_on_GearRepositoryManager_good_dunnage_full"]
+[connection signal="LoaderEmpty" from="Environment/GearRepositoryManager" to="Environment/JobManager" method="_on_GearRepositoryManager_loader_empty"]

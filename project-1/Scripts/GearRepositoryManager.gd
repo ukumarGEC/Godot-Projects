@@ -14,6 +14,10 @@ enum DunnageType
 @export var Bad_Dunnage_Gears:Array[Node3D] 
 @export var Good_Dunnage_Gears:Array[Node3D] 
 
+signal LoaderEmpty
+signal GoodDunnageFull
+signal BadDunnageFull
+
 var loader_count := 0
 var good_dunnage_count := 0
 var bad_dunnage_count := 0
@@ -47,6 +51,8 @@ func add_to_bad_dunnage() -> void:
 	print("Gear added to bad dunnage")
 	update_gears(DunnageType.BadDunnage, bad_dunnage_count)
 
+	if bad_dunnage_count == capacity_threshold:
+		BadDunnageFull.emit()
 
 func remove_from_bad_dunnage() -> void:
 	if bad_dunnage_count == 0:
@@ -57,7 +63,6 @@ func remove_from_bad_dunnage() -> void:
 	# TODO: Play bad dunnage remove animation using gear
 	print("Gear removed from bad dunnage")
 	update_gears(DunnageType.BadDunnage, bad_dunnage_count)
-
 
 # -------------------------------------------------------------------------
 # Good Dunnage
@@ -79,6 +84,8 @@ func add_to_good_dunnage() -> void:
 	print("Gear added to good dunnage")
 	update_gears(DunnageType.GoodDunnage, good_dunnage_count)
 
+	if good_dunnage_count == capacity_threshold:
+		GoodDunnageFull.emit()
 
 func remove_from_good_dunnage() -> void:
 	if good_dunnage_count == 0:
@@ -89,7 +96,6 @@ func remove_from_good_dunnage() -> void:
 	# TODO: Play good dunnage remove animation using gear
 	print("Gear removed from good dunnage")
 	update_gears(DunnageType.GoodDunnage, good_dunnage_count)
-
 
 # -------------------------------------------------------------------------
 # Loader
@@ -124,6 +130,9 @@ func remove_from_loader() -> void:
 	# TODO: Play loader remove animation using gear
 	print("Gear removed from loader")
 	update_gears(DunnageType.Loader, loader_count)
+	
+	if loader_count == 0:
+		LoaderEmpty.emit()
 	
 
 
